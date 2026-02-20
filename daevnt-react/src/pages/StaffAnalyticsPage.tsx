@@ -466,9 +466,9 @@ const StaffAnalyticsPage: React.FC<StaffAnalyticsPageProps> = ({ tvMode = false 
     const attended = ${attendedJson};
     const defaultCenter = [${mapConfig.center.lat}, ${mapConfig.center.lng}];
     const isGlobal = ${JSON.stringify(isGlobalMap)};
-    const map = L.map('map', { zoomControl: true }).setView(defaultCenter, ${mapConfig.zoom});
+    const map = L.map('map', { zoomControl: true, zoomSnap: 0.25 }).setView(defaultCenter, ${mapConfig.zoom});
     if (isGlobal) {
-      map.setView([12, 10], 2);
+      map.setView([12, 10], 2.5);
       map.setMaxBounds([[-85, -180], [85, 180]]);
     }
 
