@@ -466,11 +466,26 @@ const StaffAnalyticsPage: React.FC<StaffAnalyticsPageProps> = ({ tvMode = false 
     const defaultCenter = [${mapConfig.center.lat}, ${mapConfig.center.lng}];
     const map = L.map('map', { zoomControl: true }).setView(defaultCenter, ${mapConfig.zoom});
 
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+    const fallbackLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
+      maxZoom: 16,
+      attribution: '&copy; OpenStreetMap contributors &copy; Esri'
+    });
+
+    const primaryLayer = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
       subdomains: 'abcd',
       maxZoom: 20,
       attribution: '&copy; OpenStreetMap contributors &copy; CARTO'
-    }).addTo(map);
+    });
+
+    let switchedToFallback = false;
+    primaryLayer.on('tileerror', function () {
+      if (switchedToFallback) return;
+      switchedToFallback = true;
+      map.removeLayer(primaryLayer);
+      fallbackLayer.addTo(map);
+    });
+
+    primaryLayer.addTo(map);
 
     if (points.length > 1) {
       const bounds = L.latLngBounds(points.map(p => [p.lat, p.lng]));
