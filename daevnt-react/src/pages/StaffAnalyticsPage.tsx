@@ -204,7 +204,7 @@ const StaffAnalyticsPage: React.FC<StaffAnalyticsPageProps> = ({ tvMode = false 
     }, { scope: containerRef, dependencies: [activeTab, loading] });
 
     useEffect(() => {
-        const isAuthenticated = localStorage.getItem("staffAuthenticated");
+        const isAuthenticated = sessionStorage.getItem("staffAuthenticated");
         if (!isAuthenticated) {
             navigate("/staff/login");
             return;
@@ -213,6 +213,19 @@ const StaffAnalyticsPage: React.FC<StaffAnalyticsPageProps> = ({ tvMode = false 
         const intervalId = window.setInterval(() => void loadRegistrations(false), 10000);
         return () => window.clearInterval(intervalId);
     }, [navigate]);
+
+    useEffect(() => {
+        const clearAuth = () => {
+            sessionStorage.removeItem("staffAuthenticated");
+            localStorage.removeItem("staffAuthenticated");
+        };
+        window.addEventListener("beforeunload", clearAuth);
+        window.addEventListener("pagehide", clearAuth);
+        return () => {
+            window.removeEventListener("beforeunload", clearAuth);
+            window.removeEventListener("pagehide", clearAuth);
+        };
+    }, []);
 
     useEffect(() => {
         if (!initialTab) return;

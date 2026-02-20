@@ -14,7 +14,8 @@ const StaffLoginPage: React.FC = () => {
         e.preventDefault();
         if (username === "gennnxt2025" && password === "delineatingthefuture") {
             // successful login
-            localStorage.setItem("staffAuthenticated", "true");
+            sessionStorage.setItem("staffAuthenticated", "true");
+            localStorage.removeItem("staffAuthenticated");
             navigate("/staff/portal");
         } else {
             setError("Invalid username or password");

@@ -20,7 +20,7 @@ const StaffPortalPage: React.FC = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        const isAuthenticated = localStorage.getItem("staffAuthenticated");
+        const isAuthenticated = sessionStorage.getItem("staffAuthenticated");
         if (!isAuthenticated) {
             navigate("/staff/login");
             return;
@@ -36,6 +36,19 @@ const StaffPortalPage: React.FC = () => {
             window.clearInterval(intervalId);
         };
     }, [navigate]);
+
+    useEffect(() => {
+        const clearAuth = () => {
+            sessionStorage.removeItem("staffAuthenticated");
+            localStorage.removeItem("staffAuthenticated");
+        };
+        window.addEventListener("beforeunload", clearAuth);
+        window.addEventListener("pagehide", clearAuth);
+        return () => {
+            window.removeEventListener("beforeunload", clearAuth);
+            window.removeEventListener("pagehide", clearAuth);
+        };
+    }, []);
 
     const loadRegistrations = async (showLoader = false) => {
         try {
@@ -64,6 +77,7 @@ const StaffPortalPage: React.FC = () => {
     };
 
     const handleLogout = () => {
+        sessionStorage.removeItem("staffAuthenticated");
         localStorage.removeItem("staffAuthenticated");
         navigate("/staff/login");
     };
