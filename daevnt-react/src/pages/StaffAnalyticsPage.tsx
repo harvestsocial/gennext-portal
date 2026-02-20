@@ -443,6 +443,7 @@ const StaffAnalyticsPage: React.FC<StaffAnalyticsPageProps> = ({ tvMode = false 
         const pointsJson = JSON.stringify(points);
         const attendedJson = JSON.stringify(attendedCityCircles);
         const markerColor = "#7dd3fc";
+        const isGlobalMap = mapCountry === "Global Reach";
 
         return `<!doctype html>
 <html>
@@ -464,16 +465,23 @@ const StaffAnalyticsPage: React.FC<StaffAnalyticsPageProps> = ({ tvMode = false 
     const points = ${pointsJson};
     const attended = ${attendedJson};
     const defaultCenter = [${mapConfig.center.lat}, ${mapConfig.center.lng}];
+    const isGlobal = ${JSON.stringify(isGlobalMap)};
     const map = L.map('map', { zoomControl: true }).setView(defaultCenter, ${mapConfig.zoom});
+    if (isGlobal) {
+      map.setView([12, 10], 2);
+      map.setMaxBounds([[-85, -180], [85, 180]]);
+    }
 
     const fallbackLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
       maxZoom: 16,
+      noWrap: true,
       attribution: '&copy; OpenStreetMap contributors &copy; Esri'
     });
 
     const primaryLayer = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
       subdomains: 'abcd',
       maxZoom: 20,
+      noWrap: true,
       attribution: '&copy; OpenStreetMap contributors &copy; CARTO'
     });
 
@@ -487,7 +495,7 @@ const StaffAnalyticsPage: React.FC<StaffAnalyticsPageProps> = ({ tvMode = false 
 
     primaryLayer.addTo(map);
 
-    if (points.length > 1) {
+    if (!isGlobal && points.length > 1) {
       const bounds = L.latLngBounds(points.map(p => [p.lat, p.lng]));
       map.fitBounds(bounds.pad(0.25));
     }
