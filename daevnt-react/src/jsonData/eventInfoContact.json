@@ -1,0 +1,42 @@
+{
+    "details": {
+        "title": "Detail",
+        "items": [
+            {
+                "label": "COST",
+                "value": "Free Entry"
+            },
+            {
+                "label": "DATE",
+                "value": "March 12-14, 2026"
+            },
+            {
+                "label": "TIME",
+                "value": "9:00 AM – 5:00 PM"
+            }
+        ]
+    },
+    "organizer": {
+        "title": "Organizer",
+        "items": [
+            {
+                "value": "Harvest House International"
+            },
+            {
+                "label": "WEBSITE",
+                "value": "hhi.church",
+                "type": "text"
+            }
+        ]
+    },
+    "venue": {
+        "title": "Venue",
+        "items": [
+            {
+                "label": "LOCATION",
+                "value": "Grace Centre, 5XH6+XR9, Harare"
+            }
+        ]
+    },
+    "mapSrc": "https://www.google.com/maps?q=Grace%20Centre%2C%205XH6%2BXR9%2C%20Harare&z=17&output=embed"
+}

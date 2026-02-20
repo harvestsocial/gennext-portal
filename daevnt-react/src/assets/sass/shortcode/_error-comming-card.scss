@@ -1,0 +1,40 @@
+/*--------------------------------------------------------------
+  26. Error Page Content
+----------------------------------------------------------------*/
+.error-page {
+  position: relative;
+  &__content {
+    max-width: 626px;
+    width: 100%;
+    position: relative;
+    z-index: 13;
+  }
+  &__heading {
+    font-size: 110px;
+  }
+  &__subtitle {
+    font-size: 60px;
+    font-weight: 400;
+    margin-bottom: 20px;
+  }
+  &__desp {
+    max-width: 470px;
+    margin-bottom: 40px;
+  }
+  &__bg-img {
+    position: absolute;
+    z-index: 12;
+    bottom: -26px;
+    right: 0;
+    max-width: 913px;
+    width: 100%;
+    background-repeat: no-repeat;
+  }
+}
+@media screen and (max-width: 991px) {
+  .error-page {
+    &__bg-img {
+      opacity: 0.5;
+    }
+  }
+}

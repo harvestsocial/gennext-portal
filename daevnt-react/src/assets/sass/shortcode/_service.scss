@@ -1,0 +1,42 @@
+/*--------------------------------------------------------------
+  15. Service
+----------------------------------------------------------------*/
+.services-details {
+  &__wapper {
+    border: 1px solid rgba(#d9d9d9, 0.2);
+    border-top: 0;
+    border-bottom: 0;
+    padding: 0 130px;
+  }
+  &__desp {
+    padding-top: 30px;
+    line-height: 150%;
+    font-size: 16px;
+    .highlight {
+      font-weight: 700;
+      color: var(--white-color);
+    }
+  }
+  &__title {
+    margin-top: 50px;
+    font-size: 24px;
+  }
+  &__imgs {
+    margin: 50px 0;
+    display: flex;
+    gap: 10px;
+    & > * {
+      flex: 1;
+    }
+  }
+}
+@media screen and (max-width: 991px) {
+  .services-details {
+    &__wapper {
+      padding: 0 15px;
+    }
+    &__imgs {
+      flex-wrap: wrap;
+    }
+  }
+}

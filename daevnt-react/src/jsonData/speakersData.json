@@ -1,0 +1,90 @@
+[
+    {
+        "id": 1,
+        "name": "Linda Roberts",
+        "title": "Chief Data Officer, IBM",
+        "image": "/assets/img/speaker/speaker-member-1.png",
+        "socials": {
+            "facebook": "https://www.facebook.com/",
+            "instagram": "https://www.instagram.com/accounts/login",
+            "twitter": "https://x.com/?lang=en"
+        }
+    },
+    {
+        "id": 2,
+        "name": "Michael Chen",
+        "title": "Head of Cybersecurity, SecureNet",
+        "image": "/assets/img/speaker/speaker-member-2.png",
+        "socials": {
+            "facebook": "https://www.facebook.com/",
+            "instagram": "https://www.instagram.com/accounts/login",
+            "twitter": "https://x.com/?lang=en"
+        }
+    },
+    {
+        "id": 3,
+        "name": "Laday Roberts",
+        "title": "Senior Data Scientist, OpenAI",
+        "image": "/assets/img/speaker/speaker-member-3.png",
+        "socials": {
+            "facebook": "https://www.facebook.com/",
+            "instagram": "https://www.instagram.com/accounts/login",
+            "twitter": "https://x.com/?lang=en"
+        }
+    },
+    {
+        "id": 4,
+        "name": "James Porter",
+        "title": "Full-Stack Developer, CodeGen",
+        "image": "/assets/img/speaker/speaker-member-4.png",
+        "socials": {
+            "facebook": "https://www.facebook.com/",
+            "instagram": "https://www.instagram.com/accounts/login",
+            "twitter": "https://x.com/?lang=en"
+        }
+    },
+    {
+        "id": 5,
+        "name": "P.B Shelley",
+        "title": "Investor, TechVentures",
+        "image": "/assets/img/speaker/speaker-member-5.png",
+        "socials": {
+            "facebook": "https://www.facebook.com/",
+            "instagram": "https://www.instagram.com/accounts/login",
+            "twitter": "https://x.com/?lang=en"
+        }
+    },
+    {
+        "id": 6,
+        "name": "John Keats",
+        "title": "Cybersecurity Expert, SecureNet",
+        "image": "/assets/img/speaker/speaker-member-6.png",
+        "socials": {
+            "facebook": "https://www.facebook.com/",
+            "instagram": "https://www.instagram.com/accounts/login",
+            "twitter": "https://x.com/?lang=en"
+        }
+    },
+    {
+        "id": 7,
+        "name": "Sufia Kamal",
+        "title": "Event Strategist, EventPro",
+        "image": "/assets/img/speaker/speaker-member-7.png",
+        "socials": {
+            "facebook": "https://www.facebook.com/",
+            "instagram": "https://www.instagram.com/accounts/login",
+            "twitter": "https://x.com/?lang=en"
+        }
+    },
+    {
+        "id": 8,
+        "name": "Johnathan Swift",
+        "title": "Marketing Director, Tesla",
+        "image": "/assets/img/speaker/speaker-member-8.png",
+        "socials": {
+            "facebook": "https://www.facebook.com/",
+            "instagram": "https://www.instagram.com/accounts/login",
+            "twitter": "https://x.com/?lang=en"
+        }
+    }
+]

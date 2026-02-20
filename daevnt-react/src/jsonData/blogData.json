@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "imgSrc": "/assets/img/blog/blog-1.png",
+        "alt": "Blog Image 1",
+        "category": "EventTrends",
+        "date": "03 Feb 2025",
+        "title": "Beyond the Stage: How Conferences Inspire Innovation & Collaboration"
+    },
+    {
+        "id": 2,
+        "imgSrc": "/assets/img/blog/blog-2.png",
+        "alt": "Blog Image 2",
+        "category": "TechSummit",
+        "date": "08 Feb 2025",
+        "title": "The Ultimate Guide to Engaging & Immersive Event Experiences"
+    },
+    {
+        "id": 3,
+        "imgSrc": "/assets/img/blog/blog-3.png",
+        "alt": "Blog Image 3",
+        "category": "EventTrends",
+        "date": "12 Feb 2025",
+        "title": "The Evolution of Conference Branding: Engaging Audiences in 2025"
+    },
+    {
+        "id": 4,
+        "imgSrc": "/assets/img/blog/blog-4.png",
+        "alt": "Blog Image 4",
+        "category": "EventVenue",
+        "date": "03 Mar 2025",
+        "title": "How to Choose the Perfect Venue for Your Event"
+    },
+    {
+        "id": 5,
+        "imgSrc": "/assets/img/blog/blog-5.png",
+        "alt": "Blog Image 5",
+        "category": "EventBrands",
+        "date": "02 Mar 2025",
+        "title": "The Power of Generation Next Sessions: Boosting Brand Awareness"
+    },
+    {
+        "id": 6,
+        "imgSrc": "/assets/img/blog/blog-6.png",
+        "alt": "Blog Image 6",
+        "category": "Networking",
+        "date": "07 Mar 2025",
+        "title": "How to Maximize Networking Opportunities at Events"
+    }
+]

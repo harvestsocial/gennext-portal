@@ -1,0 +1,179 @@
+/*--------------------------------------------------------------
+  32. Moving
+----------------------------------------------------------------*/
+.moving-section__wrap {
+  overflow: hidden;
+}
+
+.moving-section__in {
+  display: flex;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  gap: 80px;
+}
+
+.moving-section {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  padding: 5px 0px;
+  animation: slide-left 10s linear infinite;
+  will-change: transform, opacity;
+  &.ak-stroke-text {
+    margin: 0 10px;
+  }
+  &__title {
+    color: transparent;
+    font-size: 150px;
+    font-weight: 700;
+    color: var(--white-color);
+  }
+  .highlight-text {
+    font-weight: 700;
+    line-height: 100%;
+    text-shadow: -1px -1px 0 #0E2CA6, 0px -1px 0 #0E2CA6, 1px -1px 0 #0E2CA6,
+      1px 0px 0 #0E2CA6, 1px 1px 0 #0E2CA6, 0px 1px 0 #0E2CA6,
+      -1px 1px 0 #0E2CA6, -1px 0 0 #0E2CA6;
+    color: var(--body-bg-color);
+    background-image: none;
+    background-color: var(--body-bg-color);
+    background-clip: text;
+    -webkit-background-clip: text;
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: -7%;
+      width: 25px;
+      height: 25px;
+      z-index: 111;
+      background-color: var(--primary-color);
+      border-radius: 50%;
+      display: none;
+    }
+
+    &.no-dot::after {
+      display: none;
+    }
+  }
+
+  &-in.style2 {
+    display: flex;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    gap: 10px;
+    background-color: var(--primary-color);
+    .moving-section {
+      display: flex;
+      flex-shrink: 0;
+      align-items: center;
+      padding: 5px 0px;
+      animation: slide-left 10s linear infinite;
+      will-change: transform, opacity;
+      h2 {
+        font-size: 80px;
+        padding: 20px 0px;
+        position: relative;
+      }
+      .highlight-text-style2 {
+        font-weight: 700;
+        line-height: 100%;
+        text-shadow: -1px -1px 0 #ffffff, 0px -1px 0 #ffffff, 1px -1px 0 #ffffff,
+          1px 0px 0 #ffffff, 1px 1px 0 #ffffff, 0px 1px 0 #ffffff,
+          -1px 1px 0 #ffffff, -1px 0 0 #ffffff;
+        color: var(--primary-color);
+        background-image: none;
+        background-color: var(--primary-color);
+        background-clip: text;
+        -webkit-background-clip: text;
+        position: relative;
+        margin: 0px 65px;
+        &::before {
+          content: "";
+          position: absolute;
+          top: 42%;
+          left: -14%;
+          width: 25px;
+          height: 25px;
+          z-index: 111;
+          background-color: var(--secondary-color);
+          border-radius: 50%;
+          display: none;
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          top: 42%;
+          right: -14%;
+          width: 25px;
+          height: 25px;
+          z-index: 111;
+          background-color: var(--secondary-color);
+          border-radius: 50%;
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.animation-speed-10 {
+  animation: slide-left 10s linear infinite;
+}
+
+.animation-speed-15 {
+  animation: slide-left 15s linear infinite !important;
+}
+
+.animation-speed-20 {
+  animation: slide-left 20s linear infinite;
+}
+
+.animation-speed-30 {
+  animation: slide-left 30s linear infinite;
+}
+
+.animation-speed-40 {
+  animation: slide-left 40s linear infinite;
+}
+
+.animation-speed-50 {
+  animation: slide-left 50s linear infinite;
+}
+
+.moving-section-hover-push:hover .moving-section {
+  animation-play-state: paused;
+}
+
+@keyframes slide-left {
+  from {
+    transform: translate3d(00%, 0px, 0px);
+  }
+  to {
+    transform: translate3d(-100%, 0px, 0px);
+  }
+}
+
+.brand-logo {
+  display: inline-flex;
+  width: 100%;
+  height: 208px;
+  flex: 1 1 0%;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--black-color);
+}
+@media screen and (max-width: 1199px) {
+  .moving-section {
+    &__title {
+      font-size: 90px;
+    }
+  }
+}
+@media screen and (max-width: 767px) {
+  .brand-logo {
+    height: auto;
+    padding: 10px;
+  }
+}

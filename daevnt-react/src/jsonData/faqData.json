@@ -1,0 +1,63 @@
+[
+    {
+        "id": 1,
+        "collapseId": "collapseOne",
+        "question": "1. How do I register for Generation Next?",
+        "answer": "Register online by completing the registration form on the event page. Once submitted, you will receive your confirmation and digital ticket details.",
+        "defaultOpen": true
+    },
+    {
+        "id": 2,
+        "collapseId": "collapseTwo",
+        "question": "2. Is the event free?",
+        "answer": "Yes. The event is free for all. There is no registration fee."
+    },
+    {
+        "id": 3,
+        "collapseId": "collapseThree",
+        "question": "3. Who is this event for?",
+        "answer": "Generation Next is designed especially for church leaders, founders, and faith enthusiasts who want to grow in leadership, doctrine, and spiritual formation."
+    },
+    {
+        "id": 4,
+        "collapseId": "collapseFour",
+        "question": "4. What should I bring on event day?",
+        "answer": "Please bring your digital ticket (QR code), a charged phone, and a notebook or device for notes. Arriving early is recommended for smooth check-in."
+    },
+    {
+        "id": 5,
+        "collapseId": "collapseFive",
+        "question": "5. Will food be provided?",
+        "answer": "Snacks will be provided during lunch breaks only."
+    },
+    {
+        "id": 6,
+        "collapseId": "collapseSix",
+        "question": "6. Can I transfer my ticket to someone else?",
+        "answer": "Please contact the event support team before the event if you need to transfer a ticket. Transfers are reviewed on a case-by-case basis."
+    },
+    {
+        "id": 7,
+        "collapseId": "collapseSeven",
+        "question": "7. What happens after I register?",
+        "answer": "Your details are recorded and your registration ID is generated. Keep your ticket safe and present your QR code at check-in."
+    },
+    {
+        "id": 8,
+        "collapseId": "collapseEight",
+        "question": "8. Is there on-site check-in?",
+        "answer": "Yes. On-site staff will scan your ticket QR code at the registration desk to confirm attendance and grant access. Attendants will receive tags at the registration desk upon checking in."
+    },
+    {
+        "id": 9,
+        "collapseId": "collapseNine",
+        "question": "9. Can I attend if I did not register online?",
+        "answer": "Online registration is strongly recommended to avoid delays and secure your space. Unregistered walk-ins may be assisted only if capacity allows."
+    },
+    {
+        "id": 10,
+        "collapseId": "collapseTen",
+        "question": "10. Is Generation Next denominational?",
+        "answer": "Generation Next is a non-denominational movement and event space. We welcome church leaders, founders, and faith enthusiasts from different Christian backgrounds."
+    }
+]
