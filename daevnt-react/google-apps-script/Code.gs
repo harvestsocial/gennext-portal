@@ -181,8 +181,10 @@ function listRegistrations() {
   const createdAtIdx = getHeaderIndex_(headers, ["createdat", "created_at"]);
   const idIdx = getHeaderIndex_(headers, ["id"]);
 
-  const rows = values.slice(1).map(function (row) {
-    return {
+  const rows = values.slice(1)
+    .filter(function (row) { return !isBlankRow_(row); })
+    .map(function (row) {
+      return {
       id: getByIndex_(row, idIdx),
       firstName: getByIndex_(row, firstNameIdx),
       lastName: getByIndex_(row, lastNameIdx),
@@ -195,8 +197,8 @@ function listRegistrations() {
       email: getByIndex_(row, emailIdx),
       accessGranted: String(getByIndex_(row, accessIdx)).toLowerCase() === "true",
       createdAt: getByIndex_(row, createdAtIdx),
-    };
-  });
+      };
+    });
 
   rows.sort(function (a, b) {
     const aTime = new Date(a.createdAt || 0).getTime();
@@ -451,6 +453,13 @@ function getHeaderIndex_(normalizedHeaders, aliases) {
 function getByIndex_(row, idx) {
   if (idx < 0 || idx >= row.length) return "";
   return row[idx];
+}
+
+function isBlankRow_(row) {
+  for (var i = 0; i < row.length; i++) {
+    if (String(row[i] || "").trim() !== "") return false;
+  }
+  return true;
 }
 
 function jsonResponse(obj) {

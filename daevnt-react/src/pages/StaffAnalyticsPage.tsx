@@ -466,9 +466,10 @@ const StaffAnalyticsPage: React.FC<StaffAnalyticsPageProps> = ({ tvMode = false 
     const defaultCenter = [${mapConfig.center.lat}, ${mapConfig.center.lng}];
     const map = L.map('map', { zoomControl: true }).setView(defaultCenter, ${mapConfig.zoom});
 
-    L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png', {
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+      subdomains: 'abcd',
       maxZoom: 20,
-      attribution: '&copy; OpenStreetMap contributors &copy; Stadia Maps'
+      attribution: '&copy; OpenStreetMap contributors &copy; CARTO'
     }).addTo(map);
 
     if (points.length > 1) {
