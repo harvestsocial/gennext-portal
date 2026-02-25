@@ -2,14 +2,35 @@ import React, { useEffect, useState } from "react";
 import { useSearchParams, useNavigate } from "react-router-dom";
 import QRCode from "react-qr-code";
 import { getRegistrationById, type RegistrationData } from "@/lib/registrationApi";
+import eventData from "@/jsonData/eventInfoContact.json";
 import logo from "/assets/img/icon/logo.svg";
 import "../index.scss";
 
+interface EventItem {
+    label?: string;
+    value: string;
+}
+
+interface EventSection {
+    title: string;
+    items: EventItem[];
+}
+
+interface EventData {
+    details: EventSection;
+    venue: EventSection;
+}
+
+const data = eventData as EventData;
+const eventDate = data.details.items.find((item) => item.label?.toUpperCase() === "DATE")?.value || "March 12-14, 2026";
+const eventTime = data.details.items.find((item) => item.label?.toUpperCase() === "TIME")?.value || "08:00 AM";
+const eventVenue = data.venue.items.find((item) => item.label?.toUpperCase() === "LOCATION")?.value || "Grace Centre, 5XH6+XR9, Harare";
+
 const EVENT_DETAILS = {
     name: "Generation Next Conference",
-    date: "Saturday, 12 December 2026",
-    venue: "Grace Centre, 5XH6+XR9, Harare",
-    checkIn: "08:00 AM",
+    date: eventDate,
+    venue: eventVenue,
+    checkIn: eventTime,
 };
 
 const ConfirmationPage: React.FC = () => {

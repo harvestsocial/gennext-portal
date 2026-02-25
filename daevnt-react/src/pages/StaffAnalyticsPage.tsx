@@ -184,6 +184,7 @@ const StaffAnalyticsPage: React.FC<StaffAnalyticsPageProps> = ({ tvMode = false 
     const location = useLocation();
     const cleanMode = tvMode && new URLSearchParams(location.search).get("clean") === "1";
     const initialTab = new URLSearchParams(location.search).get("tab") as AnalyticsTab | null;
+    const googleMapsApiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY || "";
 
     useGSAP(() => {
         gsap.from(".analytics-card", {
@@ -463,79 +464,141 @@ const StaffAnalyticsPage: React.FC<StaffAnalyticsPageProps> = ({ tvMode = false 
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <style>
     html, body { margin: 0; padding: 0; height: 100%; width: 100%; background: #0b1220; }
     #map { height: 100%; width: 100%; }
-    .leaflet-control-attribution { background: rgba(8, 12, 22, 0.75); color: #cbd5e1; }
-    .leaflet-popup-content-wrapper, .leaflet-popup-tip { background: #0f172a; color: #e2e8f0; }
+    #fallback {
+      height: 100%;
+      width: 100%;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      color: #e2e8f0;
+      background: linear-gradient(180deg, #0b1220, #111827);
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    #fallback code {
+      background: rgba(125, 211, 252, 0.12);
+      color: #7dd3fc;
+      padding: 2px 6px;
+      border-radius: 6px;
+    }
   </style>
 </head>
 <body>
   <div id="map"></div>
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <div id="fallback"></div>
   <script>
     const points = ${pointsJson};
     const attended = ${attendedJson};
-    const defaultCenter = [${mapConfig.center.lat}, ${mapConfig.center.lng}];
+    const defaultCenter = { lat: ${mapConfig.center.lat}, lng: ${mapConfig.center.lng} };
+    const defaultZoom = ${mapConfig.zoom};
     const isGlobal = ${JSON.stringify(isGlobalMap)};
-    const map = L.map('map', { zoomControl: true, zoomSnap: 0.25 }).setView(defaultCenter, ${mapConfig.zoom});
-    if (isGlobal) {
-      map.setView([12, 10], 2.5);
-      map.setMaxBounds([[-85, -180], [85, 180]]);
+    const apiKey = ${JSON.stringify(googleMapsApiKey)};
+    const darkStyle = [
+      { elementType: "geometry", stylers: [{ color: "#0b1220" }] },
+      { elementType: "labels.text.fill", stylers: [{ color: "#cbd5e1" }] },
+      { elementType: "labels.text.stroke", stylers: [{ color: "#0b1220" }] },
+      { featureType: "administrative", elementType: "geometry", stylers: [{ color: "#1e293b" }] },
+      { featureType: "poi", elementType: "geometry", stylers: [{ color: "#111827" }] },
+      { featureType: "road", elementType: "geometry", stylers: [{ color: "#172554" }] },
+      { featureType: "road", elementType: "labels.text.fill", stylers: [{ color: "#93c5fd" }] },
+      { featureType: "transit", elementType: "geometry", stylers: [{ color: "#0f172a" }] },
+      { featureType: "water", elementType: "geometry", stylers: [{ color: "#020617" }] }
+    ];
+
+    const showFallback = (message) => {
+      const mapEl = document.getElementById("map");
+      const fallback = document.getElementById("fallback");
+      if (!mapEl || !fallback) return;
+      mapEl.style.display = "none";
+      fallback.style.display = "flex";
+      fallback.innerHTML = message;
+    };
+
+    const initMap = () => {
+      if (!window.google || !window.google.maps) {
+        showFallback("Google Maps failed to load.");
+        return;
+      }
+
+      const map = new window.google.maps.Map(document.getElementById("map"), {
+        center: isGlobal ? { lat: 12, lng: 10 } : defaultCenter,
+        zoom: isGlobal ? 2.5 : defaultZoom,
+        minZoom: isGlobal ? 2 : undefined,
+        styles: darkStyle,
+        mapTypeControl: false,
+        streetViewControl: false,
+        fullscreenControl: true,
+        zoomControl: true,
+        gestureHandling: "greedy"
+      });
+
+      const infoWindow = new window.google.maps.InfoWindow();
+      const bounds = new window.google.maps.LatLngBounds();
+
+      attended.forEach((c) => {
+        new window.google.maps.Circle({
+          strokeColor: "#7dd3fc",
+          strokeOpacity: 0.5,
+          strokeWeight: 1,
+          fillColor: "#7dd3fc",
+          fillOpacity: 0.45,
+          map,
+          center: { lat: c.lat, lng: c.lng },
+          radius: c.radiusKm * 1000
+        });
+      });
+
+      points.forEach((p) => {
+        const marker = new window.google.maps.Marker({
+          position: { lat: p.lat, lng: p.lng },
+          map,
+          title: p.label,
+          icon: {
+            path: window.google.maps.SymbolPath.CIRCLE,
+            scale: 9,
+            fillColor: "${markerColor}",
+            fillOpacity: 0.92,
+            strokeColor: "${markerColor}",
+            strokeWeight: 3
+          }
+        });
+
+        marker.addListener("click", () => {
+          infoWindow.setContent("<strong>" + p.label + "</strong><br/>Count: " + p.count);
+          infoWindow.open({ anchor: marker, map });
+        });
+
+        bounds.extend(marker.getPosition());
+      });
+
+      if (!isGlobal && points.length > 1) {
+        map.fitBounds(bounds, 50);
+      }
+    };
+
+    if (!apiKey) {
+      showFallback("Google Maps API key missing.<br/>Set <code>VITE_GOOGLE_MAPS_API_KEY</code> in environment variables.");
+      return;
     }
 
-    const fallbackLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
-      maxZoom: 16,
-      noWrap: true,
-      attribution: '&copy; OpenStreetMap contributors &copy; Esri'
-    });
-
-    const primaryLayer = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-      subdomains: 'abcd',
-      maxZoom: 20,
-      noWrap: true,
-      attribution: '&copy; OpenStreetMap contributors &copy; CARTO'
-    });
-
-    let switchedToFallback = false;
-    primaryLayer.on('tileerror', function () {
-      if (switchedToFallback) return;
-      switchedToFallback = true;
-      map.removeLayer(primaryLayer);
-      fallbackLayer.addTo(map);
-    });
-
-    primaryLayer.addTo(map);
-
-    if (!isGlobal && points.length > 1) {
-      const bounds = L.latLngBounds(points.map(p => [p.lat, p.lng]));
-      map.fitBounds(bounds.pad(0.25));
-    }
-
-    attended.forEach((c) => {
-      L.circle([c.lat, c.lng], {
-        radius: c.radiusKm * 1000,
-        fillColor: "#7dd3fc",
-        fillOpacity: 0.45,
-        color: "#7dd3fc",
-        weight: 1
-      }).addTo(map).bindPopup('<strong>' + c.name + '</strong> (Attended)<br/>Count: ' + c.count);
-    });
-
-    points.forEach((p) => {
-      L.circleMarker([p.lat, p.lng], {
-        radius: 14,
-        color: '${markerColor}',
-        fillColor: '${markerColor}',
-        fillOpacity: 0.92,
-        weight: 3
-      }).addTo(map).bindPopup('<strong>' + p.label + '</strong><br/>Count: ' + p.count);
-    });
+    window.__initGenNextMap = initMap;
+    const script = document.createElement("script");
+    script.src = "https://maps.googleapis.com/maps/api/js?key=" + encodeURIComponent(apiKey) + "&callback=__initGenNextMap";
+    script.async = true;
+    script.defer = true;
+    script.onerror = () => {
+      showFallback("Could not load Google Maps script.");
+    };
+    document.head.appendChild(script);
   </script>
 </body>
 </html>`;
-    }, [attendedCityCircles, mapConfig.center.lat, mapConfig.center.lng, mapConfig.zoom, mapCountry, mapPoints]);
+    }, [attendedCityCircles, mapConfig.center.lat, mapConfig.center.lng, mapConfig.zoom, mapCountry, mapPoints, googleMapsApiKey]);
 
     const boardChurchProgress = useMemo(() => {
         return BOARD_CHURCHES.map((entry) => {

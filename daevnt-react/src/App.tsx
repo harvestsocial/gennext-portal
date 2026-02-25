@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import Main from "@/layout/Main";
-import Home from "@pages/Home";
+import NewHome from "@pages/NewHome";
 import Events from "@pages/Events";
 import ContactUs from "@pages/ContactUs";
 import RegisterPage from "@pages/RegisterPage";
@@ -33,8 +33,8 @@ function App() {
       <Route path="/staff/portal" element={<StaffPortalPage />} />
       <Route path="/staff/analytics" element={<StaffAnalyticsPage />} />
       <Route path="/staff/analytics/tv" element={<StaffAnalyticsPage tvMode />} />
-      <Route path="/" element={<Main />}>
-        <Route index element={<Home />} />
+      <Route path="/" element={<NewHome />} />
+      <Route element={<Main />}>
         <Route path="/registration" element={<RegisterPage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/confirmation" element={<ConfirmationPage />} />

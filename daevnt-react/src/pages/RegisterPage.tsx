@@ -15,12 +15,10 @@ const titles = [
     "Snr. Pastor",
     "Pastor",
     "Evangelist",
+    "Minister",
+    "Shephered",
+    "Doctor",
     "Congregant",
-    "Mr",
-    "Ms",
-    "Miss",
-    "Mrs",
-    "Dr",
 ];
 
 // Sort in reverse alphabetical order

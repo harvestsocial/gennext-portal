@@ -44,6 +44,22 @@ const BOARD_PROGRESS_HEADERS = [
   "Pending",
   "Attendance Progress %",
 ];
+const TITLE_OPTIONS = [
+  "Bishop",
+  "Apostle",
+  "Prophet",
+  "Prophetess",
+  "Overseer",
+  "Snr Reverend",
+  "Reverend",
+  "Snr. Pastor",
+  "Pastor",
+  "Evangelist",
+  "Minister",
+  "Shephered",
+  "Doctor",
+  "Congregant",
+];
 const BOARD_CHURCHES = [
   {
     church: "Harvest House International Church",
@@ -108,6 +124,16 @@ function doGet(e) {
       return jsonResponse({ success: true, message: "Sheets initialized" });
     }
 
+    if (action === "titleOptions") {
+      return jsonResponse({ success: true, data: TITLE_OPTIONS });
+    }
+
+    if (action === "normalizeLegacyTitles") {
+      const updated = normalizeLegacyCongregantTitles_();
+      rebuildAttendanceSheet_();
+      return jsonResponse({ success: true, updated: updated });
+    }
+
     return jsonResponse({ success: false, error: "Invalid action" });
   } catch (error) {
     return jsonResponse({ success: false, error: String(error) });
@@ -142,13 +168,14 @@ function doPost(e) {
 function createRegistration(data) {
   const sheet = getSheet_();
   const gender = normalizeGenderStrict_(data.gender);
+  const title = normalizeTitleStrict_(data.title);
   const id = generateRegistrationId_(sheet);
   const row = [
     id,
     safe(data.firstName),
     safe(data.lastName),
     gender,
-    safe(data.title),
+    title,
     safe(data.church),
     safe(data.city),
     safe(data.country),
@@ -282,6 +309,35 @@ function setupSheets_() {
   // Ensure all required tabs exist and are populated with headers/current data.
   getSheet_();
   rebuildAttendanceSheet_();
+}
+
+function normalizeLegacyCongregantTitles_() {
+  const sheet = getSheet_();
+  const values = sheet.getDataRange().getValues();
+  if (values.length <= 1) return 0;
+
+  const headers = values[0].map(function (h) { return normalizeHeader_(h); });
+  const titleIdx = getHeaderIndex_(headers, ["title"]);
+  if (titleIdx === -1) return 0;
+
+  const titleValues = values.slice(1).map(function (row) {
+    return [safe(getByIndex_(row, titleIdx))];
+  });
+
+  var updated = 0;
+  for (var i = 0; i < titleValues.length; i++) {
+    var normalizedTitle = normalizeExistingTitle_(titleValues[i][0]);
+    if (normalizedTitle !== titleValues[i][0]) {
+      titleValues[i][0] = normalizedTitle;
+      updated += 1;
+    }
+  }
+
+  if (updated > 0) {
+    sheet.getRange(2, titleIdx + 1, titleValues.length, 1).setValues(titleValues);
+  }
+
+  return updated;
 }
 
 function getOrCreateAttendanceSheet_() {
@@ -436,6 +492,48 @@ function normalizeGenderStrict_(value) {
   throw new Error("Gender must be Male or Female");
 }
 
+function normalizeTitleStrict_(value) {
+  var input = String(value || "").trim();
+  for (var i = 0; i < TITLE_OPTIONS.length; i++) {
+    if (input.toLowerCase() === TITLE_OPTIONS[i].toLowerCase()) {
+      return TITLE_OPTIONS[i];
+    }
+  }
+  throw new Error("Invalid title. Use one of the configured title options.");
+}
+
+function isLegacyCongregantTitle_(value) {
+  var normalized = String(value || "")
+    .trim()
+    .toLowerCase()
+    .replace(/\./g, "");
+  return normalized === "mr" || normalized === "miss" || normalized === "ms" || normalized === "mrs";
+}
+
+function normalizeExistingTitle_(value) {
+  var input = safe(value);
+  if (!input) return input;
+
+  if (isLegacyCongregantTitle_(input)) return "Congregant";
+
+  var normalized = input
+    .trim()
+    .toLowerCase()
+    .replace(/\./g, "")
+    .replace(/\s+/g, " ");
+
+  if (normalized === "snr reverend" || normalized === "senior reverend") return "Snr Reverend";
+  if (normalized === "dr" || normalized === "doctor") return "Doctor";
+
+  for (var i = 0; i < TITLE_OPTIONS.length; i++) {
+    if (normalized === TITLE_OPTIONS[i].toLowerCase().replace(/\./g, "")) {
+      return TITLE_OPTIONS[i];
+    }
+  }
+
+  return input;
+}
+
 function normalizeHeader_(value) {
   return String(value || "")
     .toLowerCase()
@@ -466,4 +564,10 @@ function jsonResponse(obj) {
   return ContentService
     .createTextOutput(JSON.stringify(obj))
     .setMimeType(ContentService.MimeType.JSON);
+}
+
+function fixTitlesNow() {
+  const updated = normalizeLegacyCongregantTitles_();
+  rebuildAttendanceSheet_();
+  return updated;
 }
