@@ -56,8 +56,8 @@ const NewHome: React.FC = () => {
                 body.new-home-body .bgc-black h4,
                 body.new-home-body .bgc-black h5,
                 body.new-home-body .bgc-black h6,
-                body.new-home-body .bgc-black a:not(.event-item a),
-                body.new-home-body .bgc-black span:not(.event-item span),
+                body.new-home-body .bgc-black a,
+                body.new-home-body .bgc-black span,
                 body.new-home-body .footer-area h1,
                 body.new-home-body .footer-area h2,
                 body.new-home-body .footer-area h3,
@@ -70,7 +70,7 @@ const NewHome: React.FC = () => {
                 body.new-home-body p {
                     color: #0F0E0E;
                 }
-                body.new-home-body .bgc-black p:not(.event-item p),
+                body.new-home-body .bgc-black p,
                 body.new-home-body .footer-area p {
                     color: #d4d4d4 !important;
                 }
