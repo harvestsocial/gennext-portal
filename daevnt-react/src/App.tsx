@@ -18,7 +18,8 @@ import AboutUs from "@pages/AboutUs";
 // import Blog from "@pages/Blog";
 // import BlogStandard from "@pages/BlogStandard";
 // import BlogDetails from "@pages/BlogDetails";
-import Speaker from "@pages/Speaker";
+// import Speaker from "@pages/Speaker";
+import NewSpeaker from "./pages/NewSpeaker";
 // import SpeakerDetails from "@pages/SpeakerDetails";
 // import Pricing from "@pages/Pricing";
 import Faq from "@pages/Faq";
@@ -34,6 +35,7 @@ function App() {
       <Route path="/staff/analytics" element={<StaffAnalyticsPage />} />
       <Route path="/staff/analytics/tv" element={<StaffAnalyticsPage tvMode />} />
       <Route path="/" element={<NewHome />} />
+      <Route path="/speaker" element={<NewSpeaker />} />
       <Route element={<Main />}>
         <Route path="/registration" element={<RegisterPage />} />
         <Route path="/register" element={<RegisterPage />} />
@@ -42,7 +44,7 @@ function App() {
         <Route path="/events" element={<Events />} />
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/about-us" element={<AboutUs />} />
-        <Route path="/speaker" element={<Speaker />} />
+        {/* <Route path="/speaker" element={<Speaker />} /> */}
         <Route path="/faq" element={<Faq />} />
 
         {/* <Route path="/" element={<HomeOne />} /> */}
