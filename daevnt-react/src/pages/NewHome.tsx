@@ -49,7 +49,22 @@ const NewHome: React.FC = () => {
                 body.new-home-body .text-white h3,
                 body.new-home-body .text-white h4,
                 body.new-home-body .text-white h5,
-                body.new-home-body .text-white h6 {
+                body.new-home-body .text-white h6,
+                body.new-home-body .bgc-black h1,
+                body.new-home-body .bgc-black h2,
+                body.new-home-body .bgc-black h3,
+                body.new-home-body .bgc-black h4,
+                body.new-home-body .bgc-black h5,
+                body.new-home-body .bgc-black h6,
+                body.new-home-body .bgc-black a,
+                body.new-home-body .bgc-black span,
+                body.new-home-body .footer-area h1,
+                body.new-home-body .footer-area h2,
+                body.new-home-body .footer-area h3,
+                body.new-home-body .footer-area h4,
+                body.new-home-body .footer-area h5,
+                body.new-home-body .footer-area h6,
+                body.new-home-body .footer-area a {
                     color: white !important;
                 }
                 body.new-home-body p {
@@ -58,6 +73,17 @@ const NewHome: React.FC = () => {
                 body.new-home-body .bgc-black p,
                 body.new-home-body .footer-area p {
                     color: #d4d4d4 !important;
+                }
+                body.new-home-body .slider-btns {
+                    display: flex !important;
+                    align-items: center !important;
+                    gap: 30px !important;
+                }
+                body.new-home-body .slider-btns .theme-btn {
+                    margin: 0 !important;
+                }
+                body.new-home-body .slider-btns .video-play-text {
+                    margin: 0 !important;
                 }
             `}</style>
             <div className="page-wrapper" dangerouslySetInnerHTML={{
@@ -161,15 +187,15 @@ const NewHome: React.FC = () => {
                             <div class="container container-1500">
                                 <div class="slider-content-inner">
                                     <span class="subtitle">Generation Next Movement</span>
-                                    <h1 class="title">Generation Next</h1>
+                                    <h1 class="title">Generation<br/>Next</h1>
                                     <div class="slider-btns">
                                         <a href="/registration" class="theme-btn">Register
                                             Here</a>
                                         <a href="https://youtu.be/zH2LYpje9U0?si=Goe9_8aLpl6D7rBJ"
-                                            class="mt-15 video-play-text" target="_blank"
+                                            class="video-play-text" target="_blank"
                                             rel="noopener noreferrer"><span>Watch Intro Video</span></a>
                                     </div>
-                                    <div class="conf-text">12-14 March<br>2026</div>
+                                    <div class="conf-text">12-14 MARCH<br>2026</div>
                                 </div>
                             </div>
                         </div>
@@ -180,15 +206,15 @@ const NewHome: React.FC = () => {
                             <div class="container container-1500">
                                 <div class="slider-content-inner">
                                     <span class="subtitle">Generation Next Movement</span>
-                                    <h1 class="title">Church Leadership</h1>
+                                    <h1 class="title">Church<br/>Leadership</h1>
                                     <div class="slider-btns">
                                         <a href="/registration" class="theme-btn">Register
                                             Here</a>
                                         <a href="https://youtu.be/zH2LYpje9U0?si=Goe9_8aLpl6D7rBJ"
-                                            class="mt-15 video-play-text" target="_blank"
+                                            class="video-play-text" target="_blank"
                                             rel="noopener noreferrer"><span>Watch Intro Video</span></a>
                                     </div>
-                                    <div class="conf-text">Grace Centre<br>Harare</div>
+                                    <div class="conf-text">GRACE CENTRE<br>HARARE</div>
                                 </div>
                             </div>
                         </div>
@@ -199,15 +225,15 @@ const NewHome: React.FC = () => {
                             <div class="container container-1500">
                                 <div class="slider-content-inner">
                                     <span class="subtitle">Generation Next Movement</span>
-                                    <h1 class="title">Prophetic Anointing</h1>
+                                    <h1 class="title">Prophetic<br/>Anointing</h1>
                                     <div class="slider-btns">
                                         <a href="/registration" class="theme-btn">Register
                                             Here</a>
                                         <a href="https://youtu.be/zH2LYpje9U0?si=Goe9_8aLpl6D7rBJ"
-                                            class="mt-15 video-play-text" target="_blank"
+                                            class="video-play-text" target="_blank"
                                             rel="noopener noreferrer"><span>Watch Intro Video</span></a>
                                     </div>
-                                    <div class="conf-text">Host: Bishop<br>Dr. Colin Nyathi</div>
+                                    <div class="conf-text">HOST: BISHOP<br>DR. COLIN NYATHI</div>
                                 </div>
                             </div>
                         </div>
@@ -218,15 +244,15 @@ const NewHome: React.FC = () => {
                             <div class="container container-1500">
                                 <div class="slider-content-inner">
                                     <span class="subtitle">Generation Next Movement</span>
-                                    <h1 class="title">End-time Mantles</h1>
+                                    <h1 class="title">End-time<br/>Mantles</h1>
                                     <div class="slider-btns">
                                         <a href="/registration" class="theme-btn">Register
                                             Here</a>
                                         <a href="https://youtu.be/zH2LYpje9U0?si=Goe9_8aLpl6D7rBJ"
-                                            class="mt-15 video-play-text" target="_blank"
+                                            class="video-play-text" target="_blank"
                                             rel="noopener noreferrer"><span>Watch Intro Video</span></a>
                                     </div>
-                                    <div class="conf-text">Guest: Bishop<br>Mosa Sono</div>
+                                    <div class="conf-text">GUEST: BISHOP<br>MOSA SONO</div>
                                 </div>
                             </div>
                         </div>
