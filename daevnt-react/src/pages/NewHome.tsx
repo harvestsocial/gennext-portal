@@ -3,6 +3,9 @@ import React, { useEffect } from 'react';
 
 const NewHome: React.FC = () => {
     useEffect(() => {
+        // Add a body class to apply specific overrides that counter the global React theme (index.scss)
+        document.body.classList.add('new-home-body');
+
         // Inject the main template script to initialize sliders, AOS, etc. after DOM is ready
         const timer = setTimeout(() => {
             const scriptId = 'gennext-template-script';
@@ -19,12 +22,46 @@ const NewHome: React.FC = () => {
             setTimeout(() => window.dispatchEvent(new Event('load')), 300);
         }, 100);
 
-        return () => clearTimeout(timer);
+        return () => {
+            clearTimeout(timer);
+            document.body.classList.remove('new-home-body');
+        };
     }, []);
 
     return (
-        <div className="page-wrapper" dangerouslySetInnerHTML={{
-            __html: `
+        <>
+            <style>{`
+                body.new-home-body {
+                    background-color: white !important;
+                    color: #0F0E0E !important;
+                }
+                body.new-home-body h1, 
+                body.new-home-body h2, 
+                body.new-home-body h3, 
+                body.new-home-body h4, 
+                body.new-home-body h5, 
+                body.new-home-body h6 {
+                    color: #01030B !important;
+                }
+                body.new-home-body .text-white,
+                body.new-home-body .text-white h1,
+                body.new-home-body .text-white h2,
+                body.new-home-body .text-white h3,
+                body.new-home-body .text-white h4,
+                body.new-home-body .text-white h5,
+                body.new-home-body .text-white h6 {
+                    color: white !important;
+                }
+                body.new-home-body p {
+                    color: #0F0E0E;
+                }
+                body.new-home-body .bgc-black p,
+                body.new-home-body .footer-area p {
+                    color: #d4d4d4 !important;
+                }
+            `}</style>
+            <div className="page-wrapper" dangerouslySetInnerHTML={{
+                __html: `
 
         <!-- Preloader -->
         <div class="site-preloader" id="preloader">
@@ -1103,6 +1140,7 @@ const NewHome: React.FC = () => {
         <!-- Scroll Top Button -->
         <button class="scroll-top scroll-to-target" data-target="html"><i class="far fa-angle-up"></i></button>
     ` }} />
+        </>
     );
 };
 
