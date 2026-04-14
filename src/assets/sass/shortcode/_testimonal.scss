@@ -1,0 +1,122 @@
+/*--------------------------------------------------------------
+  17. Testimonal
+----------------------------------------------------------------*/
+.testimonal-items {
+  &__wrapper {
+    height: 673px;
+
+    // &.style2 {
+    //   height: 100%;
+    //   .swiper-slide {
+    //     width: 25%;
+    //   }
+    // }
+
+    .swiper-slide {
+      display: flex;
+      &:nth-child(even) {
+        align-items: start;
+      }
+
+      &:nth-child(odd) {
+        align-items: end;
+      }
+    }
+  }
+
+  .testimonal-item {
+    width: 410px;
+    height: 410px;
+    border-radius: 50%;
+    border: 1px dashed var(--white-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-color: var(--primary-color);
+    padding: 20px 20px 20px 62px;
+
+    &__subtitle {
+      font-weight: 700;
+      line-height: 150%;
+      margin-bottom: 8px;
+      color: var(--white-color);
+    }
+    &__title {
+      margin-top: 9px;
+      margin-bottom: 5px;
+      font-size: 20px;
+    }
+    &__desp {
+      font-size: 16px;
+      font-style: italic;
+    }
+
+    &__style2 {
+      padding: 73px;
+      background-color: var(--white-color);
+      .testimonal-item {
+        &__title {
+          color: var(--black-color);
+          font-size: 16px;
+          font-weight: 700;
+          line-height: 150%;
+        }
+        &__desp {
+          color: var(--black-color);
+          font-size: 16px;
+          font-style: italic;
+          font-weight: 400;
+          line-height: 150%;
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width: 1200px) {
+  .testimonal-items {
+    &__wrapper {
+      height: 673px;
+      &.style2 {
+        height: 100%;
+        .swiper-slide {
+          margin-left: 20px;
+          width: calc(420px - 20px);
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 1199px) {
+  .testimonal-items {
+    &__wrapper {
+      height: auto;
+    }
+    .testimonal-item {
+      &__style2 {
+        padding: 35px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 991px) {
+  .testimonal-items {
+    &__wrapper {
+      height: auto;
+    }
+    .testimonal-item {
+      width: auto;
+      height: auto;
+      border: none;
+      &__style2 {
+        padding: 55px 35px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 991px) {
+  .testimonal-items {
+    .testimonal-item {
+      padding: 20px 20px 20px 15px;
+    }
+  }
+}

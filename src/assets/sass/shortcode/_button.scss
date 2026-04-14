@@ -1,0 +1,176 @@
+/*--------------------------------------------------------------
+  12. Button
+----------------------------------------------------------------*/
+@use "../default/color_variable" as color;
+
+@mixin base-button {
+  display: inline-flex;
+  padding: 16px 30px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  color: var(--white-color);
+  background-color: var(--primary-color);
+  font-family: var(--heading-font-family);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 110%;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  &:hover {
+    background-color: var(--primary-200);
+    color: var(--white-color);
+  }
+}
+
+@mixin circle-button {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: none;
+  background: var(--primary-color);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  i {
+    font-size: 30px;
+    color: var(--white-color);
+  }
+  &:hover {
+    background: var(--primary-200);
+  }
+}
+
+.primary__btn {
+  @include base-button;
+  &.style3 {
+    padding: 10px 16px;
+    border: 1px solid var(--primary-color);
+    background-color: transparent;
+  }
+  &.bg-white__btn {
+    color: var(--black-color);
+  }
+}
+
+.primary__btn {
+  &.style2 {
+    @include base-button;
+    background-color: var(--white-color);
+    width: 100%;
+    border: none;
+    color: var(--black-color);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer !important;
+  }
+}
+
+.feature-content__button {
+  @include base-button;
+  background: transparent;
+  color: var(--white-color);
+  border: 1px solid var(--primary-color);
+
+  &:hover {
+    background: var(--primary-color);
+    color: var(--white-color);
+  }
+  &.button-active {
+    background: var(--primary-color);
+    color: var(--white-color);
+  }
+}
+
+.zigzag__btn {
+  cursor: pointer;
+  display: inline-block;
+  width: 150px;
+  height: 151px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  position: relative;
+  svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150px;
+    height: 151px;
+  }
+  &--text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 110%;
+    color: var(--black-color);
+    text-align: center;
+  }
+  &--icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 17.995px;
+    height: 18px;
+    flex-shrink: 0;
+    color: var(--primary-color);
+    border-radius: 50%;
+    border: 1px solid var(--primary-color);
+    position: relative;
+    line-height: 19%;
+    i {
+      position: absolute;
+      font-size: 10px;
+      padding: 2px;
+      line-height: 19%;
+    }
+  }
+  &.style2 {
+    cursor: pointer;
+    .zigzag__btn--icon,
+    .zigzag__btn--text {
+      color: var(--white-color);
+    }
+    svg {
+      path {
+        fill: var(--primary-color);
+      }
+    }
+  }
+}
+
+.circle__btn-next {
+  @include circle-button;
+  transform: rotate(180deg);
+}
+
+.circle__btn-perv {
+  @include circle-button;
+}
+
+.view__btn {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 110%; /* 17.6px */
+  text-transform: uppercase;
+  color: var(--white-color);
+  &:hover {
+    color: var(--primary-color);
+  }
+}
+@media screen and (max-width: 991px) {
+  .circle__btn-next {
+    width: 60px;
+    height: 60px;
+  }
+  .circle__btn-perv {
+    width: 60px;
+    height: 60px;
+  }
+}

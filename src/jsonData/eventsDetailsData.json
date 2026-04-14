@@ -1,0 +1,244 @@
+[
+    {
+        "id": 1,
+        "aboutContent": {
+            "title": "About the Event",
+            "desp": "Generation Next is a gathering of young leaders, visionaries, and believers ready to take the baton and run with the mandate of the Kingdom. Join Prophetess Memory Matimbire as she unpacks the prophetic destiny of the next generation."
+        },
+        "expect": {
+            "title": "What to Expect?",
+            "list": [
+                "Prophetic Impartation",
+                "Deep Worship Sessions",
+                "Strategic Leadership Teaching",
+                "Networking with Kingdom Influencers"
+            ]
+        },
+        "attend": {
+            "title": "Who Should Attend?",
+            "list": [
+                "Youth Leaders",
+                "Young Pastors",
+                "Aspiring Entrepreneurs",
+                "Students & Professionals"
+            ]
+        },
+        "speakers": {
+            "id": 1,
+            "title": "Speakers",
+            "list": [
+                {
+                    "id": 1,
+                    "name": "Prophetess Memory Matimbire",
+                    "title": "Keynote Speaker",
+                    "img": "/assets/img/hero/avatar.png"
+                }
+            ]
+        },
+        "eventOverview": {
+            "desp": "Generation Next is more than a conference; it's a movement. Expect to be challenged, inspired, and equipped for the greater works."
+        }
+    },
+    {
+        "id": 2,
+        "aboutContent": {
+            "title": "About the Event",
+            "desp": "Church Leadership in the 21st Century requires wisdom, grit, and grace. Apostle Tavonga Vutabwashe shares insights on building resilient ministries that thrive in changing times."
+        },
+        "expect": {
+            "title": "What to Expect?",
+            "list": [
+                "Leadership Strategies",
+                "Building Effective Teams",
+                "Handling Crises",
+                "Growing a Global Vision"
+            ]
+        },
+        "attend": {
+            "title": "Who Should Attend?",
+            "list": [
+                "Senior Pastors",
+                "Ministry Administrators",
+                "Departmental Heads",
+                "Church Planters"
+            ]
+        },
+        "speakers": {
+            "id": 2,
+            "title": "Speakers",
+            "list": [
+                {
+                    "id": 1,
+                    "name": "Apostle Tavonga Vutabwashe",
+                    "title": "Keynote Speaker",
+                    "img": "/assets/img/hero/avatar.png"
+                }
+            ]
+        },
+        "eventOverview": {
+            "desp": "Equip yourself with the tools to lead effectively and impact your community."
+        }
+    },
+    {
+        "id": 3,
+        "aboutContent": {
+            "title": "About the Event",
+            "desp": "The Prophetic Anointing opens doors and breaks chains. Join our host, Bishop Dr. Colin Nyathi, for a session dedicated to understanding and walking in the prophetic office."
+        },
+        "expect": {
+            "title": "What to Expect?",
+            "list": [
+                "Understanding the Prophetic",
+                "Activation Sessions",
+                "Hearing God's Voice",
+                "Prophetic Protocol"
+            ]
+        },
+        "attend": {
+            "title": "Who Should Attend?",
+            "list": [
+                "Prophets & Seers",
+                "Intercessors",
+                "Worship Leaders",
+                "All Believers"
+            ]
+        },
+        "speakers": {
+            "id": 3,
+            "title": "Speakers",
+            "list": [
+                {
+                    "id": 1,
+                    "name": "Bishop Dr. Colin Nyathi",
+                    "title": "Host",
+                    "img": "/assets/img/hero/avatar.png"
+                }
+            ]
+        },
+        "eventOverview": {
+            "desp": "A powerful time of impartation and revelation. Don't miss this opportunity to sharpen your spiritual senses."
+        }
+    },
+    {
+        "id": 4,
+        "aboutContent": {
+            "title": "About the Event",
+            "desp": "End-time Mantles are being released for the final harvest. Bishop Mosa Sono teaches on how to position yourself to receive and carry the mantle for your generation."
+        },
+        "expect": {
+            "title": "What to Expect?",
+            "list": [
+                "Teaching on Mantles",
+                "Impartation Service",
+                "Prayer for Destiny",
+                "Understanding Times & Seasons"
+            ]
+        },
+        "attend": {
+            "title": "Who Should Attend?",
+            "list": [
+                "Believers Seeking Purpose",
+                "Ministry Leaders",
+                "Missionaries",
+                "Revivalists"
+            ]
+        },
+        "speakers": {
+            "id": 4,
+            "title": "Speakers",
+            "list": [
+                {
+                    "id": 1,
+                    "name": "Bishop Mosa Sono",
+                    "title": "Keynote Speaker",
+                    "img": "/assets/img/hero/avatar.png"
+                }
+            ]
+        },
+        "eventOverview": {
+            "desp": "Receive the grace to finish strong and fulfill your God-given assignment."
+        }
+    },
+    {
+        "id": 5,
+        "aboutContent": {
+            "title": "About the Event",
+            "desp": "Mistakes Pastors Make - candid, hard-hitting, and healing. Dr. Sarah Nyathi addresses the common pitfalls in ministry and how to avoid or recover from them."
+        },
+        "expect": {
+            "title": "What to Expect?",
+            "list": [
+                "Honest Conversations",
+                "Healing & Restoration",
+                "Wisdom for Longevity",
+                "Q&A Session"
+            ]
+        },
+        "attend": {
+            "title": "Who Should Attend?",
+            "list": [
+                "Pastors & Spouses",
+                "Ministry Leaders",
+                "Counselors"
+            ]
+        },
+        "speakers": {
+            "id": 5,
+            "title": "Speakers",
+            "list": [
+                {
+                    "id": 1,
+                    "name": "Dr. Sarah Nyathi",
+                    "title": "Host",
+                    "img": "/assets/img/hero/avatar.png"
+                }
+            ]
+        },
+        "eventOverview": {
+            "desp": "Gain wisdom from experience and protect your calling."
+        }
+    },
+    {
+        "id": 6,
+        "aboutContent": {
+            "title": "About the Event",
+            "desp": "The Grand Finale of Generation Next 2026! A celebration of what God has done and a commissioning for what lies ahead."
+        },
+        "expect": {
+            "title": "What to Expect?",
+            "list": [
+                "High Praise & Worship",
+                "Special Performances",
+                "Commissioning Service",
+                "Holy Communion"
+            ]
+        },
+        "attend": {
+            "title": "Who Should Attend?",
+            "list": [
+                "Everyone!"
+            ]
+        },
+        "speakers": {
+            "id": 6,
+            "title": "Speakers",
+            "list": [
+                {
+                    "id": 1,
+                    "name": "Bishop Dr. Colin Nyathi",
+                    "title": "Host",
+                    "img": "/assets/img/hero/avatar.png"
+                },
+                {
+                    "id": 2,
+                    "name": "Dr. Sarah Nyathi",
+                    "title": "Host",
+                    "img": "/assets/img/hero/avatar.png"
+                }
+            ]
+        },
+        "eventOverview": {
+            "desp": "Closing the conference with a bang! Launching into the future with power."
+        }
+    }
+]

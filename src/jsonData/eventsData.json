@@ -1,0 +1,56 @@
+[
+    {
+        "id": 1,
+        "image": "/assets/img/events/event-1.png",
+        "title": "Generation Next",
+        "location": "Grace Centre, Tynwald South, Harare",
+        "date": "March 12, 2026",
+        "time": "10:00 AM – 1:00 PM",
+        "stock": "In Stock"
+    },
+    {
+        "id": 2,
+        "image": "/assets/img/events/event-2.png",
+        "title": "Church Leadership",
+        "location": "Grace Centre, Tynwald South, Harare",
+        "date": "March 12, 2026",
+        "time": "2:00 PM – 4:30 PM",
+        "stock": "In Stock"
+    },
+    {
+        "id": 3,
+        "image": "/assets/img/events/event-3.png",
+        "title": "Prophetic Anointing",
+        "location": "Grace Centre, Tynwald South, Harare",
+        "date": "March 13, 2026",
+        "time": "9:00 AM – 1:00 PM",
+        "stock": "In Stock"
+    },
+    {
+        "id": 4,
+        "image": "/assets/img/events/event-4.png",
+        "title": "End-time Mantles",
+        "location": "Grace Centre, Tynwald South, Harare",
+        "date": "March 13, 2026",
+        "time": "6:00 PM – 9:00 PM",
+        "stock": "In Stock"
+    },
+    {
+        "id": 5,
+        "image": "/assets/img/events/event-5.png",
+        "title": "Mistakes Pastors Make",
+        "location": "Grace Centre, Tynwald South, Harare",
+        "date": "March 14, 2026",
+        "time": "9:00 AM – 1:00 PM",
+        "stock": "In Stock"
+    },
+    {
+        "id": 6,
+        "image": "/assets/img/events/event-6.png",
+        "title": "Grand Finale",
+        "location": "Grace Centre, Tynwald South, Harare",
+        "date": "March 14, 2026",
+        "time": "2:00 PM – 5:00 PM",
+        "stock": "In Stock"
+    }
+]

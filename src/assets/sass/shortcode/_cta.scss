@@ -1,0 +1,77 @@
+/*--------------------------------------------------------------
+  21. Cta
+----------------------------------------------------------------*/
+
+.cta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__content {
+    max-width: 1010px;
+    width: 100%;
+    text-align: center;
+  }
+  &__title {
+    margin-bottom: 30px;
+    font-size: 50px;
+    font-weight: 600;
+  }
+  &__desp {
+    padding: 0px 126px;
+    color: var(--white-color);
+    margin-bottom: 60px;
+    font-size: 20px;
+    line-height: 150%;
+    font-weight: 400;
+  }
+}
+.cta-boxs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+  & > :nth-of-type(1) {
+    max-width: 470px;
+    width: 100%;
+  }
+  & > :nth-of-type(2) {
+    max-width: 470px;
+    width: 100%;
+  }
+  & > :nth-of-type(3) {
+    max-width: 150px;
+    width: 100%;
+  }
+  &__title {
+    font-size: 50px;
+    font-weight: 600;
+  }
+  &__desp {
+    line-height: 150%;
+    font-size: 20px;
+    color: var(--white-color);
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .cta {
+    padding: 0 15px;
+    &__title {
+      font-size: 42px;
+    }
+    &__desp {
+      padding: 0;
+      font-size: 16px;
+    }
+  }
+  .cta-boxs {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .cta-boxs {
+    gap: 30px;
+  }
+}

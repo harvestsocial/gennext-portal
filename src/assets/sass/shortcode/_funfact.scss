@@ -1,0 +1,63 @@
+/*--------------------------------------------------------------
+  16. Funfact
+----------------------------------------------------------------*/
+.funfact-content {
+  &__wapper {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    &--cunter {
+      font-size: 80px;
+      line-height: 100%;
+    }
+    &--title {
+      font-size: 30px;
+      line-height: 110%;
+    }
+    &--desp {
+      margin-top: 5px;
+      font-size: 16px;
+    }
+  }
+  &.style2 {
+    .funfact-content__item {
+      text-align: start;
+      align-items: flex-start;
+      &--desp {
+        font-family: var(--heading-font-family);
+        font-size: 24px;
+        line-height: 110%;
+        color: var(--white-color);
+      }
+    }
+  }
+}
+@media screen and (max-width: 991px) {
+  .funfact-content {
+    &__wapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: space-around;
+    }
+  }
+}
+@media screen and (max-width: 767px) {
+  .funfact-content {
+    &__wapper {
+      flex-direction: column;
+      gap: 50px;
+    }
+    &__item {
+      &--cunter {
+        font-size: 52px;
+      }
+    }
+  }
+}

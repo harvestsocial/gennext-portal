@@ -1,0 +1,164 @@
+/*--------------------------------------------------------------
+  30. Feature
+----------------------------------------------------------------*/
+
+.feature-content {
+  position: relative;
+  &__wrapper {
+    position: relative;
+    width: 100%;
+    z-index: 1;
+  }
+  &__buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+  }
+  .feature-bg-img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+  }
+  &__info {
+    display: flex;
+    gap: 80px;
+    align-items: center;
+    &.active {
+      display: flex;
+    }
+  }
+
+  &__speaker {
+    max-width: 620px;
+    width: 100%;
+  }
+
+  &__img {
+    width: 100%;
+    height: auto;
+  }
+
+  &__person__info {
+    max-width: 725px;
+    width: 100%;
+  }
+
+  &__tagline {
+    font-size: 24px;
+    line-height: 110%;
+    margin-bottom: 10px;
+  }
+  &__headline {
+    font-size: 60px;
+  }
+  &__title {
+    font-size: 80px;
+    margin-bottom: 50px;
+    line-height: 85%;
+  }
+
+  &__description {
+    margin-bottom: 60px;
+    font-size: 20px;
+    line-height: 150%;
+    padding-right: 77px;
+  }
+}
+
+.brands-sponsor {
+  background-color: var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  &__title {
+    &--text {
+      text-align: center;
+      font-size: 42px;
+    }
+  }
+  &__list {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__item {
+    max-width: 218px;
+    width: 100%;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    &.style2 {
+      max-width: 308px;
+      border: 1px solid var(--primary-300);
+      padding: 91px 40px;
+    }
+  }
+}
+@media screen and (max-width: 1399px) {
+  .brands-sponsor {
+    &__item {
+      max-width: 100%;
+      &.style2 {
+        max-width: 100%;
+        padding: 40px 20px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .feature-content {
+    &__wrapper {
+      max-width: 720px;
+      padding: 0px 15px;
+    }
+    &__info {
+      gap: 50px;
+      flex-wrap: wrap;
+      &.active {
+        flex-direction: column;
+      }
+    }
+    &__title {
+      font-size: 52px;
+      margin-bottom: 30px;
+    }
+    &__headline {
+      font-size: 42px;
+    }
+    &__description {
+      margin-bottom: 50px;
+      padding: 0;
+    }
+  }
+
+  .brands-sponsor {
+    &__title {
+      &--text {
+        text-align: center;
+        font-size: 32px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 767px) {
+  .feature-content {
+    &__wrapper {
+      max-width: 540px;
+    }
+    &__buttons {
+      flex-wrap: wrap;
+    }
+  }
+
+  .brands-sponsor {
+    &__title {
+      &--text {
+        text-align: center;
+        font-size: 26px;
+      }
+    }
+  }
+}

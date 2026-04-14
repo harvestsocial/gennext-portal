@@ -1,0 +1,498 @@
+[
+    {
+        "id": 1,
+        "name": "Linda Roberts",
+        "position": "Chief Data Officer, IBM",
+        "image": "/assets/img/speaker/speaker-single-person.png",
+        "content": "Lorem ipsum is dummy data expert in data strategy and AI-driven analytics. As the Chief Data Officer at IBM, she has spearheaded innovative data solutions, helping businesses leverage big data for growth and efficiency. With over 15 years of experience in data science and digital transformation, Linda is a sought-after speaker at global tech conferences.",
+        "contact": {
+            "phone": "+1-416-7130327",
+            "email": "info@generationnextmovement.com",
+            "website": "www.example.com"
+        },
+        "socials": [
+            {
+                "id": "facebook",
+                "icon": "flaticon-facebook",
+                "url": "https://www.facebook.com/"
+            },
+            {
+                "id": "twitter",
+                "icon": "flaticon-twitter",
+                "url": "https://x.com/"
+            },
+            {
+                "id": "instagram",
+                "icon": "flaticon-instagram",
+                "url": "https://www.instagram.com/accounts/login"
+            }
+        ],
+        "achievements": [
+            {
+                "id": "qualification",
+                "title": "Qualification",
+                "description": "You can register online by visiting our event page..."
+            },
+            {
+                "id": "professional-membership",
+                "title": "Professional associations and membership",
+                "description": "You can register online by visiting our event page..."
+            },
+            {
+                "id": "world-class-achievement",
+                "title": "World class achievement",
+                "description": "You can register online by visiting our event page..."
+            }
+        ],
+        "previousEvents": [
+            {
+                "id": 1,
+                "title": "Startup and Investments Summit 2025",
+                "location": "Grace Centre, 5XH6+XR9, Harare",
+                "date": "March 15, 2025",
+                "image": "/assets/img/speaker/previous-hit-event.png"
+            },
+            {
+                "id": 2,
+                "title": "Global Leadership Business Summit 2025",
+                "location": "Grace Centre, 5XH6+XR9, Harare",
+                "date": "March 15, 2025",
+                "image": "/assets/img/speaker/previous-hit-event-2.png"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": "James Smith",
+        "position": "AI Research Lead, Google",
+        "image": "/assets/img/speaker/speaker-single-person.png",
+        "content": "James is a pioneer in artificial intelligence and machine learning, leading research teams at Google. He has published over 50 papers and is a frequent keynote speaker.",
+        "contact": {
+            "phone": "+1-555-1234567",
+            "email": "james.smith@example.com",
+            "website": "www.jamessmith.com"
+        },
+        "socials": [
+            {
+                "id": "facebook",
+                "icon": "flaticon-facebook",
+                "url": "https://www.facebook.com/"
+            },
+            {
+                "id": "twitter",
+                "icon": "flaticon-twitter",
+                "url": "https://x.com/"
+            },
+            {
+                "id": "instagram",
+                "icon": "flaticon-instagram",
+                "url": "https://www.instagram.com/accounts/login"
+            }
+        ],
+        "achievements": [
+            {
+                "id": "qualification",
+                "title": "Qualification",
+                "description": "You can register online by visiting our event page..."
+            },
+            {
+                "id": "professional-membership",
+                "title": "Professional associations and membership",
+                "description": "You can register online by visiting our event page..."
+            },
+            {
+                "id": "world-class-achievement",
+                "title": "World class achievement",
+                "description": "You can register online by visiting our event page..."
+            }
+        ],
+        "previousEvents": [
+            {
+                "id": 1,
+                "title": "Startup and Investments Summit 2025",
+                "location": "Grace Centre, 5XH6+XR9, Harare",
+                "date": "March 15, 2025",
+                "image": "/assets/img/speaker/previous-hit-event.png"
+            },
+            {
+                "id": 2,
+                "title": "Global Leadership Business Summit 2025",
+                "location": "Grace Centre, 5XH6+XR9, Harare",
+                "date": "March 15, 2025",
+                "image": "/assets/img/speaker/previous-hit-event-2.png"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Maria Garcia",
+        "position": "CTO, DataWave",
+        "image": "/assets/img/speaker/speaker-single-person.png",
+        "content": "Maria specializes in cloud computing and big data. As CTO at DataWave, she has transformed enterprise data strategies.",
+        "contact": {
+            "phone": "+1-555-2345678",
+            "email": "maria.garcia@example.com",
+            "website": "www.mariagarcia.com"
+        },
+        "socials": [
+            {
+                "id": "facebook",
+                "icon": "flaticon-facebook",
+                "url": "https://www.facebook.com/"
+            },
+            {
+                "id": "twitter",
+                "icon": "flaticon-twitter",
+                "url": "https://x.com/"
+            },
+            {
+                "id": "instagram",
+                "icon": "flaticon-instagram",
+                "url": "https://www.instagram.com/accounts/login"
+            }
+        ],
+        "achievements": [
+            {
+                "id": "qualification",
+                "title": "Qualification",
+                "description": "You can register online by visiting our event page..."
+            },
+            {
+                "id": "professional-membership",
+                "title": "Professional associations and membership",
+                "description": "You can register online by visiting our event page..."
+            },
+            {
+                "id": "world-class-achievement",
+                "title": "World class achievement",
+                "description": "You can register online by visiting our event page..."
+            }
+        ],
+        "previousEvents": [
+            {
+                "id": 1,
+                "title": "Startup and Investments Summit 2025",
+                "location": "Grace Centre, 5XH6+XR9, Harare",
+                "date": "March 15, 2025",
+                "image": "/assets/img/speaker/previous-hit-event.png"
+            },
+            {
+                "id": 2,
+                "title": "Global Leadership Business Summit 2025",
+                "location": "Grace Centre, 5XH6+XR9, Harare",
+                "date": "March 15, 2025",
+                "image": "/assets/img/speaker/previous-hit-event-2.png"
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "name": "David Lee",
+        "position": "Head of Analytics, Amazon",
+        "image": "/assets/img/speaker/speaker-single-person.png",
+        "content": "David leads analytics at Amazon, focusing on customer insights and predictive modeling.",
+        "contact": {
+            "phone": "+1-555-3456789",
+            "email": "david.lee@example.com",
+            "website": "www.davidlee.com"
+        },
+        "socials": [
+            {
+                "id": "facebook",
+                "icon": "flaticon-facebook",
+                "url": "https://www.facebook.com/"
+            },
+            {
+                "id": "twitter",
+                "icon": "flaticon-twitter",
+                "url": "https://x.com/"
+            },
+            {
+                "id": "instagram",
+                "icon": "flaticon-instagram",
+                "url": "https://www.instagram.com/accounts/login"
+            }
+        ],
+        "achievements": [
+            {
+                "id": "qualification",
+                "title": "Qualification",
+                "description": "You can register online by visiting our event page..."
+            },
+            {
+                "id": "professional-membership",
+                "title": "Professional associations and membership",
+                "description": "You can register online by visiting our event page..."
+            },
+            {
+                "id": "world-class-achievement",
+                "title": "World class achievement",
+                "description": "You can register online by visiting our event page..."
+            }
+        ],
+        "previousEvents": [
+            {
+                "id": 1,
+                "title": "Startup and Investments Summit 2025",
+                "location": "Grace Centre, 5XH6+XR9, Harare",
+                "date": "March 15, 2025",
+                "image": "/assets/img/speaker/previous-hit-event.png"
+            },
+            {
+                "id": 2,
+                "title": "Global Leadership Business Summit 2025",
+                "location": "Grace Centre, 5XH6+XR9, Harare",
+                "date": "March 15, 2025",
+                "image": "/assets/img/speaker/previous-hit-event-2.png"
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "name": "Sophia Wang",
+        "position": "Machine Learning Engineer, Facebook",
+        "image": "/assets/img/speaker/speaker-single-person.png",
+        "content": "Sophia is an expert in deep learning and neural networks, working on cutting-edge projects at Facebook.",
+        "contact": {
+            "phone": "+1-555-4567890",
+            "email": "sophia.wang@example.com",
+            "website": "www.sophiawang.com"
+        },
+        "socials": [
+            {
+                "id": "facebook",
+                "icon": "flaticon-facebook",
+                "url": "https://www.facebook.com/"
+            },
+            {
+                "id": "twitter",
+                "icon": "flaticon-twitter",
+                "url": "https://x.com/"
+            },
+            {
+                "id": "instagram",
+                "icon": "flaticon-instagram",
+                "url": "https://www.instagram.com/accounts/login"
+            }
+        ],
+        "achievements": [
+            {
+                "id": "qualification",
+                "title": "Qualification",
+                "description": "You can register online by visiting our event page..."
+            },
+            {
+                "id": "professional-membership",
+                "title": "Professional associations and membership",
+                "description": "You can register online by visiting our event page..."
+            },
+            {
+                "id": "world-class-achievement",
+                "title": "World class achievement",
+                "description": "You can register online by visiting our event page..."
+            }
+        ],
+        "previousEvents": [
+            {
+                "id": 1,
+                "title": "Startup and Investments Summit 2025",
+                "location": "Grace Centre, 5XH6+XR9, Harare",
+                "date": "March 15, 2025",
+                "image": "/assets/img/speaker/previous-hit-event.png"
+            },
+            {
+                "id": 2,
+                "title": "Global Leadership Business Summit 2025",
+                "location": "Grace Centre, 5XH6+XR9, Harare",
+                "date": "March 15, 2025",
+                "image": "/assets/img/speaker/previous-hit-event-2.png"
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "name": "Michael Brown",
+        "position": "Data Science Director, Microsoft",
+        "image": "/assets/img/speaker/speaker-single-person.png",
+        "content": "Michael oversees data science initiatives at Microsoft, focusing on AI ethics and responsible AI.",
+        "contact": {
+            "phone": "+1-555-5678901",
+            "email": "michael.brown@example.com",
+            "website": "www.michaelbrown.com"
+        },
+        "socials": [
+            {
+                "id": "facebook",
+                "icon": "flaticon-facebook",
+                "url": "https://www.facebook.com/"
+            },
+            {
+                "id": "twitter",
+                "icon": "flaticon-twitter",
+                "url": "https://x.com/"
+            },
+            {
+                "id": "instagram",
+                "icon": "flaticon-instagram",
+                "url": "https://www.instagram.com/accounts/login"
+            }
+        ],
+        "achievements": [
+            {
+                "id": "qualification",
+                "title": "Qualification",
+                "description": "You can register online by visiting our event page..."
+            },
+            {
+                "id": "professional-membership",
+                "title": "Professional associations and membership",
+                "description": "You can register online by visiting our event page..."
+            },
+            {
+                "id": "world-class-achievement",
+                "title": "World class achievement",
+                "description": "You can register online by visiting our event page..."
+            }
+        ],
+        "previousEvents": [
+            {
+                "id": 1,
+                "title": "Startup and Investments Summit 2025",
+                "location": "Grace Centre, 5XH6+XR9, Harare",
+                "date": "March 15, 2025",
+                "image": "/assets/img/speaker/previous-hit-event.png"
+            },
+            {
+                "id": 2,
+                "title": "Global Leadership Business Summit 2025",
+                "location": "Grace Centre, 5XH6+XR9, Harare",
+                "date": "March 15, 2025",
+                "image": "/assets/img/speaker/previous-hit-event-2.png"
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "name": "Emily Clark",
+        "position": "Chief Innovation Officer, Tesla",
+        "image": "/assets/img/speaker/speaker-single-person.png",
+        "content": "Emily drives innovation at Tesla, integrating AI into automotive technologies.",
+        "contact": {
+            "phone": "+1-555-6789012",
+            "email": "emily.clark@example.com",
+            "website": "www.emilyclark.com"
+        },
+        "socials": [
+            {
+                "id": "facebook",
+                "icon": "flaticon-facebook",
+                "url": "https://www.facebook.com/"
+            },
+            {
+                "id": "twitter",
+                "icon": "flaticon-twitter",
+                "url": "https://x.com/"
+            },
+            {
+                "id": "instagram",
+                "icon": "flaticon-instagram",
+                "url": "https://www.instagram.com/accounts/login"
+            }
+        ],
+        "achievements": [
+            {
+                "id": "qualification",
+                "title": "Qualification",
+                "description": "You can register online by visiting our event page..."
+            },
+            {
+                "id": "professional-membership",
+                "title": "Professional associations and membership",
+                "description": "You can register online by visiting our event page..."
+            },
+            {
+                "id": "world-class-achievement",
+                "title": "World class achievement",
+                "description": "You can register online by visiting our event page..."
+            }
+        ],
+        "previousEvents": [
+            {
+                "id": 1,
+                "title": "Startup and Investments Summit 2025",
+                "location": "Grace Centre, 5XH6+XR9, Harare",
+                "date": "March 15, 2025",
+                "image": "/assets/img/speaker/previous-hit-event.png"
+            },
+            {
+                "id": 2,
+                "title": "Global Leadership Business Summit 2025",
+                "location": "Grace Centre, 5XH6+XR9, Harare",
+                "date": "March 15, 2025",
+                "image": "/assets/img/speaker/previous-hit-event-2.png"
+            }
+        ]
+    },
+    {
+        "id": 8,
+        "name": "Raj Patel",
+        "position": "Lead Data Engineer, Netflix",
+        "image": "/assets/img/speaker/speaker-single-person.png",
+        "content": "Raj specializes in data pipelines and streaming analytics at Netflix.",
+        "contact": {
+            "phone": "+1-555-7890123",
+            "email": "raj.patel@example.com",
+            "website": "www.rajpatel.com"
+        },
+        "socials": [
+            {
+                "id": "facebook",
+                "icon": "flaticon-facebook",
+                "url": "https://www.facebook.com/"
+            },
+            {
+                "id": "twitter",
+                "icon": "flaticon-twitter",
+                "url": "https://x.com/"
+            },
+            {
+                "id": "instagram",
+                "icon": "flaticon-instagram",
+                "url": "https://www.instagram.com/accounts/login"
+            }
+        ],
+        "achievements": [
+            {
+                "id": "qualification",
+                "title": "Qualification",
+                "description": "You can register online by visiting our event page..."
+            },
+            {
+                "id": "professional-membership",
+                "title": "Professional associations and membership",
+                "description": "You can register online by visiting our event page..."
+            },
+            {
+                "id": "world-class-achievement",
+                "title": "World class achievement",
+                "description": "You can register online by visiting our event page..."
+            }
+        ],
+        "previousEvents": [
+            {
+                "id": 1,
+                "title": "Startup and Investments Summit 2025",
+                "location": "Grace Centre, 5XH6+XR9, Harare",
+                "date": "March 15, 2025",
+                "image": "/assets/img/speaker/previous-hit-event.png"
+            },
+            {
+                "id": 2,
+                "title": "Global Leadership Business Summit 2025",
+                "location": "Grace Centre, 5XH6+XR9, Harare",
+                "date": "March 15, 2025",
+                "image": "/assets/img/speaker/previous-hit-event-2.png"
+            }
+        ]
+    }
+]

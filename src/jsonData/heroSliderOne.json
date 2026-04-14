@@ -1,0 +1,77 @@
+[
+    {
+        "title": [
+            "Generation",
+            "Next"
+        ],
+        "image": "assets/img/hero/creative-conference.png",
+        "speaker": {
+            "name": "Prophetess Memory Matimbire",
+            "role": "Keynote Speaker",
+            "avatar": "assets/img/hero/avatar.png"
+        },
+        "date": "12-14 March",
+        "time": "2026",
+        "location": "Grace Centre, Tynwald South, Harare"
+    },
+    {
+        "title": [
+            "Church",
+            "Leadership"
+        ],
+        "image": "assets/img/hero/creative-conference-two.png",
+        "speaker": {
+            "name": "Apostle Tavonga Vutabwashe",
+            "role": "Keynote Speaker",
+            "avatar": "assets/img/hero/avatar.png"
+        },
+        "date": "12-14 March",
+        "time": "2026",
+        "location": "Grace Centre, Tynwald South, Harare"
+    },
+    {
+        "title": [
+            "Prophetic",
+            "Anointing"
+        ],
+        "image": "assets/img/hero/creative-conference-three.png",
+        "speaker": {
+            "name": "Bishop Dr. Colin Nyathi",
+            "role": "Host",
+            "avatar": "assets/img/hero/avatar.png"
+        },
+        "date": "12-14 March",
+        "time": "2026",
+        "location": "Grace Centre, Tynwald South, Harare"
+    },
+    {
+        "title": [
+            "End-time",
+            "Mantles"
+        ],
+        "image": "assets/img/hero/creative-conference-four.png",
+        "speaker": {
+            "name": "Bishop Mosa Sono",
+            "role": "Keynote Speaker",
+            "avatar": "assets/img/hero/avatar.png"
+        },
+        "date": "12-14 March",
+        "time": "2026",
+        "location": "Grace Centre, Tynwald South, Harare"
+    },
+    {
+        "title": [
+            "Mistakes",
+            "Pastors Make"
+        ],
+        "image": "assets/img/hero/creative-conference.png",
+        "speaker": {
+            "name": "Dr. Sarah Nyathi",
+            "role": "Host",
+            "avatar": "assets/img/hero/avatar.png"
+        },
+        "date": "12-14 March",
+        "time": "2026",
+        "location": "Grace Centre, Tynwald South, Harare"
+    }
+]

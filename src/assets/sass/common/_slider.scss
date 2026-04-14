@@ -1,0 +1,157 @@
+/*--------------------------------------------------------------
+  6. Slider
+----------------------------------------------------------------*/
+
+.tm-slider {
+  position: relative;
+  overflow: hidden;
+}
+
+.parallax-item {
+  --parallax-offset: 0px;
+  transform: translate3d(var(--parallax-offset), 0, 0);
+  transition: transform 0.3s ease;
+}
+
+.creative-conference__slider {
+  width: 100%;
+  height: 100%;
+  .swiper-slide {
+    width: 100%;
+  }
+}
+.educational-conference__slider {
+  width: 100%;
+  height: 100%;
+  .swiper-slide {
+    width: 100%;
+  }
+}
+.brands-sponsor__slider {
+  width: 100%;
+  height: 100%;
+  .swiper-slide {
+    width: 16.66%;
+  }
+}
+.testimonal-items__slider {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  .swiper-slide {
+    width: 410px !important;
+  }
+}
+
+.oc-testimonal-items__slider {
+  width: 100%;
+  height: 100%;
+  .swiper-slide {
+    width: 21%;
+    height: auto;
+  }
+}
+
+.oc-brands-sponsor__slider {
+  width: 100%;
+  height: 100%;
+
+  .swiper-slide {
+    width: calc(25% - 24px);
+  }
+  &.style2 {
+    .swiper-slide {
+      width: calc(20% - 24px);
+    }
+  }
+}
+
+@media screen and (max-width: 1399px) {
+  .oc-brands-sponsor__slider {
+    .swiper-slide {
+      width: calc(33.333% - 24px);
+    }
+    &.style2 {
+      .swiper-slide {
+        width: calc(33.333% - 24px);
+      }
+    }
+  }
+  .oc-testimonal-items__slider {
+    .swiper-slide {
+      width: 30%;
+    }
+  }
+}
+@media screen and (max-width: 1250px) {
+  .brands-sponsor__slider {
+    width: 100%;
+    height: 100%;
+    .swiper-slide {
+      width: 25%;
+    }
+  }
+  .oc-testimonal-items__slider {
+    .swiper-slide {
+      width: 35%;
+    }
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .brands-sponsor__slider {
+    width: 100%;
+    height: 100%;
+    .swiper-slide {
+      width: 33.33%;
+    }
+  }
+  .oc-testimonal-items__slider {
+    .swiper-slide {
+      width: 50%;
+      height: 100%;
+    }
+  }
+  .oc-brands-sponsor__slider {
+    .swiper-slide {
+      width: calc(50% - 24px);
+    }
+    &.style2 {
+      .swiper-slide {
+        width: calc(50% - 24px);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .brands-sponsor__slider {
+    width: 100%;
+    height: 100%;
+    .swiper-slide {
+      width: 50%;
+    }
+  }
+  .oc-brands-sponsor__slider {
+    .swiper-slide {
+      width: calc(100% - 0px);
+    }
+    &.style2 {
+      .swiper-slide {
+        width: calc(100% - 0px);
+      }
+    }
+  }
+  .oc-testimonal-items__slider {
+    .swiper-slide {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .swiper-slide {
+    width: 100%;
+  }
+}

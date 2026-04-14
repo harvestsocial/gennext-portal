@@ -1,0 +1,186 @@
+[
+    {
+        "id": 1,
+        "thumbnail": "/assets/img/bg/services-thumbnail.png",
+        "description": [
+            "Recognizing excellence and celebrating achievements is at the heart of every great award ceremony. Whether it’s honoring industry pioneers, top performers, or emerging talents, our award ceremonies create a prestigious and unforgettable experience.",
+            "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."
+        ],
+        "title": "Why Choose Our Award Ceremonies?",
+        "highlights": [
+            {
+                "label": "Elegant Venue & Stage Design –",
+                "text": "We create a visually stunning and sophisticated atmosphere that reflects the prestige of the event."
+            },
+            {
+                "label": "Seamless Event Planning –",
+                "text": "From concept to execution, we handle all logistics, ensuring a smooth and flawless experience."
+            },
+            {
+                "label": "Engaging Hosts & Presenters –",
+                "text": "Professional hosts and presenters bring energy and excitement, keeping the audience engaged throughout the ceremony."
+            },
+            {
+                "label": "Customized Award Categories –",
+                "text": "Tailor the award categories to highlight the best in your industry or organization."
+            },
+            {
+                "label": "Live Entertainment & Performances –",
+                "text": "Add a touch of glamour with live music, performances, and creative visual elements."
+            },
+            {
+                "label": "High-Quality Media Coverage –",
+                "text": "Capture the moments with professional photography, videography, and live streaming for maximum reach."
+            },
+            {
+                "label": "Exclusive Networking Opportunities –",
+                "text": "Connect with industry leaders, influencers, and professionals in a prestigious setting."
+            }
+        ],
+        "images": [
+            "/assets/img/service/show-1.png",
+            "/assets/img/service/show-2.png"
+        ],
+        "closingNote": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."
+    },
+    {
+        "id": 2,
+        "thumbnail": "/assets/img/bg/services-thumbnail.png",
+        "description": [
+            "Our corporate events are designed to inspire, motivate, and connect your team. From annual meetings to product launches, we ensure every detail is handled with precision.",
+            "We blend creativity with professionalism to deliver memorable experiences that align with your brand values."
+        ],
+        "title": "Generation Next Sessions",
+        "highlights": [
+            {
+                "label": "Strategic Planning –",
+                "text": "We work closely with you to understand your goals and deliver a tailored event strategy."
+            },
+            {
+                "label": "Brand Integration –",
+                "text": "Your brand is seamlessly woven into every aspect of the event."
+            },
+            {
+                "label": "Innovative Technology –",
+                "text": "Utilizing the latest tech for presentations, networking, and engagement."
+            }
+        ],
+        "images": [
+            "/assets/img/service/show-1.png",
+            "/assets/img/service/show-2.png"
+        ],
+        "closingNote": "Let us help you make your next corporate event a resounding success."
+    },
+    {
+        "id": 3,
+        "thumbnail": "/assets/img/bg/services-thumbnail.png",
+        "description": [
+            "Make your special day truly unforgettable with our bespoke wedding planning services. We turn your dreams into reality, handling every detail with care.",
+            "From intimate gatherings to grand celebrations, we create magical moments."
+        ],
+        "title": "Wedding Planning",
+        "highlights": [
+            {
+                "label": "Personalized Themes –",
+                "text": "Every wedding is unique, and we ensure your personality shines through."
+            },
+            {
+                "label": "Vendor Coordination –",
+                "text": "We manage all vendors to guarantee a seamless experience."
+            },
+            {
+                "label": "On-site Management –",
+                "text": "Our team is present on the day to handle everything, so you can enjoy your celebration."
+            }
+        ],
+        "images": [
+            "/assets/img/service/show-1.png",
+            "/assets/img/service/show-2.png"
+        ],
+        "closingNote": "Celebrate love with a wedding that reflects your story."
+    },
+    {
+        "id": 4,
+        "thumbnail": "/assets/img/bg/services-thumbnail.png",
+        "description": [
+            "Product launches are pivotal moments for any brand. We create buzz and excitement, ensuring your product gets the attention it deserves.",
+            "Our team crafts immersive experiences that leave a lasting impression."
+        ],
+        "title": "Product Launches",
+        "highlights": [
+            {
+                "label": "Generation Next Focus –",
+                "text": "We develop unique launch ideas that capture your audience’s imagination."
+            },
+            {
+                "label": "Media Outreach –",
+                "text": "Maximize exposure with targeted media and influencer engagement."
+            },
+            {
+                "label": "Audience Engagement –",
+                "text": "Interactive elements keep guests involved and excited."
+            }
+        ],
+        "images": [
+            "/assets/img/service/show-1.png",
+            "/assets/img/service/show-2.png"
+        ],
+        "closingNote": "Launch your product with impact and style."
+    },
+    {
+        "id": 5,
+        "thumbnail": "/assets/img/bg/services-thumbnail.png",
+        "description": [
+            "From intimate gatherings to large-scale galas, our social event planning services ensure every occasion is memorable.",
+            "We handle everything so you can focus on enjoying your event."
+        ],
+        "title": "Social Events",
+        "highlights": [
+            {
+                "label": "Theme Development –",
+                "text": "We help you choose and execute the perfect theme for your event."
+            },
+            {
+                "label": "Guest Management –",
+                "text": "Invitations, RSVPs, and guest services are all taken care of."
+            },
+            {
+                "label": "Entertainment Booking –",
+                "text": "From DJs to live acts, we bring the fun to your event."
+            }
+        ],
+        "images": [
+            "/assets/img/service/show-1.png",
+            "/assets/img/service/show-2.png"
+        ],
+        "closingNote": "Let’s make your next social event unforgettable."
+    },
+    {
+        "id": 6,
+        "thumbnail": "/assets/img/bg/services-thumbnail.png",
+        "description": [
+            "Our conference management services ensure your event runs smoothly from start to finish. We handle logistics, technology, and attendee experience.",
+            "Focus on your content while we take care of the rest."
+        ],
+        "title": "Conference Management",
+        "highlights": [
+            {
+                "label": "Venue Sourcing –",
+                "text": "We find the perfect venue to suit your conference needs."
+            },
+            {
+                "label": "Registration Solutions –",
+                "text": "Streamlined attendee registration and check-in processes."
+            },
+            {
+                "label": "Technical Support –",
+                "text": "On-site tech support for presentations, AV, and more."
+            }
+        ],
+        "images": [
+            "/assets/img/service/show-1.png",
+            "/assets/img/service/show-2.png"
+        ],
+        "closingNote": "Host a conference that delivers value and impact."
+    }
+]
