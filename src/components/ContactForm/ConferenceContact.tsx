@@ -19,13 +19,13 @@ const conferenceContactData: ConferenceContactData = {
   description:
     "Join leading educators, researchers, and policymakers in a global dialogue on the future of learning.",
   addressTitle: "Address:",
-  address: "Grace Centre, 5XH6+XR9, Harare",
+  address: "Celebration Centre, Borrowdale, Harare",
   phoneTitle: "Phone:",
-  phone: "+1-416-8241228",
+  phone: "+263 787 963 720",
   emailTitle: "Email:",
   email: "info@generationnextmovement.com",
   mapSrc:
-    "https://www.google.com/maps?q=Grace%20Centre%2C%205XH6%2BXR9%2C%20Harare&z=17&output=embed",
+    "https://www.google.com/maps?q=Celebration+Centre%2C+Borrowdale%2C+Harare&z=17&output=embed",
 };
 
 const ConferenceContact: React.FC = () => {

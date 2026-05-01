@@ -19,7 +19,7 @@ const ContactFormInfo: React.FC = () => {
     description: "Reach out for registration support and event information.",
     phones: ["+263 777 612 854", "+263 771 982 116"],
     email: "info@generationnextmovement.com",
-    address: "Grace Centre, 5XH6+XR9, Harare",
+    address: "Celebration Centre, Borrowdale, Harare",
     recruiting: {
       message: "For partnership and volunteer enquiries:",
       email: "info@generationnextmovement.com",

@@ -16,7 +16,7 @@ const events: OnlineEvent[] = [
   {
     id: 1,
     title: "Generation Next",
-    location: "Grace Centre, Tynwald South, Harare",
+    location: "Celebration Centre, Borrowdale, Harare",
     date: "March 2026",
     onlyDate: "12",
     time: "10:00 AM – 1:00 PM",
@@ -25,7 +25,7 @@ const events: OnlineEvent[] = [
   {
     id: 2,
     title: "Church Leadership",
-    location: "Grace Centre, Tynwald South, Harare",
+    location: "Celebration Centre, Borrowdale, Harare",
     date: "March 2026",
     onlyDate: "12",
     time: "2:00 PM – 4:30 PM",
@@ -34,7 +34,7 @@ const events: OnlineEvent[] = [
   {
     id: 3,
     title: "Prophetic Anointing",
-    location: "Grace Centre, Tynwald South, Harare",
+    location: "Celebration Centre, Borrowdale, Harare",
     date: "March 2026",
     onlyDate: "13",
     time: "9:00 AM – 1:00 PM",

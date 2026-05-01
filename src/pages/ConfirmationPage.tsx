@@ -22,9 +22,9 @@ interface EventData {
 }
 
 const data = eventData as EventData;
-const eventDate = data.details.items.find((item) => item.label?.toUpperCase() === "DATE")?.value || "March 12-14, 2026";
-const eventTime = data.details.items.find((item) => item.label?.toUpperCase() === "TIME")?.value || "08:00 AM";
-const eventVenue = data.venue.items.find((item) => item.label?.toUpperCase() === "LOCATION")?.value || "Grace Centre, 5XH6+XR9, Harare";
+const eventDate = data.details.items.find((item) => item.label?.toUpperCase() === "DATE")?.value || "July 16-18, 2026";
+const eventTime = data.details.items.find((item) => item.label?.toUpperCase() === "TIME")?.value || "09:00 AM";
+const eventVenue = data.venue.items.find((item) => item.label?.toUpperCase() === "LOCATION")?.value || "Celebration Centre, Borrowdale, Harare";
 
 const EVENT_DETAILS = {
     name: "Generation Next Conference",

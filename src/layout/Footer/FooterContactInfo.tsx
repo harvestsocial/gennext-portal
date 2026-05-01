@@ -8,7 +8,7 @@ interface ContactInfo {
 }
 
 const contactInfo: ContactInfo = {
-  address: "Grace Centre, 5XH6+XR9, Harare",
+  address: "Celebration Centre, Borrowdale, Harare",
   phones: [
     { number: "+263 777 612 854", href: "tel:+263777612854" },
     { number: "+263 771 982 116", href: "tel:+263771982116" },

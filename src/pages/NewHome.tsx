@@ -367,7 +367,7 @@ const NewHome: React.FC = () => {
                             <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
                             <div class="content">
                                 <h6>Venue :</h6>
-                                <p>Grace Centre, Tynwald, Harare</p>
+                                <p>Celebration Centre, Borrowdale, Harare</p>
                             </div>
                         </div>
                     </div>
@@ -377,7 +377,7 @@ const NewHome: React.FC = () => {
                             <div class="icon"><i class="fas fa-clock"></i></div>
                             <div class="content">
                                 <h6>Date & Time :</h6>
-                                <p>March 12-14, 2026</p>
+                                <p>July 16-18, 2026</p>
                             </div>
                         </div>
                     </div>
@@ -451,7 +451,7 @@ const NewHome: React.FC = () => {
                         <ul class="blog-meta">
                             <li>
                                 <i class="fal fa-calendar-alt"></i>
-                                <span>12 - 14 March, 2026</span>
+                                <span>16 - 18 July, 2026</span>
                             </li>
                             <li>
                                 <i class="fal fa-clock"></i>
@@ -459,10 +459,10 @@ const NewHome: React.FC = () => {
                             </li>
                             <li>
                                 <i class="fal fa-map-marker-alt"></i>
-                                <span>Grace Centre, Harare</span>
+                                <span>Celebration Centre, Harare</span>
                             </li>
                         </ul>
-                        <h4>Generation Next 4th Edition</h4>
+                        <h4>Generation Next 5th Edition</h4>
                         <p>End-time mantles, prophetic anointing, church growth, church planting, and the top 10
                             mistakes pastors make.</p>
                         <a href="/registration" class="theme-btn">Register Now</a>
@@ -786,7 +786,7 @@ const NewHome: React.FC = () => {
                             </div>
                             <div class="content">
                                 <ul class="blog-meta">
-                                    <li><i class="fal fa-calendar-alt"></i> <span>March 12, 2026</span></li>
+                                    <li><i class="fal fa-calendar-alt"></i> <span>July 16, 2026</span></li>
                                     <li><i class="fal fa-clock"></i> <span>18:00 - 20:30</span></li>
                                 </ul>
                                 <h4>Bishop Dr. Colin Nyathi</h4>
@@ -807,7 +807,7 @@ const NewHome: React.FC = () => {
                             </div>
                             <div class="content">
                                 <ul class="blog-meta">
-                                    <li><i class="fal fa-calendar-alt"></i> <span>March 13, 2026</span></li>
+                                    <li><i class="fal fa-calendar-alt"></i> <span>July 17, 2026</span></li>
                                     <li><i class="fal fa-clock"></i> <span>08:00 - 09:00</span></li>
                                 </ul>
                                 <h4>Prophetess Memory Matimbire</h4>
@@ -823,7 +823,7 @@ const NewHome: React.FC = () => {
                             </div>
                             <div class="content">
                                 <ul class="blog-meta">
-                                    <li><i class="fal fa-calendar-alt"></i> <span>March 13, 2026</span></li>
+                                    <li><i class="fal fa-calendar-alt"></i> <span>July 17, 2026</span></li>
                                     <li><i class="fal fa-clock"></i> <span>09:00 - 11:00</span></li>
                                 </ul>
                                 <h4>Bishop Mosa Sono</h4>
@@ -839,7 +839,7 @@ const NewHome: React.FC = () => {
                             </div>
                             <div class="content">
                                 <ul class="blog-meta">
-                                    <li><i class="fal fa-calendar-alt"></i> <span>March 13, 2026</span></li>
+                                    <li><i class="fal fa-calendar-alt"></i> <span>July 17, 2026</span></li>
                                     <li><i class="fal fa-clock"></i> <span>11:00 - 13:00</span></li>
                                 </ul>
                                 <h4>Bishop Mosa Sono</h4>
@@ -855,7 +855,7 @@ const NewHome: React.FC = () => {
                             </div>
                             <div class="content">
                                 <ul class="blog-meta">
-                                    <li><i class="fal fa-calendar-alt"></i> <span>March 13, 2026</span></li>
+                                    <li><i class="fal fa-calendar-alt"></i> <span>July 17, 2026</span></li>
                                     <li><i class="fal fa-clock"></i> <span>14:00 - 15:00</span></li>
                                 </ul>
                                 <h4>Bishop Dr. Sarah Nyathi</h4>
@@ -871,7 +871,7 @@ const NewHome: React.FC = () => {
                             </div>
                             <div class="content">
                                 <ul class="blog-meta">
-                                    <li><i class="fal fa-calendar-alt"></i> <span>March 13, 2026</span></li>
+                                    <li><i class="fal fa-calendar-alt"></i> <span>July 17, 2026</span></li>
                                     <li><i class="fal fa-clock"></i> <span>15:15 - 16:15</span></li>
                                 </ul>
                                 <h4>Apostle Batsirai Java</h4>
@@ -887,7 +887,7 @@ const NewHome: React.FC = () => {
                             </div>
                             <div class="content">
                                 <ul class="blog-meta">
-                                    <li><i class="fal fa-calendar-alt"></i> <span>March 13, 2026</span></li>
+                                    <li><i class="fal fa-calendar-alt"></i> <span>July 17, 2026</span></li>
                                     <li><i class="fal fa-clock"></i> <span>17:30 - 18:00</span></li>
                                 </ul>
                                 <h4>Pre-Service Prayer</h4>
@@ -903,7 +903,7 @@ const NewHome: React.FC = () => {
                             </div>
                             <div class="content">
                                 <ul class="blog-meta">
-                                    <li><i class="fal fa-calendar-alt"></i> <span>March 13, 2026</span></li>
+                                    <li><i class="fal fa-calendar-alt"></i> <span>July 17, 2026</span></li>
                                     <li><i class="fal fa-clock"></i> <span>18:00 - 20:30</span></li>
                                 </ul>
                                 <h4>Bishop Dr. Colin Nyathi</h4>
@@ -924,7 +924,7 @@ const NewHome: React.FC = () => {
                             </div>
                             <div class="content">
                                 <ul class="blog-meta">
-                                    <li><i class="fal fa-calendar-alt"></i> <span>March 14, 2026</span></li>
+                                    <li><i class="fal fa-calendar-alt"></i> <span>July 18, 2026</span></li>
                                     <li><i class="fal fa-clock"></i> <span>Morning Sessions</span></li>
                                 </ul>
                                 <h4>Morning Power Sessions</h4>
@@ -940,7 +940,7 @@ const NewHome: React.FC = () => {
                             </div>
                             <div class="content">
                                 <ul class="blog-meta">
-                                    <li><i class="fal fa-calendar-alt"></i> <span>March 14, 2026</span></li>
+                                    <li><i class="fal fa-calendar-alt"></i> <span>July 18, 2026</span></li>
                                     <li><i class="fal fa-clock"></i> <span>Afternoon Sessions</span></li>
                                 </ul>
                                 <h4>Afternoon Empowerment</h4>
@@ -957,7 +957,7 @@ const NewHome: React.FC = () => {
                             </div>
                             <div class="content">
                                 <ul class="blog-meta">
-                                    <li><i class="fal fa-calendar-alt"></i> <span>March 14, 2026</span></li>
+                                    <li><i class="fal fa-calendar-alt"></i> <span>July 18, 2026</span></li>
                                     <li><i class="fal fa-clock"></i> <span>General Session</span></li>
                                 </ul>
                                 <h4>All Leaders General Question & Answer Segment</h4>
@@ -973,7 +973,7 @@ const NewHome: React.FC = () => {
                             </div>
                             <div class="content">
                                 <ul class="blog-meta">
-                                    <li><i class="fal fa-calendar-alt"></i> <span>March 14, 2026</span></li>
+                                    <li><i class="fal fa-calendar-alt"></i> <span>July 18, 2026</span></li>
                                     <li><i class="fal fa-clock"></i> <span>Closing Session</span></li>
                                 </ul>
                                 <h4>Bishop Dr. Colin Nyathi</h4>
@@ -1039,14 +1039,14 @@ const NewHome: React.FC = () => {
                 </div>
                 <ul class="blog-meta-two justify-content-center pb-45" data-aos="fade-up" data-aos-duration="1500"
                     data-aos-offset="50">
-                    <li><i class="fal fa-map-marker-alt"></i> Grace Centre, Tynwald, Harare</li>
+                    <li><i class="fal fa-map-marker-alt"></i> Celebration Centre, Borrowdale, Harare</li>
                     <li><i class="fal fa-clock"></i> 8.00 am - 5.00 pm</li>
                 </ul>
             </div>
             <div class="container container-1600">
                 <div class="venue-location" data-aos="fade-up" data-aos-duration="1500" data-aos-offset="50">
                     <iframe
-                        src="https://www.google.com/maps?q=Grace%20Centre%2C%205XH6%2BXR9%2C%20Harare&z=17&output=embed"
+                        src="https://www.google.com/maps?q=Celebration+Centre%2C+Borrowdale%2C+Harare&z=17&output=embed"
                         style="border:0; width: 100%; height: 450px;" allowfullscreen="" loading="lazy"
                         referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>

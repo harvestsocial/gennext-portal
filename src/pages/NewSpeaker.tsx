@@ -272,8 +272,8 @@ const NewSpeaker: React.FC = () => {
                                 <div className="event-two-item style-two" data-aos="fade-up" data-aos-duration="1500"
                                     data-aos-offset="50" data-aos-delay="50">
                                     <div className="content">
-                                        <span className="date"><b>12</b> Mar, 2026</span>
-                                        <h4 className="title">Grace Centre, Harare</h4>
+                                        <span className="date"><b>16</b> Jul, 2026</span>
+                                        <h4 className="title">Celebration Centre, Borrowdale, Harare</h4>
                                     </div>
                                     <a href="/registration" className="theme-btn">Register
                                         Now</a>
