@@ -1,121 +1,8 @@
-import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useState } from "react";
+import { useNavigate, Link } from "react-router-dom";
 import bgImage from "/assets/img/bg/error-page-bg-elements.svg";
 import { allCountries } from "@/lib/countryList";
 import { createRegistration } from "@/lib/registrationApi";
-
-const REGISTRATION_OPEN_DATE = new Date("2026-05-01T00:00:00");
-
-function getTimeRemaining() {
-    const now = new Date();
-    const diff = REGISTRATION_OPEN_DATE.getTime() - now.getTime();
-    if (diff <= 0) return null;
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-    return { days, hours, minutes, seconds };
-}
-
-const CountdownPage: React.FC = () => {
-    const [timeLeft, setTimeLeft] = useState(getTimeRemaining());
-
-    useEffect(() => {
-        const timer = setInterval(() => {
-            const remaining = getTimeRemaining();
-            setTimeLeft(remaining);
-            if (!remaining) clearInterval(timer);
-        }, 1000);
-        return () => clearInterval(timer);
-    }, []);
-
-    const pad = (n: number) => String(n).padStart(2, "0");
-
-    return (
-        <>
-            <div className="tm-height-150 tm-height-lg-80"></div>
-            <section className="error-page">
-                <img
-                    src={bgImage}
-                    alt="Background elements"
-                    className="error-page__bg-img"
-                    style={{ zIndex: 0 }}
-                />
-                <div className="container" style={{ position: "relative", zIndex: 1, textAlign: "center" }}>
-                    <div className="error-page__content" style={{ maxWidth: "800px", margin: "0 auto" }}>
-                        <h1
-                            className="error-page__heading mb-3"
-                            style={{ fontSize: "2.8rem", letterSpacing: "0.02em" }}
-                        >
-                            Registration Opening Soon
-                        </h1>
-                        <p className="mb-5 text-white-50" style={{ fontSize: "1.15rem" }}>
-                            Registration for Generation Next opens on <strong style={{ color: "#fff" }}>1st May 2025</strong>. Check back then!
-                        </p>
-
-                        <div
-                            style={{
-                                display: "flex",
-                                justifyContent: "center",
-                                gap: "1.5rem",
-                                flexWrap: "wrap",
-                                marginBottom: "3rem",
-                            }}
-                        >
-                            {timeLeft ? (
-                                [
-                                    { label: "Days", value: timeLeft.days },
-                                    { label: "Hours", value: pad(timeLeft.hours) },
-                                    { label: "Minutes", value: pad(timeLeft.minutes) },
-                                    { label: "Seconds", value: pad(timeLeft.seconds) },
-                                ].map(({ label, value }) => (
-                                    <div
-                                        key={label}
-                                        style={{
-                                            background: "rgba(255,255,255,0.08)",
-                                            border: "1px solid rgba(255,255,255,0.15)",
-                                            borderRadius: "12px",
-                                            padding: "1.5rem 2rem",
-                                            minWidth: "120px",
-                                        }}
-                                    >
-                                        <div
-                                            style={{
-                                                fontSize: "3.5rem",
-                                                fontWeight: 700,
-                                                lineHeight: 1,
-                                                color: "#fff",
-                                                fontVariantNumeric: "tabular-nums",
-                                            }}
-                                        >
-                                            {value}
-                                        </div>
-                                        <div
-                                            style={{
-                                                fontSize: "0.85rem",
-                                                textTransform: "uppercase",
-                                                letterSpacing: "0.12em",
-                                                color: "rgba(255,255,255,0.5)",
-                                                marginTop: "0.5rem",
-                                            }}
-                                        >
-                                            {label}
-                                        </div>
-                                    </div>
-                                ))
-                            ) : (
-                                <p className="text-white" style={{ fontSize: "1.3rem" }}>
-                                    Registration is now open!
-                                </p>
-                            )}
-                        </div>
-                    </div>
-                </div>
-                <div className="tm-height-150 tm-height-lg-80"></div>
-            </section>
-        </>
-    );
-};
 
 const titles = [
     "Bishop",
@@ -200,10 +87,6 @@ const RegisterPage: React.FC = () => {
         phone: "",
         email: "",
     });
-
-    if (new Date() < REGISTRATION_OPEN_DATE) {
-        return <CountdownPage />;
-    }
 
     const handleInputChange = (
         e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
@@ -416,6 +299,14 @@ const RegisterPage: React.FC = () => {
                                     <button type="submit" className="primary__btn style2 w-100" disabled={submitting}>
                                         {submitting ? "Processing..." : "Submit Registration"}
                                     </button>
+                                </div>
+
+                                <div className="tm-height-20 tm-height-lg-20" />
+
+                                <div className="text-center">
+                                    <Link to="/faq" className="text-white-50" style={{ fontSize: "0.95rem", textDecoration: "underline" }}>
+                                        Have questions? View FAQs
+                                    </Link>
                                 </div>
                             </form>
                         </div>
