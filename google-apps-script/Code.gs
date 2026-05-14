@@ -159,6 +159,11 @@ function doPost(e) {
       return jsonResponse({ success: true });
     }
 
+    if (action === "archiveAndClear") {
+      const result = archiveAndClearRegistrations_();
+      return jsonResponse({ success: true, archived: result });
+    }
+
     return jsonResponse({ success: false, error: "Invalid action" });
   } catch (error) {
     return jsonResponse({ success: false, error: String(error) });
@@ -570,4 +575,36 @@ function fixTitlesNow() {
   const updated = normalizeLegacyCongregantTitles_();
   rebuildAttendanceSheet_();
   return updated;
+}
+
+// Run this directly in the GAS editor to archive all registrations and clear the sheet.
+function archiveAndClearNow() {
+  const result = archiveAndClearRegistrations_();
+  Logger.log("Archived " + result + " registrations to 'Pre-Registration Archive' sheet.");
+}
+
+function archiveAndClearRegistrations_() {
+  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  const source = getSheet_();
+  const allValues = source.getDataRange().getValues();
+
+  if (allValues.length <= 1) return 0;
+
+  const archiveName = "Pre-Registration Archive";
+  let archive = ss.getSheetByName(archiveName);
+  if (!archive) {
+    archive = ss.insertSheet(archiveName);
+  } else {
+    archive.clearContents();
+  }
+
+  archive.getRange(1, 1, allValues.length, allValues[0].length).setValues(allValues);
+
+  // Clear registrations sheet — keep header row only.
+  source.clearContents();
+  source.getRange(1, 1, 1, HEADERS.length).setValues([HEADERS]);
+
+  rebuildAttendanceSheet_();
+
+  return allValues.length - 1;
 }

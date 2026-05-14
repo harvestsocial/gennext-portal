@@ -1,5 +1,65 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
+
+const REGISTRATION_OPEN_DATE = new Date("2026-05-15T00:00:00+02:00");
+
+function getTimeRemaining() {
+  const diff = REGISTRATION_OPEN_DATE.getTime() - Date.now();
+  if (diff <= 0) return null;
+  return {
+    days: Math.floor(diff / (1000 * 60 * 60 * 24)),
+    hours: Math.floor((diff / (1000 * 60 * 60)) % 24),
+    minutes: Math.floor((diff / (1000 * 60)) % 60),
+    seconds: Math.floor((diff / 1000) % 60),
+  };
+}
+
+const CountdownPage: React.FC = () => {
+  const [time, setTime] = useState(getTimeRemaining());
+
+  useEffect(() => {
+    const timer = setInterval(() => setTime(getTimeRemaining()), 1000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const pad = (n: number) => String(n).padStart(2, "0");
+
+  return (
+    <>
+      <div className="tm-height-150 tm-height-lg-80"></div>
+      <section className="error-page" style={{ textAlign: "center" }}>
+        <div className="container" style={{ position: "relative", zIndex: 1 }}>
+          <div className="error-page__content" style={{ maxWidth: "700px", margin: "0 auto" }}>
+            <h1 className="error-page__heading mb-3" style={{ fontSize: "3rem" }}>
+              Registration Opens Saturday
+            </h1>
+            <p className="mb-5 text-white-50" style={{ fontSize: "1.1rem" }}>
+              Generation Next 2026 registration opens on <strong>15 May 2026</strong>.<br />
+              Mark your calendar and come back then.
+            </p>
+            {time && (
+              <div style={{ display: "flex", justifyContent: "center", gap: "1.5rem", flexWrap: "wrap" }}>
+                {[["Days", time.days], ["Hours", time.hours], ["Minutes", time.minutes], ["Seconds", time.seconds]].map(
+                  ([label, val]) => (
+                    <div key={label as string} style={{ minWidth: "90px" }}>
+                      <div style={{ fontSize: "3rem", fontWeight: "bold", color: "#fff" }}>
+                        {pad(val as number)}
+                      </div>
+                      <div className="text-white-50" style={{ fontSize: "0.85rem", textTransform: "uppercase", letterSpacing: "0.1em" }}>
+                        {label}
+                      </div>
+                    </div>
+                  )
+                )}
+              </div>
+            )}
+          </div>
+        </div>
+      </section>
+      <div className="tm-height-150 tm-height-lg-80"></div>
+    </>
+  );
+};
 import bgImage from "/assets/img/bg/error-page-bg-elements.svg";
 import { allCountries } from "@/lib/countryList";
 import { createRegistration } from "@/lib/registrationApi";
@@ -73,6 +133,8 @@ interface FormData {
 }
 
 const RegisterPage: React.FC = () => {
+    if (new Date() < REGISTRATION_OPEN_DATE) return <CountdownPage />;
+
     const navigate = useNavigate();
     const [submitting, setSubmitting] = useState(false);
     const [error, setError] = useState("");
