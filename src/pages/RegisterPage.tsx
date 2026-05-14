@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 
-const REGISTRATION_OPEN_DATE = new Date("2026-05-15T00:00:00+02:00");
+const REGISTRATION_OPEN_DATE = new Date("2026-05-19T00:00:00+02:00");
 
 function getTimeRemaining() {
   const diff = REGISTRATION_OPEN_DATE.getTime() - Date.now();
@@ -31,10 +31,10 @@ const CountdownPage: React.FC = () => {
         <div className="container" style={{ position: "relative", zIndex: 1 }}>
           <div className="error-page__content" style={{ maxWidth: "700px", margin: "0 auto" }}>
             <h1 className="error-page__heading mb-3" style={{ fontSize: "3rem" }}>
-              Registration Opens Saturday
+              Registration Opens Tuesday
             </h1>
             <p className="mb-5 text-white-50" style={{ fontSize: "1.1rem" }}>
-              Generation Next 2026 registration opens on <strong>15 May 2026</strong>.<br />
+              Generation Next 2026 registration opens on <strong>19 May 2026</strong>.<br />
               Mark your calendar and come back then.
             </p>
             {time && (
