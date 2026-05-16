@@ -21,6 +21,7 @@ const HEADERS = [
   "Access Granted",
   "Payment Status",
   "Created At",
+  "Confirm Token",
 ];
 const ATTENDANCE_HEADERS = [
   "ID",
@@ -167,14 +168,15 @@ function doPost(e) {
 
     if (action === "createPending") {
       const payload = body.data || {};
-      const id = createPendingRegistration_(payload);
-      return jsonResponse({ success: true, id });
+      const result = createPendingRegistration_(payload);
+      return jsonResponse({ success: true, id: result.id, token: result.token });
     }
 
     if (action === "confirmPayment") {
       const id = body.id;
+      const token = body.token || "";
       if (!id) return jsonResponse({ success: false, error: "Missing id" });
-      const registration = confirmPaymentById_(id);
+      const registration = confirmPaymentById_(id, token);
       return jsonResponse({ success: true, data: registration });
     }
 
@@ -214,6 +216,7 @@ function createPendingRegistration_(data) {
   const gender = normalizeGenderStrict_(data.gender);
   const title = normalizeTitleStrict_(data.title);
   const id = generateRegistrationId_(sheet);
+  const token = generateToken_();
   const row = [
     id,
     safe(data.firstName),
@@ -228,12 +231,13 @@ function createPendingRegistration_(data) {
     false,
     "pending",
     new Date().toISOString(),
+    token,
   ];
   sheet.appendRow(row);
-  return id;
+  return { id: id, token: token };
 }
 
-function confirmPaymentById_(id) {
+function confirmPaymentById_(id, token) {
   const sheet = getSheet_();
   const values = sheet.getDataRange().getValues();
   if (values.length <= 1) throw new Error("No registrations found");
@@ -241,12 +245,22 @@ function confirmPaymentById_(id) {
   const headers = values[0].map(function (h) { return normalizeHeader_(h); });
   const idCol = getHeaderIndex_(headers, ["id"]);
   const paymentStatusCol = getHeaderIndex_(headers, ["paymentstatus", "payment_status"]);
+  const confirmTokenCol = getHeaderIndex_(headers, ["confirmtoken", "confirm_token"]);
 
   if (idCol === -1 || paymentStatusCol === -1) throw new Error("Missing required columns");
 
   for (var r = 1; r < values.length; r++) {
     if (String(values[r][idCol]) === String(id)) {
       var currentStatus = String(values[r][paymentStatusCol] || "").toLowerCase();
+
+      // Verify token when registration is still pending (skip check once already confirmed)
+      if (currentStatus === "pending" && confirmTokenCol !== -1) {
+        var storedToken = String(values[r][confirmTokenCol] || "");
+        if (storedToken && storedToken !== String(token || "")) {
+          throw new Error("Invalid confirmation token");
+        }
+      }
+
       if (currentStatus !== "confirmed") {
         sheet.getRange(r + 1, paymentStatusCol + 1).setValue("confirmed");
       }
@@ -259,6 +273,15 @@ function confirmPaymentById_(id) {
     }
   }
   throw new Error("Registration not found");
+}
+
+function generateToken_() {
+  var chars = "abcdefghijklmnopqrstuvwxyz0123456789";
+  var token = "";
+  for (var i = 0; i < 32; i++) {
+    token += chars.charAt(Math.floor(Math.random() * chars.length));
+  }
+  return token;
 }
 
 function sendReceiptEmail_(registration) {

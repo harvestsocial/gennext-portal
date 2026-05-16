@@ -41,6 +41,7 @@ const ConfirmationPage: React.FC = () => {
     const navigate = useNavigate();
 
     const registrationId = searchParams.get("id");
+    const confirmToken = searchParams.get("token") ?? undefined;
 
     useEffect(() => {
         if (!registrationId) {
@@ -54,14 +55,24 @@ const ConfirmationPage: React.FC = () => {
     const fetchRegistration = async () => {
         try {
             if (registrationId) {
-                const registration = await confirmPayment(registrationId).catch(
-                    () => getRegistrationById(registrationId)
-                );
-                if (registration) {
-                    setData(registration);
+                if (confirmToken) {
+                    // Arriving from Paynow — attempt to confirm payment
+                    try {
+                        const registration = await confirmPayment(registrationId, confirmToken);
+                        setData(registration);
+                    } catch {
+                        alert("Payment could not be verified. Please contact support.");
+                        navigate("/");
+                    }
                 } else {
-                    alert("Registration not found!");
-                    navigate("/");
+                    // Direct lookup (e.g. page refresh without token)
+                    const registration = await getRegistrationById(registrationId);
+                    if (registration) {
+                        setData(registration);
+                    } else {
+                        alert("Registration not found!");
+                        navigate("/");
+                    }
                 }
             }
         } catch (error) {
@@ -203,11 +214,23 @@ const ConfirmationPage: React.FC = () => {
                 </div>
 
                 <div className="text-center mb-4">
-                    <h2 className="fw-bold" style={{ color: "#111827" }}>Registration Confirmed</h2>
-                    <span style={{ display: "inline-block", background: "#16a34a", color: "#fff", fontSize: "0.8rem", fontWeight: 600, padding: "3px 12px", borderRadius: "999px", letterSpacing: "0.05em", marginBottom: "8px" }}>
-                        ✓ Payment Confirmed — $10.00
-                    </span>
-                    <p className="text-muted">Present this ticket at the entrance.</p>
+                    <h2 className="fw-bold" style={{ color: "#111827" }}>
+                        {data.paymentStatus === "confirmed" ? "Registration Confirmed" : "Payment Pending"}
+                    </h2>
+                    {data.paymentStatus === "confirmed" ? (
+                        <span style={{ display: "inline-block", background: "#16a34a", color: "#fff", fontSize: "0.8rem", fontWeight: 600, padding: "3px 12px", borderRadius: "999px", letterSpacing: "0.05em", marginBottom: "8px" }}>
+                            ✓ Payment Confirmed — $10.00
+                        </span>
+                    ) : (
+                        <span style={{ display: "inline-block", background: "#ef4444", color: "#fff", fontSize: "0.8rem", fontWeight: 600, padding: "3px 12px", borderRadius: "999px", letterSpacing: "0.05em", marginBottom: "8px" }}>
+                            ⚠ Payment Not Received — Please complete payment
+                        </span>
+                    )}
+                    <p className="text-muted">
+                        {data.paymentStatus === "confirmed"
+                            ? "Present this ticket at the entrance."
+                            : "Your registration is reserved but not confirmed until payment is received."}
+                    </p>
                 </div>
 
                 <div className="text-center mb-4">

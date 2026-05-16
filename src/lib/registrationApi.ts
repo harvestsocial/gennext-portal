@@ -92,7 +92,7 @@ export const getRegistrationById = async (id: string) => {
     return (payload.data || null) as RegistrationData | null;
 };
 
-export const createPendingRegistration = async (data: RegistrationFormInput): Promise<string> => {
+export const createPendingRegistration = async (data: RegistrationFormInput): Promise<{ id: string; token: string }> => {
     assertApiConfigured();
     const res = await fetch(REG_API_URL, {
         method: "POST",
@@ -102,22 +102,22 @@ export const createPendingRegistration = async (data: RegistrationFormInput): Pr
         }),
     });
     const payload = await parseResponse(res);
-    return payload.id as string;
+    return { id: payload.id as string, token: payload.token as string };
 };
 
-export const confirmPayment = async (id: string): Promise<RegistrationData> => {
+export const confirmPayment = async (id: string, token?: string): Promise<RegistrationData> => {
     assertApiConfigured();
     const res = await fetch(REG_API_URL, {
         method: "POST",
-        body: JSON.stringify({ action: "confirmPayment", id }),
+        body: JSON.stringify({ action: "confirmPayment", id, token: token ?? "" }),
     });
     const payload = await parseResponse(res);
     return payload.data as RegistrationData;
 };
 
-export const buildPaynowUrl = (regId: string, firstName: string, lastName: string): string => {
+export const buildPaynowUrl = (regId: string, token: string, firstName: string, lastName: string): string => {
     const reference = `GenNext July 2026 - ${firstName} ${lastName}`;
-    const returnUrl = `https://gennextmovement.com/confirmation?id=${encodeURIComponent(regId)}`;
+    const returnUrl = `https://gennextmovement.com/confirmation?id=${encodeURIComponent(regId)}&token=${encodeURIComponent(token)}`;
     const params = [
         "search=gennext%40hhicc.org.zw",
         "amount=10.00",

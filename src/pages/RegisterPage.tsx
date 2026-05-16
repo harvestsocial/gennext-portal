@@ -192,8 +192,8 @@ const RegisterPage: React.FC = () => {
         setSubmitting(true);
 
         try {
-            const id = await createPendingRegistration(formData);
-            const paynowUrl = buildPaynowUrl(id, formData.firstName, formData.lastName);
+            const { id, token } = await createPendingRegistration(formData);
+            const paynowUrl = buildPaynowUrl(id, token, formData.firstName, formData.lastName);
             window.location.href = paynowUrl;
         } catch (e: unknown) {
             const msg = e instanceof Error ? e.message : "Please try again.";
