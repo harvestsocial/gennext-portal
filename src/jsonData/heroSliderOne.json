@@ -6,7 +6,7 @@
         ],
         "image": "assets/img/hero/creative-conference.png",
         "speaker": {
-            "name": "Prophetess Memory Matimbire",
+            "name": "Prophet Emmanuel Makandiwa",
             "role": "Keynote Speaker",
             "avatar": "assets/img/hero/avatar.png"
         },
@@ -16,8 +16,8 @@
     },
     {
         "title": [
-            "Church",
-            "Leadership"
+            "Raising The",
+            "Next Generation"
         ],
         "image": "assets/img/hero/creative-conference-two.png",
         "speaker": {
@@ -31,8 +31,8 @@
     },
     {
         "title": [
-            "Prophetic",
-            "Anointing"
+            "Generation",
+            "Next"
         ],
         "image": "assets/img/hero/creative-conference-three.png",
         "speaker": {
@@ -46,12 +46,12 @@
     },
     {
         "title": [
-            "End-time",
-            "Mantles"
+            "Of",
+            "Leaders"
         ],
         "image": "assets/img/hero/creative-conference-four.png",
         "speaker": {
-            "name": "Bishop Mosa Sono",
+            "name": "Prophetess Memory Matimbire",
             "role": "Keynote Speaker",
             "avatar": "assets/img/hero/avatar.png"
         },
@@ -61,12 +61,12 @@
     },
     {
         "title": [
-            "Mistakes",
-            "Pastors Make"
+            "Generation",
+            "Next"
         ],
         "image": "assets/img/hero/creative-conference.png",
         "speaker": {
-            "name": "Dr. Sarah Nyathi",
+            "name": "Bishop Dr. Sarah Nyathi",
             "role": "Host",
             "avatar": "assets/img/hero/avatar.png"
         },

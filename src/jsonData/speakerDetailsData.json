@@ -1,498 +1,210 @@
 [
     {
         "id": 1,
-        "name": "Linda Roberts",
-        "position": "Chief Data Officer, IBM",
+        "name": "Bishop Dr. Colin Nyathi",
+        "position": "Host — Harvest House International Church",
         "image": "/assets/img/speaker/speaker-single-person.png",
-        "content": "Lorem ipsum is dummy data expert in data strategy and AI-driven analytics. As the Chief Data Officer at IBM, she has spearheaded innovative data solutions, helping businesses leverage big data for growth and efficiency. With over 15 years of experience in data science and digital transformation, Linda is a sought-after speaker at global tech conferences.",
+        "content": "Bishop Dr. Colin Nyathi is the founder and senior pastor of Harvest House International Church (HHICC), headquartered in Harare, Zimbabwe. A visionary leader and apostolic voice across Africa, he hosts the Generation Next conference to raise and equip the next generation of church leaders.",
         "contact": {
-            "phone": "+1-416-7130327",
-            "email": "info@generationnextmovement.com",
-            "website": "www.example.com"
+            "phone": "0787 963720",
+            "email": "info@gennextmovement.com",
+            "website": "hhi.church"
         },
         "socials": [
-            {
-                "id": "facebook",
-                "icon": "flaticon-facebook",
-                "url": "https://www.facebook.com/"
-            },
-            {
-                "id": "twitter",
-                "icon": "flaticon-twitter",
-                "url": "https://x.com/"
-            },
-            {
-                "id": "instagram",
-                "icon": "flaticon-instagram",
-                "url": "https://www.instagram.com/accounts/login"
-            }
+            { "id": "facebook", "icon": "flaticon-facebook", "url": "https://www.facebook.com/" },
+            { "id": "twitter", "icon": "flaticon-twitter", "url": "https://x.com/" },
+            { "id": "instagram", "icon": "flaticon-instagram", "url": "https://www.instagram.com/" }
         ],
         "achievements": [
-            {
-                "id": "qualification",
-                "title": "Qualification",
-                "description": "You can register online by visiting our event page..."
-            },
-            {
-                "id": "professional-membership",
-                "title": "Professional associations and membership",
-                "description": "You can register online by visiting our event page..."
-            },
-            {
-                "id": "world-class-achievement",
-                "title": "World class achievement",
-                "description": "You can register online by visiting our event page..."
-            }
+            { "id": "founder", "title": "Founder", "description": "Founder of Harvest House International Church, one of Zimbabwe's largest and most influential ministries." },
+            { "id": "apostolic", "title": "Apostolic Leader", "description": "Recognized apostolic voice shaping church leadership across Africa and the diaspora." },
+            { "id": "gennext", "title": "Generation Next", "description": "Convener of the Generation Next conference — a gathering that has impacted thousands of ministers and church leaders." }
         ],
         "previousEvents": [
-            {
-                "id": 1,
-                "title": "Startup and Investments Summit 2025",
-                "location": "Celebration Centre, Borrowdale, Harare",
-                "date": "March 15, 2025",
-                "image": "/assets/img/speaker/previous-hit-event.png"
-            },
-            {
-                "id": 2,
-                "title": "Global Leadership Business Summit 2025",
-                "location": "Celebration Centre, Borrowdale, Harare",
-                "date": "March 15, 2025",
-                "image": "/assets/img/speaker/previous-hit-event-2.png"
-            }
+            { "id": 1, "title": "Generation Next 4th Edition", "location": "Celebration Centre, Borrowdale, Harare", "date": "2025", "image": "/assets/img/speaker/previous-hit-event.png" },
+            { "id": 2, "title": "Generation Next 3rd Edition", "location": "Celebration Centre, Borrowdale, Harare", "date": "2024", "image": "/assets/img/speaker/previous-hit-event-2.png" }
         ]
     },
     {
         "id": 2,
-        "name": "James Smith",
-        "position": "AI Research Lead, Google",
+        "name": "Bishop Dr. Sarah Nyathi",
+        "position": "Host — Harvest House International Church",
         "image": "/assets/img/speaker/speaker-single-person.png",
-        "content": "James is a pioneer in artificial intelligence and machine learning, leading research teams at Google. He has published over 50 papers and is a frequent keynote speaker.",
+        "content": "Bishop Dr. Sarah Nyathi serves alongside Bishop Dr. Colin Nyathi as co-host of the Generation Next conference. A respected minister and leader within Harvest House International Church, she brings a strong pastoral heart and prophetic insight to the gathering.",
         "contact": {
-            "phone": "+1-555-1234567",
-            "email": "james.smith@example.com",
-            "website": "www.jamessmith.com"
+            "phone": "0787 963720",
+            "email": "info@gennextmovement.com",
+            "website": "hhi.church"
         },
         "socials": [
-            {
-                "id": "facebook",
-                "icon": "flaticon-facebook",
-                "url": "https://www.facebook.com/"
-            },
-            {
-                "id": "twitter",
-                "icon": "flaticon-twitter",
-                "url": "https://x.com/"
-            },
-            {
-                "id": "instagram",
-                "icon": "flaticon-instagram",
-                "url": "https://www.instagram.com/accounts/login"
-            }
+            { "id": "facebook", "icon": "flaticon-facebook", "url": "https://www.facebook.com/" },
+            { "id": "twitter", "icon": "flaticon-twitter", "url": "https://x.com/" },
+            { "id": "instagram", "icon": "flaticon-instagram", "url": "https://www.instagram.com/" }
         ],
         "achievements": [
-            {
-                "id": "qualification",
-                "title": "Qualification",
-                "description": "You can register online by visiting our event page..."
-            },
-            {
-                "id": "professional-membership",
-                "title": "Professional associations and membership",
-                "description": "You can register online by visiting our event page..."
-            },
-            {
-                "id": "world-class-achievement",
-                "title": "World class achievement",
-                "description": "You can register online by visiting our event page..."
-            }
+            { "id": "host", "title": "Conference Host", "description": "Co-host of the Generation Next conference, a premier gathering for ministers and church leaders across Africa." },
+            { "id": "pastoral", "title": "Pastoral Leadership", "description": "Senior pastoral figure at Harvest House International Church, serving the body of Christ with compassion and wisdom." },
+            { "id": "women", "title": "Women in Leadership", "description": "A trailblazer championing women in ministry and church leadership across the region." }
         ],
         "previousEvents": [
-            {
-                "id": 1,
-                "title": "Startup and Investments Summit 2025",
-                "location": "Celebration Centre, Borrowdale, Harare",
-                "date": "March 15, 2025",
-                "image": "/assets/img/speaker/previous-hit-event.png"
-            },
-            {
-                "id": 2,
-                "title": "Global Leadership Business Summit 2025",
-                "location": "Celebration Centre, Borrowdale, Harare",
-                "date": "March 15, 2025",
-                "image": "/assets/img/speaker/previous-hit-event-2.png"
-            }
+            { "id": 1, "title": "Generation Next 4th Edition", "location": "Celebration Centre, Borrowdale, Harare", "date": "2025", "image": "/assets/img/speaker/previous-hit-event.png" },
+            { "id": 2, "title": "Generation Next 3rd Edition", "location": "Celebration Centre, Borrowdale, Harare", "date": "2024", "image": "/assets/img/speaker/previous-hit-event-2.png" }
         ]
     },
     {
         "id": 3,
-        "name": "Maria Garcia",
-        "position": "CTO, DataWave",
+        "name": "Pastor Tom Deuschle",
+        "position": "Guest Speaker",
         "image": "/assets/img/speaker/speaker-single-person.png",
-        "content": "Maria specializes in cloud computing and big data. As CTO at DataWave, she has transformed enterprise data strategies.",
+        "content": "Pastor Tom Deuschle is the founding pastor of Celebration Church (formerly Celebration Ministries International) in Harare, Zimbabwe. A transformational leader, author, and visionary, he has dedicated decades to building the local church and shaping Christian leadership in Zimbabwe and beyond.",
         "contact": {
-            "phone": "+1-555-2345678",
-            "email": "maria.garcia@example.com",
-            "website": "www.mariagarcia.com"
+            "phone": "0787 963720",
+            "email": "info@gennextmovement.com",
+            "website": "celebrationchurch.co.zw"
         },
         "socials": [
-            {
-                "id": "facebook",
-                "icon": "flaticon-facebook",
-                "url": "https://www.facebook.com/"
-            },
-            {
-                "id": "twitter",
-                "icon": "flaticon-twitter",
-                "url": "https://x.com/"
-            },
-            {
-                "id": "instagram",
-                "icon": "flaticon-instagram",
-                "url": "https://www.instagram.com/accounts/login"
-            }
+            { "id": "facebook", "icon": "flaticon-facebook", "url": "https://www.facebook.com/" },
+            { "id": "twitter", "icon": "flaticon-twitter", "url": "https://x.com/" },
+            { "id": "instagram", "icon": "flaticon-instagram", "url": "https://www.instagram.com/" }
         ],
         "achievements": [
-            {
-                "id": "qualification",
-                "title": "Qualification",
-                "description": "You can register online by visiting our event page..."
-            },
-            {
-                "id": "professional-membership",
-                "title": "Professional associations and membership",
-                "description": "You can register online by visiting our event page..."
-            },
-            {
-                "id": "world-class-achievement",
-                "title": "World class achievement",
-                "description": "You can register online by visiting our event page..."
-            }
+            { "id": "founder", "title": "Church Founder", "description": "Founding pastor of Celebration Church, one of Zimbabwe's most prominent and influential congregations." },
+            { "id": "author", "title": "Author & Communicator", "description": "Author of multiple books on leadership, family, and church building." },
+            { "id": "nation-builder", "title": "Nation Builder", "description": "Recognized for significant community development and social impact work across Zimbabwe." }
         ],
         "previousEvents": [
-            {
-                "id": 1,
-                "title": "Startup and Investments Summit 2025",
-                "location": "Celebration Centre, Borrowdale, Harare",
-                "date": "March 15, 2025",
-                "image": "/assets/img/speaker/previous-hit-event.png"
-            },
-            {
-                "id": 2,
-                "title": "Global Leadership Business Summit 2025",
-                "location": "Celebration Centre, Borrowdale, Harare",
-                "date": "March 15, 2025",
-                "image": "/assets/img/speaker/previous-hit-event-2.png"
-            }
+            { "id": 1, "title": "Generation Next 4th Edition", "location": "Celebration Centre, Borrowdale, Harare", "date": "2025", "image": "/assets/img/speaker/previous-hit-event.png" },
+            { "id": 2, "title": "Generation Next 3rd Edition", "location": "Celebration Centre, Borrowdale, Harare", "date": "2024", "image": "/assets/img/speaker/previous-hit-event-2.png" }
         ]
     },
     {
         "id": 4,
-        "name": "David Lee",
-        "position": "Head of Analytics, Amazon",
+        "name": "Prophet Emmanuel Makandiwa",
+        "position": "Keynote Speaker",
         "image": "/assets/img/speaker/speaker-single-person.png",
-        "content": "David leads analytics at Amazon, focusing on customer insights and predictive modeling.",
+        "content": "Prophet Emmanuel Makandiwa is the founder and leader of the United Family International Church (UFIC), one of the largest and fastest-growing churches in Africa. Known for his prophetic ministry and mass evangelism, he draws hundreds of thousands to his meetings across the continent.",
         "contact": {
-            "phone": "+1-555-3456789",
-            "email": "david.lee@example.com",
-            "website": "www.davidlee.com"
+            "phone": "0787 963720",
+            "email": "info@gennextmovement.com",
+            "website": "ufic.co.zw"
         },
         "socials": [
-            {
-                "id": "facebook",
-                "icon": "flaticon-facebook",
-                "url": "https://www.facebook.com/"
-            },
-            {
-                "id": "twitter",
-                "icon": "flaticon-twitter",
-                "url": "https://x.com/"
-            },
-            {
-                "id": "instagram",
-                "icon": "flaticon-instagram",
-                "url": "https://www.instagram.com/accounts/login"
-            }
+            { "id": "facebook", "icon": "flaticon-facebook", "url": "https://www.facebook.com/" },
+            { "id": "twitter", "icon": "flaticon-twitter", "url": "https://x.com/" },
+            { "id": "instagram", "icon": "flaticon-instagram", "url": "https://www.instagram.com/" }
         ],
         "achievements": [
-            {
-                "id": "qualification",
-                "title": "Qualification",
-                "description": "You can register online by visiting our event page..."
-            },
-            {
-                "id": "professional-membership",
-                "title": "Professional associations and membership",
-                "description": "You can register online by visiting our event page..."
-            },
-            {
-                "id": "world-class-achievement",
-                "title": "World class achievement",
-                "description": "You can register online by visiting our event page..."
-            }
+            { "id": "founder", "title": "Church Founder", "description": "Founder of United Family International Church (UFIC), one of Africa's largest congregations." },
+            { "id": "prophet", "title": "Prophetic Ministry", "description": "Internationally recognised prophet whose ministry has impacted millions across Africa and the diaspora." },
+            { "id": "evangelist", "title": "Mass Evangelism", "description": "Convener of mass crusades and prophetic gatherings drawing hundreds of thousands of attendees." }
         ],
         "previousEvents": [
-            {
-                "id": 1,
-                "title": "Startup and Investments Summit 2025",
-                "location": "Celebration Centre, Borrowdale, Harare",
-                "date": "March 15, 2025",
-                "image": "/assets/img/speaker/previous-hit-event.png"
-            },
-            {
-                "id": 2,
-                "title": "Global Leadership Business Summit 2025",
-                "location": "Celebration Centre, Borrowdale, Harare",
-                "date": "March 15, 2025",
-                "image": "/assets/img/speaker/previous-hit-event-2.png"
-            }
+            { "id": 1, "title": "Generation Next 4th Edition", "location": "Celebration Centre, Borrowdale, Harare", "date": "2025", "image": "/assets/img/speaker/previous-hit-event.png" },
+            { "id": 2, "title": "Generation Next 3rd Edition", "location": "Celebration Centre, Borrowdale, Harare", "date": "2024", "image": "/assets/img/speaker/previous-hit-event-2.png" }
         ]
     },
     {
         "id": 5,
-        "name": "Sophia Wang",
-        "position": "Machine Learning Engineer, Facebook",
+        "name": "Prophetess Memory Matimbire",
+        "position": "Keynote Speaker",
         "image": "/assets/img/speaker/speaker-single-person.png",
-        "content": "Sophia is an expert in deep learning and neural networks, working on cutting-edge projects at Facebook.",
+        "content": "Prophetess Memory Matimbire is a renowned prophetic minister and founder of Faith in Action International Ministries. Based in Zimbabwe, she is celebrated across Africa for her powerful prophetic gifts, healing ministry, and anointed preaching.",
         "contact": {
-            "phone": "+1-555-4567890",
-            "email": "sophia.wang@example.com",
-            "website": "www.sophiawang.com"
+            "phone": "0787 963720",
+            "email": "info@gennextmovement.com",
+            "website": "faithinaction.co.zw"
         },
         "socials": [
-            {
-                "id": "facebook",
-                "icon": "flaticon-facebook",
-                "url": "https://www.facebook.com/"
-            },
-            {
-                "id": "twitter",
-                "icon": "flaticon-twitter",
-                "url": "https://x.com/"
-            },
-            {
-                "id": "instagram",
-                "icon": "flaticon-instagram",
-                "url": "https://www.instagram.com/accounts/login"
-            }
+            { "id": "facebook", "icon": "flaticon-facebook", "url": "https://www.facebook.com/" },
+            { "id": "twitter", "icon": "flaticon-twitter", "url": "https://x.com/" },
+            { "id": "instagram", "icon": "flaticon-instagram", "url": "https://www.instagram.com/" }
         ],
         "achievements": [
-            {
-                "id": "qualification",
-                "title": "Qualification",
-                "description": "You can register online by visiting our event page..."
-            },
-            {
-                "id": "professional-membership",
-                "title": "Professional associations and membership",
-                "description": "You can register online by visiting our event page..."
-            },
-            {
-                "id": "world-class-achievement",
-                "title": "World class achievement",
-                "description": "You can register online by visiting our event page..."
-            }
+            { "id": "founder", "title": "Ministry Founder", "description": "Founder of Faith in Action International Ministries, impacting thousands through prophetic ministry." },
+            { "id": "prophetic", "title": "Prophetic Voice", "description": "One of Africa's most prominent prophetic voices, known for accurate and life-changing prophetic ministry." },
+            { "id": "women", "title": "Women in Ministry", "description": "An inspiration to women in ministry across Africa, breaking barriers and raising up the next generation." }
         ],
         "previousEvents": [
-            {
-                "id": 1,
-                "title": "Startup and Investments Summit 2025",
-                "location": "Celebration Centre, Borrowdale, Harare",
-                "date": "March 15, 2025",
-                "image": "/assets/img/speaker/previous-hit-event.png"
-            },
-            {
-                "id": 2,
-                "title": "Global Leadership Business Summit 2025",
-                "location": "Celebration Centre, Borrowdale, Harare",
-                "date": "March 15, 2025",
-                "image": "/assets/img/speaker/previous-hit-event-2.png"
-            }
+            { "id": 1, "title": "Generation Next 4th Edition", "location": "Celebration Centre, Borrowdale, Harare", "date": "2025", "image": "/assets/img/speaker/previous-hit-event.png" },
+            { "id": 2, "title": "Generation Next 3rd Edition", "location": "Celebration Centre, Borrowdale, Harare", "date": "2024", "image": "/assets/img/speaker/previous-hit-event-2.png" }
         ]
     },
     {
         "id": 6,
-        "name": "Michael Brown",
-        "position": "Data Science Director, Microsoft",
+        "name": "Apostle Tavonga Vutabwashe",
+        "position": "Keynote Speaker",
         "image": "/assets/img/speaker/speaker-single-person.png",
-        "content": "Michael oversees data science initiatives at Microsoft, focusing on AI ethics and responsible AI.",
+        "content": "Apostle Tavonga Vutabwashe is a dynamic apostolic leader and founder of Living Waters International Church. A gifted communicator and church planter, he has a passion for raising strong, Spirit-filled leaders across Africa.",
         "contact": {
-            "phone": "+1-555-5678901",
-            "email": "michael.brown@example.com",
-            "website": "www.michaelbrown.com"
+            "phone": "0787 963720",
+            "email": "info@gennextmovement.com",
+            "website": "gennextmovement.com"
         },
         "socials": [
-            {
-                "id": "facebook",
-                "icon": "flaticon-facebook",
-                "url": "https://www.facebook.com/"
-            },
-            {
-                "id": "twitter",
-                "icon": "flaticon-twitter",
-                "url": "https://x.com/"
-            },
-            {
-                "id": "instagram",
-                "icon": "flaticon-instagram",
-                "url": "https://www.instagram.com/accounts/login"
-            }
+            { "id": "facebook", "icon": "flaticon-facebook", "url": "https://www.facebook.com/" },
+            { "id": "twitter", "icon": "flaticon-twitter", "url": "https://x.com/" },
+            { "id": "instagram", "icon": "flaticon-instagram", "url": "https://www.instagram.com/" }
         ],
         "achievements": [
-            {
-                "id": "qualification",
-                "title": "Qualification",
-                "description": "You can register online by visiting our event page..."
-            },
-            {
-                "id": "professional-membership",
-                "title": "Professional associations and membership",
-                "description": "You can register online by visiting our event page..."
-            },
-            {
-                "id": "world-class-achievement",
-                "title": "World class achievement",
-                "description": "You can register online by visiting our event page..."
-            }
+            { "id": "apostle", "title": "Apostolic Leader", "description": "Recognised apostolic figure with a mandate to plant and strengthen churches across Africa." },
+            { "id": "communicator", "title": "Gifted Communicator", "description": "Known for clear, powerful, and transformative preaching that connects with audiences of all ages." },
+            { "id": "youth", "title": "Youth Champion", "description": "Passionate about engaging and raising the next generation of ministry leaders." }
         ],
         "previousEvents": [
-            {
-                "id": 1,
-                "title": "Startup and Investments Summit 2025",
-                "location": "Celebration Centre, Borrowdale, Harare",
-                "date": "March 15, 2025",
-                "image": "/assets/img/speaker/previous-hit-event.png"
-            },
-            {
-                "id": 2,
-                "title": "Global Leadership Business Summit 2025",
-                "location": "Celebration Centre, Borrowdale, Harare",
-                "date": "March 15, 2025",
-                "image": "/assets/img/speaker/previous-hit-event-2.png"
-            }
+            { "id": 1, "title": "Generation Next 4th Edition", "location": "Celebration Centre, Borrowdale, Harare", "date": "2025", "image": "/assets/img/speaker/previous-hit-event.png" },
+            { "id": 2, "title": "Generation Next 3rd Edition", "location": "Celebration Centre, Borrowdale, Harare", "date": "2024", "image": "/assets/img/speaker/previous-hit-event-2.png" }
         ]
     },
     {
         "id": 7,
-        "name": "Emily Clark",
-        "position": "Chief Innovation Officer, Tesla",
+        "name": "Apostle Batsirai Java",
+        "position": "Keynote Speaker",
         "image": "/assets/img/speaker/speaker-single-person.png",
-        "content": "Emily drives innovation at Tesla, integrating AI into automotive technologies.",
+        "content": "Apostle Batsirai Java is a powerful apostolic minister and founder of Kingdom Embassy Ministries. Known for his healing and deliverance ministry, he moves in signs and wonders and carries a strong mandate to disciple and raise leaders.",
         "contact": {
-            "phone": "+1-555-6789012",
-            "email": "emily.clark@example.com",
-            "website": "www.emilyclark.com"
+            "phone": "0787 963720",
+            "email": "info@gennextmovement.com",
+            "website": "gennextmovement.com"
         },
         "socials": [
-            {
-                "id": "facebook",
-                "icon": "flaticon-facebook",
-                "url": "https://www.facebook.com/"
-            },
-            {
-                "id": "twitter",
-                "icon": "flaticon-twitter",
-                "url": "https://x.com/"
-            },
-            {
-                "id": "instagram",
-                "icon": "flaticon-instagram",
-                "url": "https://www.instagram.com/accounts/login"
-            }
+            { "id": "facebook", "icon": "flaticon-facebook", "url": "https://www.facebook.com/" },
+            { "id": "twitter", "icon": "flaticon-twitter", "url": "https://x.com/" },
+            { "id": "instagram", "icon": "flaticon-instagram", "url": "https://www.instagram.com/" }
         ],
         "achievements": [
-            {
-                "id": "qualification",
-                "title": "Qualification",
-                "description": "You can register online by visiting our event page..."
-            },
-            {
-                "id": "professional-membership",
-                "title": "Professional associations and membership",
-                "description": "You can register online by visiting our event page..."
-            },
-            {
-                "id": "world-class-achievement",
-                "title": "World class achievement",
-                "description": "You can register online by visiting our event page..."
-            }
+            { "id": "healing", "title": "Healing Ministry", "description": "Moves in notable signs and wonders, with documented healings and miracles across his crusades." },
+            { "id": "apostolic", "title": "Apostolic Mandate", "description": "Carries a strong apostolic mandate to establish and strengthen the church in Zimbabwe and beyond." },
+            { "id": "discipleship", "title": "Discipleship", "description": "Committed to raising and discipling the next generation of church leaders." }
         ],
         "previousEvents": [
-            {
-                "id": 1,
-                "title": "Startup and Investments Summit 2025",
-                "location": "Celebration Centre, Borrowdale, Harare",
-                "date": "March 15, 2025",
-                "image": "/assets/img/speaker/previous-hit-event.png"
-            },
-            {
-                "id": 2,
-                "title": "Global Leadership Business Summit 2025",
-                "location": "Celebration Centre, Borrowdale, Harare",
-                "date": "March 15, 2025",
-                "image": "/assets/img/speaker/previous-hit-event-2.png"
-            }
+            { "id": 1, "title": "Generation Next 4th Edition", "location": "Celebration Centre, Borrowdale, Harare", "date": "2025", "image": "/assets/img/speaker/previous-hit-event.png" },
+            { "id": 2, "title": "Generation Next 3rd Edition", "location": "Celebration Centre, Borrowdale, Harare", "date": "2024", "image": "/assets/img/speaker/previous-hit-event-2.png" }
         ]
     },
     {
         "id": 8,
-        "name": "Raj Patel",
-        "position": "Lead Data Engineer, Netflix",
+        "name": "Bishop Chemani S. Tuturu",
+        "position": "Keynote Speaker",
         "image": "/assets/img/speaker/speaker-single-person.png",
-        "content": "Raj specializes in data pipelines and streaming analytics at Netflix.",
+        "content": "Bishop Chemani S. Tuturu is a respected bishop and senior church leader with decades of ministry experience. Known for his depth of teaching and strong apostolic foundation, he is a trusted voice in the Zimbabwean church landscape.",
         "contact": {
-            "phone": "+1-555-7890123",
-            "email": "raj.patel@example.com",
-            "website": "www.rajpatel.com"
+            "phone": "0787 963720",
+            "email": "info@gennextmovement.com",
+            "website": "gennextmovement.com"
         },
         "socials": [
-            {
-                "id": "facebook",
-                "icon": "flaticon-facebook",
-                "url": "https://www.facebook.com/"
-            },
-            {
-                "id": "twitter",
-                "icon": "flaticon-twitter",
-                "url": "https://x.com/"
-            },
-            {
-                "id": "instagram",
-                "icon": "flaticon-instagram",
-                "url": "https://www.instagram.com/accounts/login"
-            }
+            { "id": "facebook", "icon": "flaticon-facebook", "url": "https://www.facebook.com/" },
+            { "id": "twitter", "icon": "flaticon-twitter", "url": "https://x.com/" },
+            { "id": "instagram", "icon": "flaticon-instagram", "url": "https://www.instagram.com/" }
         ],
         "achievements": [
-            {
-                "id": "qualification",
-                "title": "Qualification",
-                "description": "You can register online by visiting our event page..."
-            },
-            {
-                "id": "professional-membership",
-                "title": "Professional associations and membership",
-                "description": "You can register online by visiting our event page..."
-            },
-            {
-                "id": "world-class-achievement",
-                "title": "World class achievement",
-                "description": "You can register online by visiting our event page..."
-            }
+            { "id": "bishop", "title": "Senior Bishop", "description": "Decades of episcopal leadership shaping the church in Zimbabwe and the broader region." },
+            { "id": "teaching", "title": "Teaching Ministry", "description": "Renowned for deep, doctrinally grounded teaching that builds up the body of Christ." },
+            { "id": "mentor", "title": "Mentor to Ministers", "description": "A trusted mentor and father figure to many pastors and church leaders across Zimbabwe." }
         ],
         "previousEvents": [
-            {
-                "id": 1,
-                "title": "Startup and Investments Summit 2025",
-                "location": "Celebration Centre, Borrowdale, Harare",
-                "date": "March 15, 2025",
-                "image": "/assets/img/speaker/previous-hit-event.png"
-            },
-            {
-                "id": 2,
-                "title": "Global Leadership Business Summit 2025",
-                "location": "Celebration Centre, Borrowdale, Harare",
-                "date": "March 15, 2025",
-                "image": "/assets/img/speaker/previous-hit-event-2.png"
-            }
+            { "id": 1, "title": "Generation Next 4th Edition", "location": "Celebration Centre, Borrowdale, Harare", "date": "2025", "image": "/assets/img/speaker/previous-hit-event.png" },
+            { "id": 2, "title": "Generation Next 3rd Edition", "location": "Celebration Centre, Borrowdale, Harare", "date": "2024", "image": "/assets/img/speaker/previous-hit-event-2.png" }
         ]
     }
 ]

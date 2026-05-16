@@ -4,7 +4,7 @@
         "items": [
             {
                 "label": "COST",
-                "value": "Free Entry"
+                "value": "$10 USD"
             },
             {
                 "label": "DATE",
@@ -36,6 +36,14 @@
                 "label": "LOCATION",
                 "value": "Celebration Centre, Borrowdale, Harare"
             }
+        ]
+    },
+    "contact": {
+        "title": "Contact",
+        "items": [
+            { "label": "PHONE", "value": "0787 963720" },
+            { "label": "PHONE", "value": "0771 982 116" },
+            { "label": "PHONE", "value": "0774 562 455" }
         ]
     },
     "mapSrc": "https://www.google.com/maps?q=Celebration+Centre%2C+Borrowdale%2C+Harare&z=17&output=embed"
