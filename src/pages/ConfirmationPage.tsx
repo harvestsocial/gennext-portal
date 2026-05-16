@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useSearchParams, useNavigate } from "react-router-dom";
 import QRCode from "react-qr-code";
-import { getRegistrationById, type RegistrationData } from "@/lib/registrationApi";
+import { confirmPayment, getRegistrationById, type RegistrationData } from "@/lib/registrationApi";
 import eventData from "@/jsonData/eventInfoContact.json";
 import logo from "/assets/img/icon/logo.svg";
 import "../index.scss";
@@ -54,7 +54,9 @@ const ConfirmationPage: React.FC = () => {
     const fetchRegistration = async () => {
         try {
             if (registrationId) {
-                const registration = await getRegistrationById(registrationId);
+                const registration = await confirmPayment(registrationId).catch(
+                    () => getRegistrationById(registrationId)
+                );
                 if (registration) {
                     setData(registration);
                 } else {
@@ -202,6 +204,9 @@ const ConfirmationPage: React.FC = () => {
 
                 <div className="text-center mb-4">
                     <h2 className="fw-bold" style={{ color: "#111827" }}>Registration Confirmed</h2>
+                    <span style={{ display: "inline-block", background: "#16a34a", color: "#fff", fontSize: "0.8rem", fontWeight: 600, padding: "3px 12px", borderRadius: "999px", letterSpacing: "0.05em", marginBottom: "8px" }}>
+                        ✓ Payment Confirmed — $10.00
+                    </span>
                     <p className="text-muted">Present this ticket at the entrance.</p>
                 </div>
 

@@ -19,6 +19,7 @@ const HEADERS = [
   "Phone",
   "Email",
   "Access Granted",
+  "Payment Status",
   "Created At",
 ];
 const ATTENDANCE_HEADERS = [
@@ -164,6 +165,19 @@ function doPost(e) {
       return jsonResponse({ success: true, archived: result });
     }
 
+    if (action === "createPending") {
+      const payload = body.data || {};
+      const id = createPendingRegistration_(payload);
+      return jsonResponse({ success: true, id });
+    }
+
+    if (action === "confirmPayment") {
+      const id = body.id;
+      if (!id) return jsonResponse({ success: false, error: "Missing id" });
+      const registration = confirmPaymentById_(id);
+      return jsonResponse({ success: true, data: registration });
+    }
+
     return jsonResponse({ success: false, error: "Invalid action" });
   } catch (error) {
     return jsonResponse({ success: false, error: String(error) });
@@ -187,11 +201,92 @@ function createRegistration(data) {
     safe(data.phone),
     safe(data.email),
     false,
+    "confirmed",
     new Date().toISOString(),
   ];
   sheet.appendRow(row);
   rebuildAttendanceSheet_();
   return id;
+}
+
+function createPendingRegistration_(data) {
+  const sheet = getSheet_();
+  const gender = normalizeGenderStrict_(data.gender);
+  const title = normalizeTitleStrict_(data.title);
+  const id = generateRegistrationId_(sheet);
+  const row = [
+    id,
+    safe(data.firstName),
+    safe(data.lastName),
+    gender,
+    title,
+    safe(data.church),
+    safe(data.city),
+    safe(data.country),
+    safe(data.phone),
+    safe(data.email),
+    false,
+    "pending",
+    new Date().toISOString(),
+  ];
+  sheet.appendRow(row);
+  return id;
+}
+
+function confirmPaymentById_(id) {
+  const sheet = getSheet_();
+  const values = sheet.getDataRange().getValues();
+  if (values.length <= 1) throw new Error("No registrations found");
+
+  const headers = values[0].map(function (h) { return normalizeHeader_(h); });
+  const idCol = getHeaderIndex_(headers, ["id"]);
+  const paymentStatusCol = getHeaderIndex_(headers, ["paymentstatus", "payment_status"]);
+
+  if (idCol === -1 || paymentStatusCol === -1) throw new Error("Missing required columns");
+
+  for (var r = 1; r < values.length; r++) {
+    if (String(values[r][idCol]) === String(id)) {
+      var currentStatus = String(values[r][paymentStatusCol] || "").toLowerCase();
+      if (currentStatus !== "confirmed") {
+        sheet.getRange(r + 1, paymentStatusCol + 1).setValue("confirmed");
+      }
+      rebuildAttendanceSheet_();
+      var registration = getRegistrationById(id);
+      if (registration && currentStatus !== "confirmed") {
+        sendReceiptEmail_(registration);
+      }
+      return registration;
+    }
+  }
+  throw new Error("Registration not found");
+}
+
+function sendReceiptEmail_(registration) {
+  var to = safe(registration.email);
+  if (!to || to.indexOf("@") === -1) return;
+
+  var fullName = [safe(registration.title), safe(registration.firstName), safe(registration.lastName)]
+    .filter(function (p) { return p !== ""; }).join(" ");
+
+  var subject = "GenNext 2026 — Payment Confirmed & Registration Receipt";
+
+  var htmlBody =
+    "<div style='font-family:sans-serif;max-width:560px;margin:0 auto;'>" +
+    "<h2 style='color:#d4af37;'>Generation Next 2026</h2>" +
+    "<p>Dear <strong>" + fullName + "</strong>,</p>" +
+    "<p>Your payment of <strong>$10.00 USD</strong> has been confirmed and your registration is complete.</p>" +
+    "<table style='border-collapse:collapse;width:100%;margin:16px 0;'>" +
+    "<tr><td style='padding:6px 0;color:#6b7280;'>Registration ID</td><td style='padding:6px 0;font-weight:bold;'>" + safe(registration.id) + "</td></tr>" +
+    "<tr><td style='padding:6px 0;color:#6b7280;'>Event</td><td style='padding:6px 0;'>Generation Next 5th Edition</td></tr>" +
+    "<tr><td style='padding:6px 0;color:#6b7280;'>Date</td><td style='padding:6px 0;'>July 16–18, 2026</td></tr>" +
+    "<tr><td style='padding:6px 0;color:#6b7280;'>Venue</td><td style='padding:6px 0;'>Celebration Centre, Borrowdale, Harare</td></tr>" +
+    "<tr><td style='padding:6px 0;color:#6b7280;'>Church</td><td style='padding:6px 0;'>" + safe(registration.church) + "</td></tr>" +
+    "</table>" +
+    "<p>Please present your Registration ID or QR code at the entrance.</p>" +
+    "<p style='color:#6b7280;font-size:13px;'>God bless you!<br/>GenNext Team</p>" +
+    "</div>";
+
+  MailApp.sendEmail({ to: to, subject: subject, htmlBody: htmlBody });
 }
 
 function listRegistrations() {
@@ -210,6 +305,7 @@ function listRegistrations() {
   const phoneIdx = getHeaderIndex_(headers, ["phone", "phonenumber"]);
   const emailIdx = getHeaderIndex_(headers, ["email", "emailaddress"]);
   const accessIdx = getHeaderIndex_(headers, ["accessgranted", "access"]);
+  const paymentStatusIdx = getHeaderIndex_(headers, ["paymentstatus", "payment_status"]);
   const createdAtIdx = getHeaderIndex_(headers, ["createdat", "created_at"]);
   const idIdx = getHeaderIndex_(headers, ["id"]);
 
@@ -228,6 +324,7 @@ function listRegistrations() {
       phone: getByIndex_(row, phoneIdx),
       email: getByIndex_(row, emailIdx),
       accessGranted: String(getByIndex_(row, accessIdx)).toLowerCase() === "true",
+      paymentStatus: safe(getByIndex_(row, paymentStatusIdx)) || "confirmed",
       createdAt: getByIndex_(row, createdAtIdx),
       };
     });

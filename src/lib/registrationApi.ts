@@ -10,6 +10,7 @@ export interface RegistrationData {
     phone: string;
     email: string;
     accessGranted: boolean;
+    paymentStatus?: string;
     createdAt?: string;
 }
 
@@ -89,6 +90,42 @@ export const getRegistrationById = async (id: string) => {
     const res = await fetch(url, { method: "GET" });
     const payload = await parseResponse(res);
     return (payload.data || null) as RegistrationData | null;
+};
+
+export const createPendingRegistration = async (data: RegistrationFormInput): Promise<string> => {
+    assertApiConfigured();
+    const res = await fetch(REG_API_URL, {
+        method: "POST",
+        body: JSON.stringify({
+            action: "createPending",
+            data: { ...data, gender: normalizeGenderStrict(data.gender) },
+        }),
+    });
+    const payload = await parseResponse(res);
+    return payload.id as string;
+};
+
+export const confirmPayment = async (id: string): Promise<RegistrationData> => {
+    assertApiConfigured();
+    const res = await fetch(REG_API_URL, {
+        method: "POST",
+        body: JSON.stringify({ action: "confirmPayment", id }),
+    });
+    const payload = await parseResponse(res);
+    return payload.data as RegistrationData;
+};
+
+export const buildPaynowUrl = (regId: string, firstName: string, lastName: string): string => {
+    const reference = `GenNext July 2026 - ${firstName} ${lastName}`;
+    const returnUrl = `https://gennextmovement.com/confirmation?id=${encodeURIComponent(regId)}`;
+    const params = [
+        "search=gennext%40hhicc.org.zw",
+        "amount=10.00",
+        `reference=${encodeURIComponent(reference)}`,
+        `returnurl=${encodeURIComponent(returnUrl)}`,
+        "l=1",
+    ].join("&");
+    return `https://www.paynow.co.zw/Payment/Link/?q=${btoa(params)}`;
 };
 
 export const setRegistrationAccess = async (id: string, accessGranted: boolean) => {

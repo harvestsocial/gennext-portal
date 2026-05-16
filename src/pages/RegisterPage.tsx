@@ -62,7 +62,7 @@ const CountdownPage: React.FC = () => {
 };
 import bgImage from "/assets/img/bg/error-page-bg-elements.svg";
 import { allCountries } from "@/lib/countryList";
-import { createRegistration } from "@/lib/registrationApi";
+import { createPendingRegistration, buildPaynowUrl } from "@/lib/registrationApi";
 
 const titles = [
     "Bishop",
@@ -192,15 +192,12 @@ const RegisterPage: React.FC = () => {
         setSubmitting(true);
 
         try {
-            console.log("Submitting registration...", formData);
-            const id = await createRegistration(formData);
-
-            console.log("Registration created with ID: ", id);
-            navigate(`/confirmation?id=${id}`);
-        } catch (e: any) {
-            console.error("Error adding document: ", e);
-            setError(`Registration failed: ${e.message || "Please try again."}`);
-        } finally {
+            const id = await createPendingRegistration(formData);
+            const paynowUrl = buildPaynowUrl(id, formData.firstName, formData.lastName);
+            window.location.href = paynowUrl;
+        } catch (e: unknown) {
+            const msg = e instanceof Error ? e.message : "Please try again.";
+            setError(`Registration failed: ${msg}`);
             setSubmitting(false);
         }
     };
@@ -359,7 +356,7 @@ const RegisterPage: React.FC = () => {
 
                                 <div>
                                     <button type="submit" className="primary__btn style2 w-100" disabled={submitting}>
-                                        {submitting ? "Processing..." : "Submit Registration"}
+                                        {submitting ? "Redirecting to Payment..." : "Proceed to Payment — $10"}
                                     </button>
                                 </div>
 
