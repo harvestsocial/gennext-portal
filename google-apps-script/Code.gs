@@ -58,9 +58,8 @@ const TITLE_OPTIONS = [
   "Pastor",
   "Evangelist",
   "Minister",
-  "Shephered",
+  "Elder",
   "Doctor",
-  "Congregant",
 ];
 const BOARD_CHURCHES = [
   {

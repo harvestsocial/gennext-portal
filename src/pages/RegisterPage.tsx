@@ -76,9 +76,8 @@ const titles = [
     "Pastor",
     "Evangelist",
     "Minister",
-    "Shephered",
+    "Elder",
     "Doctor",
-    "Congregant",
 ];
 
 // Sort in reverse alphabetical order
