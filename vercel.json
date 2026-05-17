@@ -1,8 +1,6 @@
 {
-    "rewrites": [
-        {
-            "source": "/(.*)",
-            "destination": "/"
-        }
-    ]
+  "buildCommand": "cd landing && npm run build",
+  "outputDirectory": "landing/dist",
+  "cleanUrls": true,
+  "trailingSlash": false
 }

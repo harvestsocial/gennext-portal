@@ -2,6 +2,22 @@
 
 Symfony/Twig landing page for Generation Next.
 
+## Vercel deploy
+
+This project builds to static HTML for Vercel.
+
+```bash
+npm run build
+```
+
+Vercel uses `vercel.json`:
+
+- Build command: `npm run build`
+- Output directory: `dist`
+- Clean URLs: enabled
+
+The static build renders the Twig templates from `templates/` and copies `public/assets/` into `dist/assets/`. PHP files are excluded from the static export because Vercel does not execute PHP in a static deployment.
+
 ## Local setup
 
 ```bash
