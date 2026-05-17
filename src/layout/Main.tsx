@@ -17,11 +17,13 @@ const Main: React.FC = () => {
 
 
   return (
-    <div>
+    <div style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
       <Header style={headerStyle} />
-      <Outlet />
-      {location.pathname === "/register" ? <TextScrollSlider /> : null}
-      {location.pathname !== "/register" && location.pathname !== "/registration" ? <Footer /> : null}
+      <div style={{ flex: 1 }}>
+        <Outlet />
+        {location.pathname === "/register" ? <TextScrollSlider /> : null}
+      </div>
+      <Footer />
       <ScrollUpButton />
     </div>
   );

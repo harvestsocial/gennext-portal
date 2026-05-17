@@ -31,7 +31,7 @@ const Footer: React.FC = () => {
               {/* Logo + Social */}
               <div style={{ flex: "1", minWidth: "180px" }}>
                 <img
-                  src="/assets/img/logos/logo.png"
+                  src={`${import.meta.env.BASE_URL}assets/img/logos/logo.png`}
                   alt="Generation Next"
                   style={{ width: "140px", marginBottom: "20px" }}
                 />
