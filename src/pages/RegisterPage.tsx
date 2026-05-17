@@ -259,35 +259,12 @@ const RegisterPage: React.FC = () => {
 /* ── Shared styles ── */
 
 const heroStyle: React.CSSProperties = {
-  background: "linear-gradient(135deg, #101435 0%, #1A1E42 55%, #0d1128 100%)",
-  position: "relative",
-  overflow: "hidden",
+  background: "#101435",
 };
 
-const heroBlobStyle: React.CSSProperties = {
-  position: "absolute",
-  top: "-120px",
-  right: "-120px",
-  width: "500px",
-  height: "500px",
-  borderRadius: "50%",
-  background: "radial-gradient(circle, rgba(33,51,228,0.25) 0%, transparent 70%)",
-  pointerEvents: "none",
-};
+const heroBlobStyle: React.CSSProperties = { display: "none" };
 
-const subtitleTagStyle: React.CSSProperties = {
-  display: "inline-block",
-  background: "rgba(33,51,228,0.18)",
-  border: "1px solid rgba(33,51,228,0.4)",
-  color: "#6c8aff",
-  fontSize: "0.75rem",
-  fontWeight: 700,
-  letterSpacing: "0.15em",
-  textTransform: "uppercase",
-  padding: "6px 16px",
-  borderRadius: "100px",
-  marginBottom: "20px",
-};
+const subtitleTagStyle: React.CSSProperties = { display: "none" };
 
 const metaItemStyle: React.CSSProperties = {
   display: "flex",
