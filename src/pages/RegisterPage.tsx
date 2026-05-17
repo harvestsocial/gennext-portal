@@ -154,7 +154,7 @@ const RegisterPage: React.FC = () => {
       </section>
 
       {/* ── Form section ── */}
-      <section style={{ background: "#0d1128", padding: "80px 0 100px" }}>
+      <section style={{ background: "#101435", padding: "80px 0 100px" }}>
         <div className="container">
           <div style={{ maxWidth: "800px", margin: "0 auto" }}>
 
