@@ -12,7 +12,7 @@ if (rootElement) {
   const root = createRoot(rootElement);
   root.render(
     <StrictMode>
-      <BrowserRouter>
+      <BrowserRouter basename="/registration">
         <App />
       </BrowserRouter>
     </StrictMode>
