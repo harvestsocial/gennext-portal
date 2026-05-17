@@ -1,0 +1,923 @@
+{% extends 'partials/layouts/master.html.twig' %}
+
+{% block page_contents %}
+    <style>
+        #section-speakers .speaker-card img {
+            display: block;
+            aspect-ratio: 5 / 5.4;
+            object-fit: cover;
+            object-position: center top;
+        }
+
+        #section-speakers .speaker-card-caption {
+            padding: 0 14px 14px;
+        }
+
+        #section-speakers .speaker-card-caption-inner {
+            margin: 0;
+            padding: 12px 10px;
+        }
+
+        #section-speakers .speaker-card-name {
+            font-size: 16px;
+            line-height: 1.15;
+        }
+
+        #section-speakers .speaker-card-role {
+            display: block;
+            font-size: 13px;
+            line-height: 1.2;
+            margin-top: 4px;
+        }
+
+        #section-speakers .speaker-card-caption .gradient-edge-bottom {
+            height: 45% !important;
+        }
+    </style>
+
+        <section id="section-hero" class="section-dark text-light p-0 relative overflow-hidden z-1000">
+            <div class="mh-800">
+                <div class="swiper">
+                  <!-- Additional required wrapper -->
+                  <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <div class="swiper-slide">
+                        <div class="abs abs-centered z-2 w-100">
+                            <div class="container" data-wow-duration="1s">
+                                <div class="row">
+                                    <div class="col-lg-7">
+                                        <div class="subtitle">Generation Next Movement</div>
+                                        <h1 class="mb-4 uppercase">Raising the Next Generation of Leaders</h1>
+
+                                        <div class="d-block d-md-flex">
+                                            <div class="d-flex align-items-center me-4">
+                                                <i class="fa fa-calendar id-color me-3"></i>
+                                                <h4 class="mb-0">July 16-18, 2026</h4>
+                                            </div>
+
+                                            <div class="d-flex align-items-center me-4">
+                                                <i class="fa fa-location-pin id-color me-3"></i>
+                                                <h4 class="mb-0">Celebration Centre, Harare</h4>
+                                            </div>
+                                        </div>
+
+                                        <div class="spacer-single"></div>
+
+                                        <a class="btn-main mx-2 fx-slide" href="https://www.gennextmovement.com/registration"><span>Register Now</span></a>
+                                        <a class="btn-main btn-line mx-2 fx-slide" href="#section-schedule"><span>View Program</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-inner" data-bgimage="url(assets/images/gennext/slider/slider-bg1.jpg)">
+                            <div class="sw-overlay op-3"></div>
+                            <div class="gradient-edge-bottom"></div>
+                        </div>
+                    </div>
+
+                    <!-- Slides -->
+                    <div class="swiper-slide">
+                        <div class="abs abs-centered z-2 w-100">
+                            <div class="container" data-wow-duration="1s">
+                                <div class="row">
+                                    <div class="col-lg-7">
+                                        <div class="subtitle">Harare 2026</div>
+                                        <h1 class="mb-4 uppercase">End-time Mantles, Prophetic Anointing, Church Growth</h1>
+
+                                        <div class="d-block d-md-flex">
+                                            <div class="d-flex align-items-center me-4">
+                                                <i class="fa fa-calendar id-color me-3"></i>
+                                                <h4 class="mb-0">July 16-18, 2026</h4>
+                                            </div>
+
+                                            <div class="d-flex align-items-center me-4">
+                                                <i class="fa fa-location-pin id-color me-3"></i>
+                                                <h4 class="mb-0">Celebration Centre, Borrowdale</h4>
+                                            </div>
+                                        </div>
+
+                                        <div class="spacer-single"></div>
+
+                                        <a class="btn-main mx-2 fx-slide" href="https://www.gennextmovement.com/registration"><span>Register Now</span></a>
+                                        <a class="btn-main btn-line mx-2 fx-slide" href="#section-schedule"><span>View Program</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-inner" data-bgimage="url(assets/images/gennext/slider/slider-bg4.jpg)">
+                            <div class="sw-overlay op-3"></div>
+                            <div class="gradient-edge-bottom"></div>
+                        </div>
+                    </div>
+
+
+                  </div>
+                  <!-- If we need pagination -->
+                  <div class="swiper-pagination"></div>
+
+                  <!-- If we need navigation buttons -->
+                  <div class="swiper-button-prev"></div>
+                  <div class="swiper-button-next"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="section-about" class="bg-dark section-dark text-light">
+            <div class="container">
+                <div class="row  gx-5 align-items-center justify-content-between">
+                    <div class="col-lg-6">
+                          <div class="me-lg-5 pe-lg-5 py-5 my-5">
+                              <div class="subtitle wow fadeInUp" data-wow-delay=".2s">About the Event</div>
+                              <h2 class="wow fadeInUp" data-wow-delay=".4s">A leadership and ministry movement rooted in Malachi 4:6</h2>
+                              <p class="wow fadeInUp" data-wow-delay=".6s">Generation Next revolves around Malachi 4:6: turning the hearts of fathers to sons and sons to fathers through biblical teaching, fellowship, prophetic ministry, and practical guidance for long-term ministry health.</p>
+
+                              <ul class="ul-check">
+                                  <li class="wow fadeInUp" data-wow-delay=".8s">Sound doctrine and teaching</li>
+                                  <li class="wow fadeInUp" data-wow-delay=".9s">Spiritual formation sessions</li>
+                                  <li class="wow fadeInUp" data-wow-delay="1s">Leadership alignment and mentorship</li>
+                              </ul>
+
+                          </div>
+                    </div>
+
+                    <div class="col-lg-5">
+                        <div class="wow scaleIn">
+                            <img src="assets/images/gennext/about/about1.jpg" class="w-100 rounded-1" alt="Generation Next conference">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="section-dark p-0" aria-label="section">
+            <div class="bg-color text-light d-flex py-4 lh-1 rot-2">
+              <div class="de-marquee-list-1 wow fadeInLeft" data-wow-duration="3s">
+                <span class="fs-60 mx-3">Generation Next</span>
+                <span class="fs-60 mx-3 op-2">/</span>
+                <span class="fs-60 mx-3">Church Leadership</span>
+                 <span class="fs-60 mx-3 op-2">/</span>
+                <span class="fs-60 mx-3">Prophetic Anointing</span>
+                 <span class="fs-60 mx-3 op-2">/</span>
+                <span class="fs-60 mx-3">End-time Mantles</span>
+                 <span class="fs-60 mx-3 op-2">/</span>
+                <span class="fs-60 mx-3">Church Growth</span>
+                 <span class="fs-60 mx-3 op-2">/</span>
+                <span class="fs-60 mx-3">Church Planting</span>
+                 <span class="fs-60 mx-3 op-2">/</span>
+              </div>
+            </div>
+
+            <div class="bg-color-2 text-light d-flex py-4 lh-1 rot-min-1 mt-min-20">
+              <div class="de-marquee-list-2 wow fadeInRight" data-wow-duration="3s">
+                <span class="fs-60 mx-3">Generation Next Harare</span>
+                <span class="fs-60 mx-3 op-2">/</span>
+                <span class="fs-60 mx-3">July 16-18, 2026</span>
+                 <span class="fs-60 mx-3 op-2">/</span>
+                <span class="fs-60 mx-3">Celebration Centre</span>
+                 <span class="fs-60 mx-3 op-2">/</span>
+                <span class="fs-60 mx-3">Harvest House International</span>
+                 <span class="fs-60 mx-3 op-2">/</span>
+                <span class="fs-60 mx-3">Registration Required</span>
+                 <span class="fs-60 mx-3 op-2">/</span>
+                <span class="fs-60 mx-3">Registration Required</span>
+                 <span class="fs-60 mx-3 op-2">/</span>
+              </div>
+            </div>
+        </section>
+
+        <section id="section-why-attend" class="bg-dark section-dark text-light">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-lg-6 offset-lg-3 text-center">
+                        <div class="subtitle wow fadeInUp mb-3">Why Attend</div>
+                        <h2 class="wow fadeInUp" data-wow-delay=".2s">What You Will Receive</h2>
+                        <p class="lead mb-0 wow fadeInUp">A focused environment for leaders who want sound doctrine, spiritual formation, and practical ministry tools.</p>
+                    </div>
+                </div>
+
+                <div class="spacer-single"></div>
+
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="hover">
+                            <div class="bg-dark-2 relative rounded-1 overflow-hidden hover-bg-color hover-text-light wow scale-in-mask">
+                                <div class="abs p-40 bottom-0 z-2">
+                                    <div class="relative wow fadeInUp">
+                                        <h4>Anointed Teaching Sessions</h4>
+                                        <p class="mb-0">Receive biblical teaching from trusted ministers focused on doctrine, leadership, and spiritual maturity.</p>
+                                    </div>
+                                </div>
+                                <div class="gradient-edge-bottom h-100"></div>
+                                <img src="assets/images/gennext/slider/slider-bg2.jpg" class="w-100 hover-scale-1-1" alt="">
+                                <div class="abs w-100 h-100 start-0 top-0 hover-op-1 radial-gradient-color"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="hover">
+                            <div class="bg-dark-2 relative rounded-1 overflow-hidden hover-bg-color hover-text-light wow scale-in-mask">
+                                <div class="abs p-40 bottom-0 z-2">
+                                    <div class="relative wow fadeInUp">
+                                        <h4>Prophetic Prayer Encounters</h4>
+                                        <p class="mb-0">Experience focused moments of prayer, impartation, and prophetic ministry for personal and ministry activation.</p>
+                                    </div>
+                                </div>
+                                <div class="gradient-edge-bottom h-100"></div>
+                                <img src="assets/images/gennext/slider/slider-bg3.jpg" class="w-100 hover-scale-1-1" alt="">
+                                <div class="abs w-100 h-100 start-0 top-0 hover-op-1 radial-gradient-color"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="hover">
+                            <div class="bg-dark-2 relative rounded-1 overflow-hidden hover-bg-color hover-text-light wow scale-in-mask">
+                                <div class="abs p-40 bottom-0 z-2">
+                                    <div class="relative wow fadeInUp">
+                                        <h4>Leadership Development</h4>
+                                        <p class="mb-0">Gain practical tools for church growth, team building, discipleship, and long-term ministry health.</p>
+                                    </div>
+                                </div>
+                                <div class="gradient-edge-bottom h-100"></div>
+                                <img src="assets/images/gennext/slider/slider-bg4.jpg" class="w-100 hover-scale-1-1" alt="">
+                                <div class="abs w-100 h-100 start-0 top-0 hover-op-1 radial-gradient-color"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="hover">
+                            <div class="bg-dark-2 relative rounded-1 overflow-hidden hover-bg-color hover-text-light wow scale-in-mask">
+                                <div class="abs p-40 bottom-0 z-2">
+                                    <div class="relative wow fadeInUp">
+                                        <h4>Kingdom Fellowship</h4>
+                                        <p class="mb-0">Build lasting relationships with pastors, ministry leaders, and believers committed to advancing God purpose in their generation.</p>
+                                    </div>
+                                </div>
+                                <div class="gradient-edge-bottom h-100"></div>
+                                <img src="assets/images/gennext/events/event4.jpg" class="w-100 hover-scale-1-1" alt="">
+                                <div class="abs w-100 h-100 start-0 top-0 hover-op-1 radial-gradient-color"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="hover">
+                            <div class="bg-dark-2 relative rounded-1 overflow-hidden hover-bg-color hover-text-light wow scale-in-mask">
+                                <div class="abs p-40 bottom-0 z-2">
+                                    <div class="relative wow fadeInUp">
+                                        <h4>Church Planting Focus</h4>
+                                        <p class="mb-0">Explore apostolic strategy for establishing and strengthening local churches across communities.</p>
+                                    </div>
+                                </div>
+                                <div class="gradient-edge-bottom h-100"></div>
+                                <img src="assets/images/gennext/events/event2.jpg" class="w-100 hover-scale-1-1" alt="">
+                                <div class="abs w-100 h-100 start-0 top-0 hover-op-1 radial-gradient-color"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="hover">
+                            <div class="bg-dark-2 relative rounded-1 overflow-hidden hover-bg-color hover-text-light wow scale-in-mask">
+                                <div class="abs p-40 bottom-0 z-2">
+                                    <div class="relative wow fadeInUp">
+                                        <h4>Pastoral Wisdom</h4>
+                                        <p class="mb-0">Learn from honest conversations about mistakes pastors make and how leaders can finish well.</p>
+                                    </div>
+                                </div>
+                                <div class="gradient-edge-bottom h-100"></div>
+                                <img src="assets/images/gennext/events/event3.jpg" class="w-100 hover-scale-1-1" alt="">
+                                <div class="abs w-100 h-100 start-0 top-0 hover-op-1 radial-gradient-color"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-dark section-dark text-light pt-80 relative jarallax" aria-label="section">
+            <img src="assets/images/gennext/video/video-bg.jpg" class="jarallax-img" alt="">
+            <div class="gradient-edge-top"></div>
+            <div class="gradient-edge-bottom"></div>
+            <div class="sw-overlay op-8"></div>
+            <div class="container relative z-4">
+                <div class="row align-items-center g-5">
+                    <div class="col-md-4">
+                        <div class="relative w-100 d-inline-block pe-5">
+                            <div class="abs bg-color w-80px h-80px rounded-1 text-center end-0 z-2 wow scaleIn">
+                                <i class="icofont-quote-left text-white fs-40 d-block pt-3"></i>
+                            </div>
+                            <img src="assets/images/gennext/about/about2.jpg" class="w-100 rounded-1 wow scale-in-mask" alt="">
+                        </div>
+                    </div>
+
+                    <div class="col-md-8">
+                        <h3 class="fs-32 mb-4 wow fadeInUp">"...turning the heart of fathers unto sons, and the heart of sons unto their fathers..."</h3>
+
+                        <span>Malachi 4:6</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="section-speakers" class="bg-dark section-dark text-light">
+            <div class="container">
+                <div class="row g-4 justify-content-center">
+                    <div class="col-lg-6 relative z-3">
+                          <div class="text-center">
+                              <div class="subtitle wow fadeInUp" data-wow-delay=".0s">Speakers</div>
+                              <h2 class="wow fadeInUp" data-wow-delay=".2s">Hosts and Main Speakers</h2>
+                              <p class="lead wow fadeInUp">Generation Next brings together apostolic, pastoral, and prophetic voices serving the church across Zimbabwe and beyond.</p>
+                          </div>
+                    </div>
+                </div>
+
+	                <div class="row g-4">
+	                    <div class="col-lg-3 col-md-6">
+	                        <div class="speaker-card hover relative rounded-1 overflow-hidden wow fadeIn scale-in-mask">
+	                            <img src="assets/images/gennext/speaker/bishop-colin-nyathi.jpg" class="w-100 hover-scale-1-1" alt="Bishop Dr. Colin Nyathi">
+	                            <div class="abs w-100 h-100 start-0 top-0 hover-op-1 radial-gradient-color"></div>
+	                            <div class="speaker-card-caption abs w-100 start-0 bottom-0 z-3">
+	                                <div class="speaker-card-caption-inner bg-blur rounded-1 text-light text-center relative z-2">
+	                                    <h3 class="speaker-card-name mb-0">Bishop Dr. Colin Nyathi</h3>
+	                                    <span class="speaker-card-role">Host</span>
+	                                </div>
+	                                <div class="gradient-edge-bottom h-100 op-8"></div>
+	                            </div>
+	                        </div>
+	                    </div>
+
+	                    <div class="col-lg-3 col-md-6">
+	                        <div class="speaker-card hover relative rounded-1 overflow-hidden wow fadeIn scale-in-mask">
+	                            <img src="assets/images/gennext/speaker/bishop-sarah-nyathi.jpg" class="w-100 hover-scale-1-1" alt="Bishop Dr. Sarah Nyathi">
+	                            <div class="abs w-100 h-100 start-0 top-0 hover-op-1 radial-gradient-color"></div>
+	                            <div class="speaker-card-caption abs w-100 start-0 bottom-0 z-3">
+	                                <div class="speaker-card-caption-inner bg-blur rounded-1 text-light text-center relative z-2">
+	                                    <h3 class="speaker-card-name mb-0">Bishop Dr. Sarah Nyathi</h3>
+	                                    <span class="speaker-card-role">Host</span>
+	                                </div>
+	                                <div class="gradient-edge-bottom h-100 op-8"></div>
+	                            </div>
+	                        </div>
+	                    </div>
+
+	                    <div class="col-lg-3 col-md-6">
+	                        <div class="speaker-card hover relative rounded-1 overflow-hidden wow fadeIn scale-in-mask">
+	                            <img src="assets/images/gennext/speaker/pastor-tom-deuschle.jpg" class="w-100 hover-scale-1-1" alt="Pastor Tom Deuschle">
+	                            <div class="abs w-100 h-100 start-0 top-0 hover-op-1 radial-gradient-color"></div>
+	                            <div class="speaker-card-caption abs w-100 start-0 bottom-0 z-3">
+	                                <div class="speaker-card-caption-inner bg-blur rounded-1 text-light text-center relative z-2">
+	                                    <h3 class="speaker-card-name mb-0">Pastor Tom Deuschle</h3>
+	                                    <span class="speaker-card-role">Main Speaker</span>
+	                                </div>
+	                                <div class="gradient-edge-bottom h-100 op-8"></div>
+	                            </div>
+	                        </div>
+	                    </div>
+
+	                    <div class="col-lg-3 col-md-6">
+	                        <div class="speaker-card hover relative rounded-1 overflow-hidden wow fadeIn scale-in-mask">
+	                            <img src="assets/images/gennext/speaker/prophet-emmanuel-makandiwa.jpg" class="w-100 hover-scale-1-1" alt="Prophet Emmanuel Makandiwa">
+	                            <div class="abs w-100 h-100 start-0 top-0 hover-op-1 radial-gradient-color"></div>
+	                            <div class="speaker-card-caption abs w-100 start-0 bottom-0 z-3">
+	                                <div class="speaker-card-caption-inner bg-blur rounded-1 text-light text-center relative z-2">
+	                                    <h3 class="speaker-card-name mb-0">Prophet Emmanuel Makandiwa</h3>
+	                                    <span class="speaker-card-role">Main Speaker</span>
+	                                </div>
+	                                <div class="gradient-edge-bottom h-100 op-8"></div>
+	                            </div>
+	                        </div>
+	                    </div>
+
+	                    <div class="col-lg-3 col-md-6">
+	                        <div class="speaker-card hover relative rounded-1 overflow-hidden wow fadeIn scale-in-mask">
+	                            <img src="assets/images/gennext/speaker/prophetess-mary-matimbire.jpg" class="w-100 hover-scale-1-1" alt="Prophetess Mary Matimbire">
+	                            <div class="abs w-100 h-100 start-0 top-0 hover-op-1 radial-gradient-color"></div>
+	                            <div class="speaker-card-caption abs w-100 start-0 bottom-0 z-3">
+	                                <div class="speaker-card-caption-inner bg-blur rounded-1 text-light text-center relative z-2">
+	                                    <h3 class="speaker-card-name mb-0">Prophetess Mary Matimbire</h3>
+	                                    <span class="speaker-card-role">Main Speaker</span>
+	                                </div>
+	                                <div class="gradient-edge-bottom h-100 op-8"></div>
+	                            </div>
+	                        </div>
+	                    </div>
+
+	                    <div class="col-lg-3 col-md-6">
+	                        <div class="speaker-card hover relative rounded-1 overflow-hidden wow fadeIn scale-in-mask">
+	                            <img src="assets/images/gennext/speaker/apostle-tavonga-vutabwashe.jpg" class="w-100 hover-scale-1-1" alt="Apostle Tavonga Vutabwashe">
+	                            <div class="abs w-100 h-100 start-0 top-0 hover-op-1 radial-gradient-color"></div>
+	                            <div class="speaker-card-caption abs w-100 start-0 bottom-0 z-3">
+	                                <div class="speaker-card-caption-inner bg-blur rounded-1 text-light text-center relative z-2">
+	                                    <h3 class="speaker-card-name mb-0">Apostle Tavonga Vutabwashe</h3>
+	                                    <span class="speaker-card-role">Main Speaker</span>
+	                                </div>
+	                                <div class="gradient-edge-bottom h-100 op-8"></div>
+	                            </div>
+	                        </div>
+	                    </div>
+
+	                    <div class="col-lg-3 col-md-6">
+	                        <div class="speaker-card hover relative rounded-1 overflow-hidden wow fadeIn scale-in-mask">
+	                            <img src="assets/images/gennext/speaker/apostle-batsirai-java.jpg" class="w-100 hover-scale-1-1" alt="Apostle Batsirai Java">
+	                            <div class="abs w-100 h-100 start-0 top-0 hover-op-1 radial-gradient-color"></div>
+	                            <div class="speaker-card-caption abs w-100 start-0 bottom-0 z-3">
+	                                <div class="speaker-card-caption-inner bg-blur rounded-1 text-light text-center relative z-2">
+	                                    <h3 class="speaker-card-name mb-0">Apostle Batsirai Java</h3>
+	                                    <span class="speaker-card-role">Main Speaker</span>
+	                                </div>
+	                                <div class="gradient-edge-bottom h-100 op-8"></div>
+	                            </div>
+	                        </div>
+	                    </div>
+
+	                    <div class="col-lg-3 col-md-6">
+	                        <div class="speaker-card hover relative rounded-1 overflow-hidden wow fadeIn scale-in-mask">
+	                            <img src="assets/images/gennext/speaker/bishop-chemani-tuturu.jpg" class="w-100 hover-scale-1-1" alt="Bishop Chemani S. Tuturu">
+	                            <div class="abs w-100 h-100 start-0 top-0 hover-op-1 radial-gradient-color"></div>
+	                            <div class="speaker-card-caption abs w-100 start-0 bottom-0 z-3">
+	                                <div class="speaker-card-caption-inner bg-blur rounded-1 text-light text-center relative z-2">
+	                                    <h3 class="speaker-card-name mb-0">Bishop Chemani S. Tuturu</h3>
+	                                    <span class="speaker-card-role">Main Speaker</span>
+	                                </div>
+	                                <div class="gradient-edge-bottom h-100 op-8"></div>
+	                            </div>
+	                        </div>
+	                    </div>
+
+	                </div>
+            </div>
+        </section>
+
+        <section class="bg-dark section-dark pt-80 relative jarallax" aria-label="section">
+            <img src="assets/images/background/1.webp" class="jarallax-img" alt="">
+            <div class="gradient-edge-top"></div>
+            <div class="gradient-edge-bottom"></div>
+            <div class="sw-overlay op-8"></div>
+            <div class="container">
+                <div class="row g-4">
+
+                    <div class="col-md-12 wow fadeInUp">
+                        <div class="owl-6 no-alpha owl-carousel owl-theme wow mask-right">
+                            <img src="assets/images/logo-light/1.webp" class="w-100 px-4" alt="">
+                            <img src="assets/images/logo-light/2.webp" class="w-100 px-4" alt="">
+                            <img src="assets/images/logo-light/3.webp" class="w-100 px-4" alt="">
+                            <img src="assets/images/logo-light/4.webp" class="w-100 px-4" alt="">
+                            <img src="assets/images/logo-light/5.webp" class="w-100 px-4" alt="">
+                            <img src="assets/images/logo-light/6.webp" class="w-100 px-4" alt="">
+                            <img src="assets/images/logo-light/7.webp" class="w-100 px-4" alt="">
+                            <img src="assets/images/logo-light/8.webp" class="w-100 px-4" alt="">
+                            <img src="assets/images/logo-light/9.webp" class="w-100 px-4" alt="">
+                            <img src="assets/images/logo-light/10.webp" class="w-100 px-4" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="section-schedule" class="bg-dark section-dark text-light">
+            <div class="container">
+              <div class="row g-4 gx-5 justify-content-center">
+                <div class="col-lg-6 text-center">
+                    <div class="subtitle s2 mb-3 wow fadeInUp" data-wow-delay=".0s">Conference Program</div>
+                    <h2 class="wow fadeInUp" data-wow-delay=".2s">Generation Next 2026 Schedule</h2>
+                </div>
+              </div>
+              <div class="row g-4 gx-5 justify-content-center wow fadeInUp">
+                <div class="col-lg-12">
+                    <div class="de-tab plain">
+                        <ul class="d-tab-nav mb-4 pb-4 d-flex justify-content-between">
+                            <li class="active-tab">
+                                <h3>Day 1</h3>
+                                July 16, 2026
+                            </li>
+                            <li>
+                                <h3>Day 2</h3>
+                                July 17, 2026
+                            </li>
+                            <li>
+                                <h3>Day 3</h3>
+                                July 18, 2026
+                            </li>
+                        </ul>
+                        <ul class="d-tab-content pt-3 wow fadeInUp">
+                            <li>
+                                <div class="border-white-bottom-op-2 pb-5 mb-5">
+                                    <div class="row g-4 align-items-center">
+                                        <div class="col-md-2">18:00 - 20:30</div>
+                                        <div class="col-md-4">
+                                            <div class="d-flex align-items-center">
+                                                <img src="assets/images/gennext/speaker/speaker-member-1.png" class="w-100px rounded-1 me-4" alt="Bishop Dr. Colin Nyathi">
+                                                <div>
+                                                    <h5 class="mb-0">Bishop Dr. Colin Nyathi</h5>
+                                                    Host
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <h3>Generation Next Opening Session</h3>
+                                            <p class="fs-15 mb-0">Opening worship, welcome, and commissioning focus for the conference.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="border-white-bottom-op-2 pb-5 mb-5">
+                                    <div class="row g-4 align-items-center">
+                                        <div class="col-md-2">08:00 - 09:00</div>
+                                        <div class="col-md-4">
+                                            <div class="d-flex align-items-center">
+                                                <img src="assets/images/gennext/speaker/speaker-member-5.png" class="w-100px rounded-1 me-4" alt="Prophetess Memory Matimbire">
+                                                <div>
+                                                    <h5 class="mb-0">Prophetess Memory Matimbire</h5>
+                                                    Keynote Speaker
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <h3>Morning Session</h3>
+                                            <p class="fs-15 mb-0">Teaching, prayer, and prophetic ministry for personal and ministry activation.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="border-white-bottom-op-2 pb-5 mb-5">
+                                    <div class="row g-4 align-items-center">
+                                        <div class="col-md-2">09:00 - 13:00</div>
+                                        <div class="col-md-4">
+                                            <div class="d-flex align-items-center">
+                                                <img src="assets/images/gennext/speaker/speaker-single-person.png" class="w-100px rounded-1 me-4" alt="Bishop Mosa Sono">
+                                                <div>
+                                                    <h5 class="mb-0">Bishop Mosa Sono</h5>
+                                                    Guest Minister
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <h3>Mid-Morning Insights and Leadership Intensive</h3>
+                                            <p class="fs-15 mb-0">End-time mantles, church growth, and practical leadership formation.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="border-white-bottom-op-2 pb-5 mb-5">
+                                    <div class="row g-4 align-items-center">
+                                        <div class="col-md-2">14:00 - 16:15</div>
+                                        <div class="col-md-4">
+                                            <div class="d-flex align-items-center">
+                                                <img src="assets/images/gennext/speaker/speaker-member-2.png" class="w-100px rounded-1 me-4" alt="Bishop Dr. Sarah Nyathi">
+                                                <div>
+                                                    <h5 class="mb-0">Bishop Dr. Sarah Nyathi</h5>
+                                                    Host
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <h3>Afternoon Empowerment</h3>
+                                            <p class="fs-15 mb-0">Leadership alignment, pastoral wisdom, and ministry strengthening.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="pb-5 mb-5">
+                                    <div class="row g-4 align-items-center">
+                                        <div class="col-md-2">18:00 - 20:30</div>
+                                        <div class="col-md-4">
+                                            <div class="d-flex align-items-center">
+                                                <img src="assets/images/gennext/speaker/speaker-member-1.png" class="w-100px rounded-1 me-4" alt="Bishop Dr. Colin Nyathi">
+                                                <div>
+                                                    <h5 class="mb-0">Bishop Dr. Colin Nyathi</h5>
+                                                    Host
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <h3>Main Evening Session</h3>
+                                            <p class="fs-15 mb-0">Worship, impartation, and focused ministry for leaders and churches.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="border-white-bottom-op-2 pb-5 mb-5">
+                                    <div class="row g-4 align-items-center">
+                                        <div class="col-md-2">Morning Sessions</div>
+                                        <div class="col-md-4">
+                                            <div class="d-flex align-items-center">
+                                                <img src="assets/images/gennext/events/event2.jpg" class="w-100px rounded-1 me-4" alt="Morning sessions">
+                                                <div>
+                                                    <h5 class="mb-0">Morning Power Sessions</h5>
+                                                    Conference Day 3
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <h3>Morning Power Sessions</h3>
+                                            <p class="fs-15 mb-0">Featuring Doctor Innocent Maja, Ntobeko Mhlanga, and Bishop Joshua Nyava.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="border-white-bottom-op-2 pb-5 mb-5">
+                                    <div class="row g-4 align-items-center">
+                                        <div class="col-md-2">Afternoon Sessions</div>
+                                        <div class="col-md-4">
+                                            <div class="d-flex align-items-center">
+                                                <img src="assets/images/gennext/events/event3.jpg" class="w-100px rounded-1 me-4" alt="Afternoon sessions">
+                                                <div>
+                                                    <h5 class="mb-0">Afternoon Empowerment</h5>
+                                                    Guest Ministers
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <h3>Afternoon Empowerment</h3>
+                                            <p class="fs-15 mb-0">Featuring Bishop Pride Sibiya, Apostle Evans Bangira, Apostle Augustine Bura, and Bishop Vukani Dhladhla.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="pb-5 mb-5">
+                                    <div class="row g-4 align-items-center">
+                                        <div class="col-md-2">Closing Session</div>
+                                        <div class="col-md-4">
+                                            <div class="d-flex align-items-center">
+                                                <img src="assets/images/gennext/speaker/speaker-member-1.png" class="w-100px rounded-1 me-4" alt="Bishop Dr. Colin Nyathi">
+                                                <div>
+                                                    <h5 class="mb-0">Bishop Dr. Colin Nyathi</h5>
+                                                    Host
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <h3>Closing Session and Impartation</h3>
+                                            <p class="fs-15 mb-0">Panel discussion, open Q&A, final impartation, and commissioning.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+              </div>
+            </div>
+        </section>
+
+        <section id="section-tickets" class="bg-dark section-dark text-light pt-80 relative jarallax" aria-label="section">
+            <img src="assets/images/background/7.webp" class="jarallax-img" alt="">
+            <div class="gradient-edge-top"></div>
+            <div class="gradient-edge-bottom"></div>
+            <div class="sw-overlay op-7"></div>
+
+            <div class="container relative z-2">
+                <div class="row g-4 gx-5 justify-content-center">
+                  <div class="col-lg-6 text-center">
+                      <div class="subtitle s2 mb-3 wow fadeInUp" data-wow-delay=".0s">Compulsory Registration</div>
+                      <h2 class="wow fadeInUp" data-wow-delay=".2s">Registration Is Required</h2>
+                      <p class="lead wow fadeInUp" data-wow-delay=".4s">All attendees must register online to secure their spot, receive a digital ticket, and collect a name tag at entry.</p>
+                  </div>
+                </div>
+
+                <div class="row g-4 justify-content-center">
+                    <div class="col-lg-12">
+                        <div class="owl-carousel owl-theme owl-3-dots wow mask-right">
+                            <!-- ticket item begin -->
+                            <div class="item">
+                                <div class="d-ticket">
+	                                    <img src="assets/images/gennext/logos/logo.png" class="w-80px mb-4" alt="Generation Next">
+                                    <img src="assets/images/misc/barcode.webp" class="w-20 p-2 abs abs-middle end-0 me-2" alt="">
+                                    <img src="assets/images/logo-big-white.webp" class="w-40 abs abs-centered me-4 op-2" alt="">
+		                                    <h2>Admission</h2>
+		                                    <h4 class="mb-4">US$10</h4>
+	                                    <div class="fs-14">July 16-18, 2026 - Celebration Centre</div>
+                                </div>
+
+                                <div class="relative overflow-hidden">
+                                    <div class="py-4 z-2">
+                                        <ul class="ul-check mb-4">
+	                                            <li>Registration is compulsory.</li>
+	                                            <li>Name tags issued upon entry.</li>
+	                                            <li>Access to all conference sessions.</li>
+	                                            <li>Registration support available.</li>
+                                        </ul>
+                                    </div>
+
+		                                    <a class="btn-main fx-slide w-100" href="https://www.gennextmovement.com/registration"><span>Register Now</span></a>
+                                    
+                                </div>
+                            </div>
+                            <!-- ticket item end -->
+
+	                            <!-- ticket item begin -->
+	                            <div class="item">
+	                                <div class="d-ticket s2">
+	                                    <img src="assets/images/gennext/logos/logo.png" class="w-80px mb-4" alt="Generation Next">
+                                    <img src="assets/images/misc/barcode.webp" class="w-20 p-2 abs abs-middle end-0 me-2" alt="">
+                                    <img src="assets/images/logo-big-white.webp" class="w-40 abs abs-centered me-4 op-2" alt="">
+	                                    <h2>Support Desk</h2>
+	                                    <h4 class="mb-4">Available</h4>
+	                                    <div class="fs-14">Phone and email support</div>
+                                </div>
+                                <div class="relative">
+                                    <div class="py-4 z-2">
+                                        <ul class="ul-check mb-4">
+	                                            <li>Help with registration issues.</li>
+	                                            <li>Ticket confirmation guidance.</li>
+	                                            <li>Venue and check-in information.</li>
+	                                            <li>General conference enquiries.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+		                                <a class="btn-main fx-slide w-100" href="tel:0787963720"><span>Contact Support</span></a>
+                            </div>
+                            <!-- ticket item end -->
+
+	                            <!-- ticket item begin -->
+	                            <div class="item">
+	                                <div class="d-ticket s3">
+	                                    <img src="assets/images/gennext/logos/logo.png" class="w-80px mb-4" alt="Generation Next">
+                                    <img src="assets/images/misc/barcode.webp" class="w-20 p-2 abs abs-middle end-0 me-2" alt="">
+                                    <img src="assets/images/logo-big-white.webp" class="w-40 abs abs-centered me-4 op-2" alt="">
+		                                    <h2>Registration</h2>
+		                                    <h4 class="mb-4">Who Can Attend</h4>
+		                                    <div class="fs-14">Complete your online registration</div>
+                                </div>
+                                <div class="relative">
+                                    <div class="py-4 z-2">
+                                        <ul class="ul-check mb-4">
+		                                            <li>Church leaders and founders</li>
+		                                            <li>Pastors and ministry teams</li>
+		                                            <li>Emerging leaders and sons</li>
+		                                            <li>Faith enthusiasts and believers</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+		                                <a class="btn-main fx-slide w-100" href="https://www.gennextmovement.com/registration"><span>Register Now</span></a>
+                            </div>
+                            <!-- ticket item end -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="section-venue" class="bg-dark section-dark text-light pt-80 relative jarallax" aria-label="section">
+          <div class="container relative z-2">
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-6 text-center">
+                    <div class="subtitle wow fadeInUp" data-wow-delay=".0s">Event Location</div>
+                    <h2 class="wow fadeInUp" data-wow-delay=".2s">Celebration Centre, Borrowdale, Harare</h2>
+                    <p class="lead wow fadeInUp" data-wow-delay=".6s">The Celebration Centre is a premier Harare venue offering a 3,500-seat auditorium, flexible breakout halls, advanced audio-visual tech, on-site catering, and secure parking for major corporate conferences.</p>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-12">
+                    <iframe src="https://www.google.com/maps?q=Celebration+Centre%2C+Borrowdale%2C+Harare&z=17&output=embed" class="w-100 rounded-1 wow scale-in-mask" style="height: 520px; border: 0;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map to Celebration Centre, Borrowdale, Harare"></iframe>
+                </div>
+
+                <div class="clearfix"></div>
+
+                <div class="col-lg-4 col-md-6 mb-sm-30">
+                    <div class="d-flex justify-content-center wow fadeInUp" data-wow-delay=".2s">
+                        <i class="fs-60 id-color icofont-google-map"></i>
+                        <div class="ms-3">
+                            <h4 class="mb-0">Address</h4>
+                            <p>Celebration Centre, Borrowdale, Harare</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-sm-30">
+                    <div class="d-flex justify-content-center wow fadeInUp" data-wow-delay=".4s">
+                        <i class="fs-60 id-color icofont-phone"></i>
+                        <div class="ms-3">
+                            <h4 class="mb-0">Phone</h4>
+                            <p>Call: +263 787 963 720</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-sm-30">
+                    <div class="d-flex justify-content-center wow fadeInUp" data-wow-delay=".6s">
+                        <i class="fs-60 id-color icofont-envelope"></i>
+                        <div class="ms-3">
+                            <h4 class="mb-0">Email</h4>
+                            <p>gennext@hhicc.org.zw</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+          </div>
+        </section>
+
+        <section  id="section-faq" class="bg-dark section-dark text-light">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-lg-5">
+                        <div class="subtitle wow fadeInUp" data-wow-delay=".0s">Everything You Need to Know</div>
+                        <h2 class="wow fadeInUp" data-wow-delay=".2s">Frequently Asked Questions</h2>
+                    </div>
+
+                    <div class="col-lg-7">
+                        <div class="accordion s2 wow fadeInUp">
+                            <div class="accordion-section">
+                                <div class="accordion-section-title" data-tab="#accordion-a1">
+                                    What is Generation Next 2026?
+                                </div>
+                                <div class="accordion-section-content" id="accordion-a1">
+                                    Generation Next is a leadership and ministry movement rooted in Malachi 4:6, gathering church leaders, founders, and faith enthusiasts for biblical teaching, prophetic ministry, fellowship, and practical ministry guidance.
+                                </div>
+
+                                <div class="accordion-section-title" data-tab="#accordion-a2">
+                                    When and where will the event be held?
+                                </div>
+                                <div class="accordion-section-content" id="accordion-a2">
+                                    Generation Next 2026 will take place from July 16-18, 2026 at Celebration Centre, Borrowdale, Harare.
+                                </div>
+
+                                <div class="accordion-section-title" data-tab="#accordion-a3">
+                                    How can I register for the event?
+                                </div>
+                                <div class="accordion-section-content" id="accordion-a3">
+                                    Register online by completing the event registration form. Once submitted, you will receive confirmation and digital ticket details.
+                                </div>
+
+                                <div class="accordion-section-title" data-tab="#accordion-a4">
+                                    Is registration required?
+                                </div>
+                                <div class="accordion-section-content" id="accordion-a4">
+                                    Yes. Registration is compulsory for all attendees. Please complete the online registration form before arriving at the venue.
+                                </div>
+
+                                <div class="accordion-section-title" data-tab="#accordion-a5">
+                                    What should I bring on event day?
+                                </div>
+                                <div class="accordion-section-content" id="accordion-a5">
+                                    Bring your digital ticket or QR code, a charged phone, and a notebook or device for notes. Arriving early is recommended for smooth check-in.
+                                </div>
+
+                                <div class="accordion-section-title" data-tab="#accordion-a6">
+                                    Is Generation Next denominational?
+                                </div>
+                                <div class="accordion-section-content" id="accordion-a6">
+                                    Generation Next is a non-denominational movement and event space. We welcome church leaders, founders, and faith enthusiasts from different Christian backgrounds.
+                                </div>
+                            </div>
+                        </div>                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-dark section-dark text-light pt-80 relative jarallax" aria-label="section">
+            <img src="assets/images/background/3.webp" class="jarallax-img" alt="">
+            <div class="gradient-edge-top"></div>
+            <div class="gradient-edge-bottom"></div>
+            <div class="sw-overlay op-8"></div>
+          <div class="container relative z-2">
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <div class="subtitle wow fadeInUp" data-wow-delay=".0s">Stay in the Loop</div>
+                    <h2 class="wow fadeInUp" data-wow-delay=".2s">Get Generation Next Updates</h2>
+                    <p class="wow fadeInUp" data-wow-delay=".4s">
+                      Join our WhatsApp channel for Generation Next updates, registration reminders, and conference announcements.
+                    </p>
+                </div>
+            </div>
+
+            <form class="row justify-content-center">
+              <div class="col-auto mb-3 wow fadeInUp" data-wow-delay=".6s">
+                <a href="https://whatsapp.com/channel/0029Vb20RmL0gcfK6OqZ8j34" class="btn-main fx-slide"><span>Join WhatsApp Channel</span></a>
+              </div>
+
+              <div class="col-12 text-center wow fadeInUp" data-wow-delay=".8s">
+                <p class="small text-muted wow fadeInUp" data-wow-delay="1s">
+                  Follow the channel to receive official Generation Next announcements directly on WhatsApp.
+                </p>
+              </div>
+            </form>
+          </div>
+        </section>
+
+    </div>
+
+{% endblock %}
+
+{% block page_scripts %}
+    <script src="assets/js/countdown-custom.js"></script>
+    <script src="assets/js/custom-marquee.js"></script>
+    <script src="assets/js/swiper.js"></script>
+    <script src="assets/js/custom-swiper-1.js"></script>
+{% endblock %}
