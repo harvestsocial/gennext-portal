@@ -74,7 +74,7 @@ const MainHeader: React.FC = () => {
           </div>
 
           {showRegisterOnPublicPages ? (
-            <Link to="/register" className="primary__btn">
+            <Link to="/" className="primary__btn">
               <span>REGISTER</span>
             </Link>
           ) : (
