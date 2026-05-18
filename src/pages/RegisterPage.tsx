@@ -128,38 +128,6 @@ const RegisterPage: React.FC = () => {
 
   return (
     <>
-      {/* ── Hero banner — matches homepage hero exactly ── */}
-      <section className="section-dark text-light p-0 relative overflow-hidden" style={{ minHeight: "600px", backgroundImage: "url(/assets/images/gennext/slider/slider-bg1.jpg)", backgroundSize: "cover", backgroundPosition: "center" }}>
-        <div className="sw-overlay op-3"></div>
-        <div className="gradient-edge-bottom"></div>
-        <div className="abs abs-centered z-2 w-100" style={{ paddingTop: "120px", paddingBottom: "80px" }}>
-          <div className="container">
-            <div className="row">
-              <div className="col-lg-7">
-                <div className="subtitle">Generation Next Movement</div>
-                <h1 className="mb-4 uppercase">Register for Generation Next 2026</h1>
-                <div className="d-block d-md-flex">
-                  <div className="d-flex align-items-center me-4 mb-3">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#2133e4" viewBox="0 0 448 512" style={{ marginRight: "10px", flexShrink: 0 }}><path d="M96 32V64H48C21.5 64 0 85.5 0 112v48H448V112c0-26.5-21.5-48-48-48H352V32c0-17.7-14.3-32-32-32s-32 14.3-32 32V64H160V32c0-17.7-14.3-32-32-32S96 14.3 96 32zM448 192H0V464c0 26.5 21.5 48 48 48H400c26.5 0 48-21.5 48-48V192z"/></svg>
-                    <h4 className="mb-0">July 16–18, 2026</h4>
-                  </div>
-                  <div className="d-flex align-items-center me-4 mb-3">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="18" fill="#2133e4" viewBox="0 0 384 512" style={{ marginRight: "10px", flexShrink: 0 }}><path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></svg>
-                    <h4 className="mb-0">Celebration Centre, Harare</h4>
-                  </div>
-                  <div className="d-flex align-items-center mb-3">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#2133e4" viewBox="0 0 576 512" style={{ marginRight: "10px", flexShrink: 0 }}><path d="M64 64C28.7 64 0 92.7 0 128v64c0 8.8 7.4 15.7 15.7 18.6C34.5 217.1 48 235 48 256s-13.5 38.9-32.3 45.4C7.4 304.3 0 311.2 0 320v64c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V320c0-8.8-7.4-15.7-15.7-18.6C541.5 294.9 528 277 528 256s13.5-38.9 32.3-45.4c8.3-2.9 15.7-9.8 15.7-18.6V128c0-35.3-28.7-64-64-64H64zm64 112l0 160c0 8.8 7.2 16 16 16H432c8.8 0 16-7.2 16-16V176c0-8.8-7.2-16-16-16H144c-8.8 0-16 7.2-16 16z"/></svg>
-                    <h4 className="mb-0">$10 Registration Fee</h4>
-                  </div>
-                </div>
-                <div className="spacer-single"></div>
-                <a className="btn-main mx-2 fx-slide" href="#register-form"><span>Register Now</span></a>
-                <a className="btn-main btn-line mx-2 fx-slide" href="https://www.gennextmovement.com/schedule"><span>View Program</span></a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* ── Form section ── */}
       <section style={formSectionStyle}>
