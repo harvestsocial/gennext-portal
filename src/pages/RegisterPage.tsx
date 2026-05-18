@@ -234,11 +234,6 @@ const RegisterPage: React.FC = () => {
                 {submitting ? "Redirecting to Payment…" : "Proceed to Payment — $10"}
               </button>
 
-              <div style={{ textAlign: "center", marginTop: "20px" }}>
-                <Link to="/faq" style={{ color: "rgba(255,255,255,0.4)", fontSize: "0.875rem", textDecoration: "underline" }}>
-                  Have questions? View FAQs
-                </Link>
-              </div>
             </form>
           </div>
         </div>
