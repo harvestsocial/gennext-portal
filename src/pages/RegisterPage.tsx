@@ -263,38 +263,55 @@ const RegisterPage: React.FC = () => {
   );
 };
 
-/* ── FAQ Section — exact homepage HTML ── */
+/* ── FAQ Section — homepage classes + React state ── */
 
-const FaqSection: React.FC = () => (
-  <section id="faq" className="bg-dark section-dark text-light">
-    <div className="container">
-      <div className="row g-4">
-        <div className="col-lg-5">
-          <div className="subtitle">Everything You Need to Know</div>
-          <h2>Frequently Asked Questions</h2>
-        </div>
-        <div className="col-lg-7">
-          <div className="accordion s2">
-            <div className="accordion-section">
-              <div className="accordion-section-title" data-tab="#faq-a1">What is Generation Next 2026?</div>
-              <div className="accordion-section-content" id="faq-a1">Generation Next is a leadership and ministry movement rooted in Malachi 4:6, gathering church leaders, founders, and faith enthusiasts for biblical teaching, prophetic ministry, fellowship, and practical ministry guidance.</div>
-              <div className="accordion-section-title" data-tab="#faq-a2">When and where will the event be held?</div>
-              <div className="accordion-section-content" id="faq-a2">Generation Next 2026 will take place from July 16–18, 2026 at Celebration Centre, Borrowdale, Harare.</div>
-              <div className="accordion-section-title" data-tab="#faq-a3">How can I register for the event?</div>
-              <div className="accordion-section-content" id="faq-a3">Register online by completing the event registration form above. Once submitted, you will receive confirmation and digital ticket details.</div>
-              <div className="accordion-section-title" data-tab="#faq-a4">Is registration required?</div>
-              <div className="accordion-section-content" id="faq-a4">Yes. Registration is compulsory for all attendees. Please complete the online registration form before arriving at the venue.</div>
-              <div className="accordion-section-title" data-tab="#faq-a5">What should I bring on event day?</div>
-              <div className="accordion-section-content" id="faq-a5">Bring your digital ticket or QR code, a charged phone, and a notebook or device for notes. Arriving early is recommended for smooth check-in.</div>
-              <div className="accordion-section-title" data-tab="#faq-a6">Is Generation Next denominational?</div>
-              <div className="accordion-section-content" id="faq-a6">Generation Next is a non-denominational movement and event space. We welcome church leaders, founders, and faith enthusiasts from different Christian backgrounds.</div>
+const faqs = [
+  { q: "What is Generation Next 2026?", a: "Generation Next is a leadership and ministry movement rooted in Malachi 4:6, gathering church leaders, founders, and faith enthusiasts for biblical teaching, prophetic ministry, fellowship, and practical ministry guidance." },
+  { q: "When and where will the event be held?", a: "Generation Next 2026 will take place from July 16–18, 2026 at Celebration Centre, Borrowdale, Harare." },
+  { q: "How can I register for the event?", a: "Register online by completing the event registration form above. Once submitted, you will receive confirmation and digital ticket details." },
+  { q: "Is registration required?", a: "Yes. Registration is compulsory for all attendees. Please complete the online registration form before arriving at the venue." },
+  { q: "What should I bring on event day?", a: "Bring your digital ticket or QR code, a charged phone, and a notebook or device for notes. Arriving early is recommended for smooth check-in." },
+  { q: "Is Generation Next denominational?", a: "Generation Next is a non-denominational movement and event space. We welcome church leaders, founders, and faith enthusiasts from different Christian backgrounds." },
+];
+
+const FaqSection: React.FC = () => {
+  const [open, setOpen] = useState<number | null>(null);
+  return (
+    <section id="faq" className="bg-dark section-dark text-light">
+      <div className="container">
+        <div className="row g-4">
+          <div className="col-lg-5">
+            <div className="subtitle">Everything You Need to Know</div>
+            <h2>Frequently Asked Questions</h2>
+          </div>
+          <div className="col-lg-7">
+            <div className="accordion s2">
+              <div className="accordion-section">
+                {faqs.map((faq, i) => (
+                  <div key={i}>
+                    <div
+                      className={`accordion-section-title${open === i ? " active" : ""}`}
+                      onClick={() => setOpen(open === i ? null : i)}
+                      style={{ cursor: "pointer" }}
+                    >
+                      {faq.q}
+                    </div>
+                    <div
+                      className="accordion-section-content"
+                      style={{ display: open === i ? "block" : "none" }}
+                    >
+                      {faq.a}
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
 
 /* ── WhatsApp Section — exact homepage HTML ── */
 
