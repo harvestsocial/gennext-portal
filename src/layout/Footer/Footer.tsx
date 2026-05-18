@@ -46,9 +46,9 @@ const Footer: React.FC = () => (
                 target="_blank"
                 rel="noreferrer"
                 aria-label={label}
-                style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", width: "36px", height: "36px", borderRadius: "50%", border: "1px solid rgba(255,255,255,0.25)", color: "#fff", transition: "border-color 0.3s, color 0.3s" }}
-                onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = "#2133e4"; (e.currentTarget as HTMLElement).style.color = "#2133e4"; }}
-                onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,255,255,0.25)"; (e.currentTarget as HTMLElement).style.color = "#fff"; }}
+                style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", width: "40px", height: "40px", borderRadius: "8px", background: "#1a1f3a", color: "rgba(255,255,255,0.7)", transition: "background 0.3s, color 0.3s" }}
+                onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = "#2133e4"; (e.currentTarget as HTMLElement).style.color = "#fff"; }}
+                onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = "#1a1f3a"; (e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.7)"; }}
               >
                 {svg}
               </a>
