@@ -2,5 +2,13 @@
   "buildCommand": "cd landing && npm run build && cd .. && npm install && npx vite build --base /registration/ --outDir landing/dist/registration",
   "outputDirectory": "landing/dist",
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/about", "destination": "/index.html" },
+    { "source": "/why-attend", "destination": "/index.html" },
+    { "source": "/speakers", "destination": "/index.html" },
+    { "source": "/schedule", "destination": "/index.html" },
+    { "source": "/venue", "destination": "/index.html" },
+    { "source": "/faq", "destination": "/index.html" }
+  ]
 }

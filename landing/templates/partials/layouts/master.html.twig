@@ -34,5 +34,30 @@
     {% block page_scripts %}{% endblock %}
     {% endblock %}
 
+<script>
+(function () {
+  var sections = ['about','why-attend','speakers','schedule','venue','faq'];
+  function scrollToSection(id) {
+    var el = document.getElementById(id);
+    if (el) { el.scrollIntoView({ behavior: 'smooth' }); }
+  }
+  // On load: if path matches a section, scroll to it
+  var path = window.location.pathname.replace(/^\//, '').replace(/\/$/, '');
+  if (sections.indexOf(path) !== -1) { scrollToSection(path); }
+  // Intercept nav clicks: update URL cleanly and scroll
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('a[href]');
+    if (!a) return;
+    var href = a.getAttribute('href');
+    var slug = href.replace(/^\//, '');
+    if (sections.indexOf(slug) !== -1) {
+      e.preventDefault();
+      history.pushState(null, '', '/' + slug);
+      scrollToSection(slug);
+    }
+  });
+})();
+</script>
+
 </body>
 </html>
