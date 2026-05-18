@@ -19,7 +19,7 @@ const Footer: React.FC = () => {
               {/* Address */}
               <div style={{ flex: "1", minWidth: "180px" }}>
                 <h3 style={{ fontSize: "18px", fontWeight: 600, marginBottom: "12px", color: "#fff" }}>
-                  Venue
+                  Address
                 </h3>
                 <p style={{ color: "#aab0cc", lineHeight: "1.8" }}>
                   HHICC, Stand No. 19742<br />

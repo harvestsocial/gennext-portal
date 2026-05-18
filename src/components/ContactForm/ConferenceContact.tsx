@@ -18,7 +18,7 @@ const conferenceContactData: ConferenceContactData = {
   title: "Generation Next Contact",
   description:
     "Join leading educators, researchers, and policymakers in a global dialogue on the future of learning.",
-  addressTitle: "Address:",
+  addressTitle: "Venue:",
   address: "Celebration Centre, Borrowdale, Harare",
   phoneTitle: "Phone:",
   phone: "+263 787 963 720",
