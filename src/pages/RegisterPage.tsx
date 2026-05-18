@@ -128,26 +128,34 @@ const RegisterPage: React.FC = () => {
 
   return (
     <>
-      {/* ── Hero banner ── */}
-      <section style={heroStyle}>
-        <div style={heroBlobStyle} />
-        <div className="container" style={{ position: "relative", zIndex: 1, padding: "100px 20px 80px" }}>
-          <div style={subtitleTagStyle}>Generation Next 2026</div>
-          <h1 style={{ color: "#fff", fontSize: "clamp(2.8rem, 6vw, 5rem)", fontWeight: 800, marginBottom: "24px", lineHeight: 1.05 }}>
-            Register Now
-          </h1>
-          <div style={{ display: "flex", flexWrap: "wrap", gap: "32px" }}>
-            <div style={metaItemStyle}>
-              <span style={metaIconStyle}>📅</span>
-              <span style={{ color: "rgba(255,255,255,0.85)", fontWeight: 600 }}>16 – 18 July 2026</span>
-            </div>
-            <div style={metaItemStyle}>
-              <span style={metaIconStyle}>📍</span>
-              <span style={{ color: "rgba(255,255,255,0.85)", fontWeight: 600 }}>Celebration Centre, Borrowdale, Harare</span>
-            </div>
-            <div style={metaItemStyle}>
-              <span style={metaIconStyle}>💳</span>
-              <span style={{ color: "rgba(255,255,255,0.85)", fontWeight: 600 }}>$10 Registration Fee</span>
+      {/* ── Hero banner — matches homepage hero exactly ── */}
+      <section className="section-dark text-light p-0 relative overflow-hidden" style={{ minHeight: "600px", backgroundImage: "url(/assets/images/gennext/slider/slider-bg1.jpg)", backgroundSize: "cover", backgroundPosition: "center" }}>
+        <div className="sw-overlay op-3"></div>
+        <div className="gradient-edge-bottom"></div>
+        <div className="abs abs-centered z-2 w-100" style={{ paddingTop: "120px", paddingBottom: "80px" }}>
+          <div className="container">
+            <div className="row">
+              <div className="col-lg-7">
+                <div className="subtitle">Generation Next Movement</div>
+                <h1 className="mb-4 uppercase">Register for Generation Next 2026</h1>
+                <div className="d-block d-md-flex">
+                  <div className="d-flex align-items-center me-4 mb-3">
+                    <i className="fa fa-calendar id-color me-3"></i>
+                    <h4 className="mb-0">July 16–18, 2026</h4>
+                  </div>
+                  <div className="d-flex align-items-center me-4 mb-3">
+                    <i className="fa fa-location-pin id-color me-3"></i>
+                    <h4 className="mb-0">Celebration Centre, Harare</h4>
+                  </div>
+                  <div className="d-flex align-items-center mb-3">
+                    <i className="fa fa-ticket id-color me-3"></i>
+                    <h4 className="mb-0">$10 Registration Fee</h4>
+                  </div>
+                </div>
+                <div className="spacer-single"></div>
+                <a className="btn-main mx-2 fx-slide" href="#register-form"><span>Register Now</span></a>
+                <a className="btn-main btn-line mx-2 fx-slide" href="https://www.gennextmovement.com/schedule"><span>View Program</span></a>
+              </div>
             </div>
           </div>
         </div>
