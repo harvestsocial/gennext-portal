@@ -276,28 +276,30 @@ const faqs = [
 const FaqSection: React.FC = () => {
   const [open, setOpen] = useState<number | null>(null);
   return (
-    <section style={{ background: "#101435", padding: "80px 0" }}>
+    <section style={{ background: "#101435", padding: "90px 0" }}>
       <div className="container">
-        <div style={{ display: "flex", flexWrap: "wrap", gap: "48px" }}>
-          <div style={{ flex: "0 0 300px", minWidth: "220px" }}>
-            <p style={{ color: "#2133e4", fontSize: "0.75rem", fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: "16px" }}>Everything You Need to Know</p>
-            <h2 style={{ color: "#fff", fontSize: "clamp(1.8rem, 4vw, 2.5rem)", fontWeight: 800, lineHeight: 1.1 }}>Frequently Asked Questions</h2>
+        <div className="row g-4">
+          <div className="col-lg-5">
+            <p style={sectionSubtitleStyle}>Everything You Need to Know</p>
+            <h2 style={sectionHeadingStyle}>Frequently Asked<br />Questions</h2>
           </div>
-          <div style={{ flex: 1, minWidth: "280px" }}>
-            {faqs.map((faq, i) => (
-              <div key={i} style={{ borderBottom: "1px solid rgba(255,255,255,0.08)" }}>
-                <button
-                  onClick={() => setOpen(open === i ? null : i)}
-                  style={{ width: "100%", background: "none", border: "none", color: "#fff", textAlign: "left", padding: "20px 0", fontSize: "1rem", fontWeight: 600, cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "center", fontFamily: "Manrope, sans-serif" }}
-                >
-                  {faq.q}
-                  <span style={{ color: "#2133e4", fontSize: "1.2rem", flexShrink: 0, marginLeft: "16px" }}>{open === i ? "−" : "+"}</span>
-                </button>
-                {open === i && (
-                  <p style={{ color: "rgba(255,255,255,0.65)", fontSize: "0.95rem", lineHeight: 1.7, paddingBottom: "20px", margin: 0 }}>{faq.a}</p>
-                )}
-              </div>
-            ))}
+          <div className="col-lg-7">
+            <div style={{ borderTop: "1px solid rgba(255,255,255,0.1)" }}>
+              {faqs.map((faq, i) => (
+                <div key={i} style={{ borderBottom: "1px solid rgba(255,255,255,0.1)" }}>
+                  <button
+                    onClick={() => setOpen(open === i ? null : i)}
+                    style={{ width: "100%", background: "none", border: "none", color: "#fff", textAlign: "left", padding: "22px 0", fontSize: "1rem", fontWeight: 600, cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "center", fontFamily: "Manrope, sans-serif", lineHeight: 1.4 }}
+                  >
+                    {faq.q}
+                    <span style={{ color: "#2133e4", fontSize: "1.4rem", flexShrink: 0, marginLeft: "20px", lineHeight: 1 }}>{open === i ? "−" : "+"}</span>
+                  </button>
+                  {open === i && (
+                    <p style={{ color: "rgba(255,255,255,0.65)", fontSize: "0.95rem", lineHeight: 1.8, paddingBottom: "22px", margin: 0 }}>{faq.a}</p>
+                  )}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
@@ -308,27 +310,57 @@ const FaqSection: React.FC = () => {
 /* ── WhatsApp Section ── */
 
 const WhatsAppSection: React.FC = () => (
-  <section style={{ background: "#0d1128", padding: "80px 0", textAlign: "center" }}>
-    <div className="container">
-      <p style={{ color: "#2133e4", fontSize: "0.75rem", fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: "16px" }}>Stay in the Loop</p>
-      <h2 style={{ color: "#fff", fontSize: "clamp(1.8rem, 4vw, 2.5rem)", fontWeight: 800, marginBottom: "20px", lineHeight: 1.1 }}>Get Generation Next Updates</h2>
-      <p style={{ color: "rgba(255,255,255,0.6)", fontSize: "1rem", maxWidth: "520px", margin: "0 auto 36px", lineHeight: 1.7 }}>
+  <section style={{
+    position: "relative",
+    padding: "100px 0",
+    textAlign: "center",
+    backgroundImage: `url(${import.meta.env.BASE_URL}assets/images/background/3.webp)`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    overflow: "hidden",
+  }}>
+    <div style={{ position: "absolute", inset: 0, background: "rgba(16,20,53,0.88)" }} />
+    <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(16,20,53,0.6) 0%, transparent 30%, transparent 70%, rgba(16,20,53,0.6) 100%)" }} />
+    <div className="container" style={{ position: "relative", zIndex: 1 }}>
+      <p style={sectionSubtitleStyle}>Stay in the Loop</p>
+      <h2 style={{ ...sectionHeadingStyle, marginBottom: "20px" }}>Get Generation Next Updates</h2>
+      <p style={{ color: "rgba(255,255,255,0.65)", fontSize: "1rem", maxWidth: "540px", margin: "0 auto 40px", lineHeight: 1.8 }}>
         Join our WhatsApp channel for Generation Next updates, registration reminders, and conference announcements.
       </p>
       <a
         href="https://whatsapp.com/channel/0029Vb20RmL0gcfK6OqZ8j34"
         target="_blank"
         rel="noreferrer"
-        style={{ display: "inline-block", background: "#2133e4", color: "#fff", padding: "16px 36px", borderRadius: "6px", fontSize: "0.8rem", fontWeight: 800, letterSpacing: "0.12em", textTransform: "uppercase", textDecoration: "none", fontFamily: "Manrope, sans-serif" }}
+        style={{ display: "inline-block", background: "#2133e4", color: "#fff", padding: "16px 40px", borderRadius: "6px", fontSize: "0.78rem", fontWeight: 800, letterSpacing: "0.14em", textTransform: "uppercase", textDecoration: "none", fontFamily: "Manrope, sans-serif" }}
       >
         Join WhatsApp Channel
       </a>
-      <p style={{ color: "rgba(255,255,255,0.35)", fontSize: "0.8rem", marginTop: "20px" }}>
+      <p style={{ color: "rgba(255,255,255,0.35)", fontSize: "0.82rem", marginTop: "24px" }}>
         Follow the channel to receive official Generation Next announcements directly on WhatsApp.
       </p>
     </div>
   </section>
 );
+
+const sectionSubtitleStyle: React.CSSProperties = {
+  display: "inline-block",
+  color: "#2133e4",
+  fontSize: "0.78rem",
+  fontWeight: 700,
+  letterSpacing: "0.15em",
+  textTransform: "uppercase",
+  borderLeft: "3px solid #2133e4",
+  paddingLeft: "10px",
+  marginBottom: "20px",
+};
+
+const sectionHeadingStyle: React.CSSProperties = {
+  color: "#fff",
+  fontSize: "clamp(1.8rem, 4vw, 2.6rem)",
+  fontWeight: 800,
+  lineHeight: 1.15,
+  margin: 0,
+};
 
 /* ── Shared styles ── */
 
