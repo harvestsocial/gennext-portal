@@ -73,9 +73,6 @@ const Header: React.FC = () => {
                 {title}
               </a>
             ))}
-            <a href="https://www.gennextmovement.com/registration" style={{ display: "inline-block", marginTop: "12px", background: "#2133e4", color: "#fff", padding: "12px 24px", borderRadius: "6px", fontSize: "0.8rem", fontWeight: 800, letterSpacing: "0.1em", textTransform: "uppercase", textDecoration: "none" }}>
-              Register Now
-            </a>
           </nav>
         )}
       </div>
