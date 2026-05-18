@@ -22,9 +22,9 @@ $border-emphasis: $primary;
 // Typography
 $body-font: "Manrope", sans-serif;
 $heading-font: "Manrope", sans-serif;
-$body-color: #d4d4d4;
-$light-bg-body-color: #303030;
-$body-bg-color: #111111;
+$body-color: rgba(255, 255, 255, 0.75);
+$light-bg-body-color: rgba(255, 255, 255, 0.55);
+$body-bg-color: #101435;
 $heading-color: $white;
 
 // _root.scss
