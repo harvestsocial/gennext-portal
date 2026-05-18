@@ -373,7 +373,7 @@ const heroBlobStyle: React.CSSProperties = { display: "none" };
 const formSectionStyle: React.CSSProperties = {
   position: "relative",
   padding: "80px 0 100px",
-  backgroundImage: `url(/assets/images/gennext/slider/slider-bg1.jpg)`,
+  backgroundImage: `url(/assets/images/gennext/slider/gn-session-bg.jpg)`,
   backgroundSize: "cover",
   backgroundPosition: "center",
   backgroundAttachment: "fixed",
