@@ -34,9 +34,15 @@ const MenuItem: React.FC<MenuItemProps> = ({ item }) => {
           : ""
       }
     >
-      <Link to={item.path} className="tm-text_b_line">
-        <span>{item.title}</span>
-      </Link>
+      {item.path.startsWith("http") ? (
+        <a href={item.path} className="tm-text_b_line">
+          <span>{item.title}</span>
+        </a>
+      ) : (
+        <Link to={item.path} className="tm-text_b_line">
+          <span>{item.title}</span>
+        </Link>
+      )}
 
       {item?.submenu?.length && (
         <>

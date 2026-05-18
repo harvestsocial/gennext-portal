@@ -1,1 +1,9 @@
-[]
+[
+  { "title": "Home",       "path": "https://www.gennextmovement.com/" },
+  { "title": "About",      "path": "https://www.gennextmovement.com/about" },
+  { "title": "Why Attend", "path": "https://www.gennextmovement.com/why-attend" },
+  { "title": "Speakers",   "path": "https://www.gennextmovement.com/speakers" },
+  { "title": "Program",    "path": "https://www.gennextmovement.com/schedule" },
+  { "title": "Venue",      "path": "https://www.gennextmovement.com/venue" },
+  { "title": "FAQ",        "path": "https://www.gennextmovement.com/faq" }
+]

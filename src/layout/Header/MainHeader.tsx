@@ -1,10 +1,6 @@
-
 import React, { useRef, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
 import MenuItem from "./MenuItem";
 import navData from "../../jsonData/nav.json";
-import logo from "/assets/img/icon/logo.svg";
-import HeaderSideBar from "./HeaderSideBar";
 
 interface NavItem {
   title: string;
@@ -14,24 +10,22 @@ interface NavItem {
 
 const MainHeader: React.FC = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
-  const [showSidebar, setShowSidebar] = useState(false);
   const mobileNavRef = useRef<HTMLUListElement | null>(null);
-  const location = useLocation();
-
-  const showRegisterOnPublicPages = ["/", "/about-us", "/events", "/speaker", "/faq", "/contact-us"].includes(
-    location.pathname
-  );
 
   return (
     <div className="tm-main_header_in">
-      {/* Left Section */}
+      {/* Logo */}
       <div className="tm-main-header-left">
-        <Link className="tm-site_branding" to="/">
-          <img src={logo} alt="Logo" style={{ width: "171px", height: "36px", objectFit: "contain" }} />
-        </Link>
+        <a className="tm-site_branding" href="https://www.gennextmovement.com/">
+          <img
+            src={`${import.meta.env.BASE_URL}assets/img/logos/logo.png`}
+            alt="Generation Next"
+            style={{ width: "120px", objectFit: "contain" }}
+          />
+        </a>
       </div>
 
-      {/* Center Navigation */}
+      {/* Nav */}
       <div className="tm-main-header-center">
         <nav className="tm-nav tm-medium">
           <ul
@@ -43,7 +37,6 @@ const MainHeader: React.FC = () => {
             ))}
           </ul>
 
-          {/* Mobile Toggle */}
           <span
             onClick={() => setIsNavOpen(prev => !prev)}
             id="navBar"
@@ -60,33 +53,12 @@ const MainHeader: React.FC = () => {
         </nav>
       </div>
 
-      {/* Right Section */}
+      {/* Register Now */}
       <div className="tm-main-header-right">
-        <div className="d-flex align-items-center gap-3">
-          <div
-            className="offcanvaopen-btn cursor-pointer button-offcanva style-2"
-            onClick={() => setShowSidebar(true)}
-          >
-            <img
-              src="/assets/img/icon/flaticon-dots-menu.svg"
-              alt="Menu Icon"
-            />
-          </div>
-
-          {showRegisterOnPublicPages ? (
-            <Link to="/" className="primary__btn">
-              <span>REGISTER</span>
-            </Link>
-          ) : (
-            <Link to="/staff/login" className="primary__btn">
-              <span>Staff Login</span>
-            </Link>
-          )}
-        </div>
+        <a href="https://www.gennextmovement.com/registration" className="primary__btn">
+          <span>Register Now</span>
+        </a>
       </div>
-
-      {/* Sidebar Component */}
-      <HeaderSideBar show={showSidebar} onHide={() => setShowSidebar(false)} />
     </div>
   );
 };
