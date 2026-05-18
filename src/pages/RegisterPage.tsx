@@ -293,7 +293,19 @@ const FaqSection: React.FC = () => {
                     style={{ width: "100%", background: "none", border: "none", color: "#fff", textAlign: "left", padding: "22px 0", fontSize: "1rem", fontWeight: 600, cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "center", fontFamily: "Manrope, sans-serif", lineHeight: 1.4 }}
                   >
                     {faq.q}
-                    <span style={{ color: "#2133e4", fontSize: "1.4rem", flexShrink: 0, marginLeft: "20px", lineHeight: 1 }}>{open === i ? "−" : "+"}</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="18" height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="#2133e4"
+                      strokeWidth="2.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      style={{ flexShrink: 0, marginLeft: "20px", transform: open === i ? "rotate(180deg)" : "rotate(0deg)", transition: "transform 0.3s ease" }}
+                    >
+                      <polyline points="6 9 12 15 18 9" />
+                    </svg>
                   </button>
                   {open === i && (
                     <p style={{ color: "rgba(255,255,255,0.65)", fontSize: "0.95rem", lineHeight: 1.8, paddingBottom: "22px", margin: 0 }}>{faq.a}</p>
