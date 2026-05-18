@@ -3,7 +3,6 @@ import { Outlet, useLocation } from "react-router-dom";
 import Header from "./Header/Header";
 import Footer from "./Footer/Footer";
 import useScrollRestoration from "../hooks/useScrollRestoration";
-import ScrollUpButton from "@/components/UI/Scrollup";
 import TextScrollSlider from "@/components/TextScrollSlider/TextScrollSlider";
 
 const Main: React.FC = () => {
@@ -24,7 +23,6 @@ const Main: React.FC = () => {
         {location.pathname === "/register" ? <TextScrollSlider /> : null}
       </div>
       <Footer />
-      <ScrollUpButton />
     </div>
   );
 };
