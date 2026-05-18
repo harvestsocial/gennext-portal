@@ -277,35 +277,37 @@ const faqs = [
 const FaqSection: React.FC = () => {
   const [open, setOpen] = useState<number | null>(null);
   return (
-    <section id="faq" className="bg-dark section-dark text-light">
+    <section style={{ background: "#101435", padding: "90px 0" }}>
       <div className="container">
-        <div className="row g-4">
-          <div className="col-lg-5">
-            <div className="subtitle">Everything You Need to Know</div>
-            <h2>Frequently Asked Questions</h2>
+        <div style={{ display: "flex", flexWrap: "wrap", gap: "48px", alignItems: "flex-start" }}>
+          {/* Left */}
+          <div style={{ flex: "0 0 280px", minWidth: "220px" }}>
+            <p style={{ color: "#2133e4", fontSize: "13px", fontWeight: 700, letterSpacing: "2px", textTransform: "uppercase", borderLeft: "3px solid #2133e4", paddingLeft: "10px", marginBottom: "16px" }}>
+              Everything You Need to Know
+            </p>
+            <h2 style={{ color: "#fff", fontSize: "clamp(1.8rem, 3vw, 2.4rem)", fontWeight: 800, lineHeight: 1.15, margin: 0 }}>
+              Frequently Asked<br />Questions
+            </h2>
           </div>
-          <div className="col-lg-7">
-            <div className="accordion s2">
-              <div className="accordion-section">
-                {faqs.map((faq, i) => (
-                  <div key={i}>
-                    <div
-                      className={`accordion-section-title${open === i ? " active" : ""}`}
-                      onClick={() => setOpen(open === i ? null : i)}
-                      style={{ cursor: "pointer" }}
-                    >
-                      {faq.q}
-                    </div>
-                    <div
-                      className="accordion-section-content"
-                      style={{ display: open === i ? "block" : "none" }}
-                    >
-                      {faq.a}
-                    </div>
-                  </div>
-                ))}
+          {/* Right — accordion */}
+          <div style={{ flex: 1, minWidth: "280px" }}>
+            {faqs.map((faq, i) => (
+              <div key={i} style={{ borderBottom: "1px solid rgba(255,255,255,0.1)" }}>
+                <button
+                  onClick={() => setOpen(open === i ? null : i)}
+                  style={{ width: "100%", background: "none", border: "none", color: "#fff", textAlign: "left", padding: "20px 0", fontSize: "1rem", fontWeight: 600, cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "center", fontFamily: "Manrope, sans-serif", lineHeight: 1.4 }}
+                >
+                  {faq.q}
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2133e4" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"
+                    style={{ flexShrink: 0, marginLeft: "16px", transform: open === i ? "rotate(180deg)" : "rotate(0deg)", transition: "transform 0.3s ease" }}>
+                    <polyline points="6 9 12 15 18 9" />
+                  </svg>
+                </button>
+                {open === i && (
+                  <p style={{ color: "rgba(255,255,255,0.65)", fontSize: "0.95rem", lineHeight: 1.8, paddingBottom: "20px", margin: 0 }}>{faq.a}</p>
+                )}
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>
