@@ -51,9 +51,9 @@ const Header: React.FC = () => {
 
           {/* Register button + mobile toggle */}
           <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
-            <a href="https://www.gennextmovement.com/registration" className="btn-main fx-slide d-none d-lg-inline-flex">
-              <span>Register Now</span>
-            </a>
+            <span className="d-none d-lg-inline-flex" style={{ color: "rgba(255,255,255,0.85)", fontSize: "15px", fontWeight: 700 }}>
+              Registration
+            </span>
             <button
               className="d-lg-none"
               onClick={() => setMenuOpen(o => !o)}
