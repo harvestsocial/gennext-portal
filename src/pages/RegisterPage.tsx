@@ -154,8 +154,9 @@ const RegisterPage: React.FC = () => {
       </section>
 
       {/* ── Form section ── */}
-      <section style={{ background: "#101435", padding: "80px 0 100px" }}>
-        <div className="container">
+      <section style={formSectionStyle}>
+        <div style={{ position: "absolute", inset: 0, background: "rgba(16,20,53,0.88)" }} />
+        <div className="container" style={{ position: "relative", zIndex: 1 }}>
           <div style={{ maxWidth: "800px", margin: "0 auto" }}>
 
             <div style={{ marginBottom: "48px" }}>
@@ -369,6 +370,15 @@ const heroStyle: React.CSSProperties = {
 };
 
 const heroBlobStyle: React.CSSProperties = { display: "none" };
+
+const formSectionStyle: React.CSSProperties = {
+  position: "relative",
+  padding: "80px 0 100px",
+  backgroundImage: `url(/assets/images/gennext/slider/slider-bg1.jpg)`,
+  backgroundSize: "cover",
+  backgroundPosition: "center",
+  backgroundAttachment: "fixed",
+};
 
 const subtitleTagStyle: React.CSSProperties = { display: "none" };
 
