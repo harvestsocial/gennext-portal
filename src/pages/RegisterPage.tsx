@@ -263,94 +263,63 @@ const RegisterPage: React.FC = () => {
   );
 };
 
-/* ── FAQ Section ── */
+/* ── FAQ Section — exact homepage HTML ── */
 
-const faqs = [
-  { q: "What is Generation Next 2026?", a: "Generation Next is a leadership and ministry movement rooted in Malachi 4:6, gathering church leaders, founders, and faith enthusiasts for biblical teaching, prophetic ministry, fellowship, and practical ministry guidance." },
-  { q: "When and where will the event be held?", a: "Generation Next 2026 will take place from July 16–18, 2026 at Celebration Centre, Borrowdale, Harare." },
-  { q: "How can I register for the event?", a: "Register online by completing the event registration form above. Once submitted, you will receive confirmation and digital ticket details." },
-  { q: "Is registration required?", a: "Yes. Registration is compulsory for all attendees. Please complete the online registration form before arriving at the venue." },
-  { q: "What should I bring on event day?", a: "Bring your digital ticket or QR code, a charged phone, and a notebook or device for notes. Arriving early is recommended for smooth check-in." },
-  { q: "Is Generation Next denominational?", a: "Generation Next is a non-denominational movement and event space. We welcome church leaders, founders, and faith enthusiasts from different Christian backgrounds." },
-];
-
-const FaqSection: React.FC = () => {
-  const [open, setOpen] = useState<number | null>(null);
-  return (
-    <section style={{ background: "#101435", padding: "90px 0" }}>
-      <div className="container">
-        <div className="row g-4">
-          <div className="col-lg-5">
-            <p style={sectionSubtitleStyle}>Everything You Need to Know</p>
-            <h2 style={sectionHeadingStyle}>Frequently Asked<br />Questions</h2>
-          </div>
-          <div className="col-lg-7">
-            <div style={{ borderTop: "1px solid rgba(255,255,255,0.1)" }}>
-              {faqs.map((faq, i) => (
-                <div key={i} style={{ borderBottom: "1px solid rgba(255,255,255,0.1)" }}>
-                  <button
-                    onClick={() => setOpen(open === i ? null : i)}
-                    style={{ width: "100%", background: "none", border: "none", color: "#fff", textAlign: "left", padding: "22px 0", fontSize: "1rem", fontWeight: 600, cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "center", fontFamily: "Manrope, sans-serif", lineHeight: 1.4 }}
-                  >
-                    {faq.q}
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="18" height="18"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="#2133e4"
-                      strokeWidth="2.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      style={{ flexShrink: 0, marginLeft: "20px", transform: open === i ? "rotate(180deg)" : "rotate(0deg)", transition: "transform 0.3s ease" }}
-                    >
-                      <polyline points="6 9 12 15 18 9" />
-                    </svg>
-                  </button>
-                  {open === i && (
-                    <p style={{ color: "rgba(255,255,255,0.65)", fontSize: "0.95rem", lineHeight: 1.8, paddingBottom: "22px", margin: 0 }}>{faq.a}</p>
-                  )}
-                </div>
-              ))}
+const FaqSection: React.FC = () => (
+  <section id="faq" className="bg-dark section-dark text-light">
+    <div className="container">
+      <div className="row g-4">
+        <div className="col-lg-5">
+          <div className="subtitle">Everything You Need to Know</div>
+          <h2>Frequently Asked Questions</h2>
+        </div>
+        <div className="col-lg-7">
+          <div className="accordion s2">
+            <div className="accordion-section">
+              <div className="accordion-section-title" data-tab="#faq-a1">What is Generation Next 2026?</div>
+              <div className="accordion-section-content" id="faq-a1">Generation Next is a leadership and ministry movement rooted in Malachi 4:6, gathering church leaders, founders, and faith enthusiasts for biblical teaching, prophetic ministry, fellowship, and practical ministry guidance.</div>
+              <div className="accordion-section-title" data-tab="#faq-a2">When and where will the event be held?</div>
+              <div className="accordion-section-content" id="faq-a2">Generation Next 2026 will take place from July 16–18, 2026 at Celebration Centre, Borrowdale, Harare.</div>
+              <div className="accordion-section-title" data-tab="#faq-a3">How can I register for the event?</div>
+              <div className="accordion-section-content" id="faq-a3">Register online by completing the event registration form above. Once submitted, you will receive confirmation and digital ticket details.</div>
+              <div className="accordion-section-title" data-tab="#faq-a4">Is registration required?</div>
+              <div className="accordion-section-content" id="faq-a4">Yes. Registration is compulsory for all attendees. Please complete the online registration form before arriving at the venue.</div>
+              <div className="accordion-section-title" data-tab="#faq-a5">What should I bring on event day?</div>
+              <div className="accordion-section-content" id="faq-a5">Bring your digital ticket or QR code, a charged phone, and a notebook or device for notes. Arriving early is recommended for smooth check-in.</div>
+              <div className="accordion-section-title" data-tab="#faq-a6">Is Generation Next denominational?</div>
+              <div className="accordion-section-content" id="faq-a6">Generation Next is a non-denominational movement and event space. We welcome church leaders, founders, and faith enthusiasts from different Christian backgrounds.</div>
             </div>
           </div>
         </div>
       </div>
-    </section>
-  );
-};
+    </div>
+  </section>
+);
 
-/* ── WhatsApp Section ── */
+/* ── WhatsApp Section — exact homepage HTML ── */
 
 const WhatsAppSection: React.FC = () => (
-  <section style={{
-    position: "relative",
-    padding: "100px 0",
-    textAlign: "center",
-    backgroundImage: `url(${import.meta.env.BASE_URL}assets/images/background/3.webp)`,
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-    overflow: "hidden",
-  }}>
-    <div style={{ position: "absolute", inset: 0, background: "rgba(16,20,53,0.88)" }} />
-    <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(16,20,53,0.6) 0%, transparent 30%, transparent 70%, rgba(16,20,53,0.6) 100%)" }} />
-    <div className="container" style={{ position: "relative", zIndex: 1 }}>
-      <p style={sectionSubtitleStyle}>Stay in the Loop</p>
-      <h2 style={{ ...sectionHeadingStyle, marginBottom: "20px" }}>Get Generation Next Updates</h2>
-      <p style={{ color: "rgba(255,255,255,0.65)", fontSize: "1rem", maxWidth: "540px", margin: "0 auto 40px", lineHeight: 1.8 }}>
-        Join our WhatsApp channel for Generation Next updates, registration reminders, and conference announcements.
-      </p>
-      <a
-        href="https://whatsapp.com/channel/0029Vb20RmL0gcfK6OqZ8j34"
-        target="_blank"
-        rel="noreferrer"
-        style={{ display: "inline-block", background: "#2133e4", color: "#fff", padding: "16px 40px", borderRadius: "6px", fontSize: "0.78rem", fontWeight: 800, letterSpacing: "0.14em", textTransform: "uppercase", textDecoration: "none", fontFamily: "Manrope, sans-serif" }}
-      >
-        Join WhatsApp Channel
-      </a>
-      <p style={{ color: "rgba(255,255,255,0.35)", fontSize: "0.82rem", marginTop: "24px" }}>
-        Follow the channel to receive official Generation Next announcements directly on WhatsApp.
-      </p>
+  <section className="bg-dark section-dark text-light pt-80 relative jarallax" aria-label="section">
+    <img src="/assets/images/background/3.webp" className="jarallax-img" alt="" />
+    <div className="gradient-edge-top"></div>
+    <div className="gradient-edge-bottom"></div>
+    <div className="sw-overlay op-8"></div>
+    <div className="container relative z-2">
+      <div className="row g-4 justify-content-center">
+        <div className="col-lg-8 text-center">
+          <div className="subtitle">Stay in the Loop</div>
+          <h2>Get Generation Next Updates</h2>
+          <p>Join our WhatsApp channel for Generation Next updates, registration reminders, and conference announcements.</p>
+        </div>
+      </div>
+      <div className="row justify-content-center">
+        <div className="col-auto mb-3">
+          <a href="https://whatsapp.com/channel/0029Vb20RmL0gcfK6OqZ8j34" target="_blank" rel="noreferrer" className="btn-main fx-slide"><span>Join WhatsApp Channel</span></a>
+        </div>
+        <div className="col-12 text-center">
+          <p className="small text-muted">Follow the channel to receive official Generation Next announcements directly on WhatsApp.</p>
+        </div>
+      </div>
     </div>
   </section>
 );
