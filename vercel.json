@@ -4,11 +4,11 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "rewrites": [
-    { "source": "/about", "destination": "/index.html" },
-    { "source": "/why-attend", "destination": "/index.html" },
-    { "source": "/speakers", "destination": "/index.html" },
-    { "source": "/schedule", "destination": "/index.html" },
-    { "source": "/venue", "destination": "/index.html" },
-    { "source": "/faq", "destination": "/index.html" }
+    { "source": "/about", "destination": "/" },
+    { "source": "/why-attend", "destination": "/" },
+    { "source": "/speakers", "destination": "/" },
+    { "source": "/schedule", "destination": "/" },
+    { "source": "/venue", "destination": "/" },
+    { "source": "/faq", "destination": "/" }
   ]
 }
