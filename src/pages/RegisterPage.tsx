@@ -252,9 +252,83 @@ const RegisterPage: React.FC = () => {
           </div>
         </div>
       </section>
+
+      {/* ── FAQ ── */}
+      <FaqSection />
+
+      {/* ── WhatsApp CTA ── */}
+      <WhatsAppSection />
     </>
   );
 };
+
+/* ── FAQ Section ── */
+
+const faqs = [
+  { q: "What is Generation Next 2026?", a: "Generation Next is a leadership and ministry movement rooted in Malachi 4:6, gathering church leaders, founders, and faith enthusiasts for biblical teaching, prophetic ministry, fellowship, and practical ministry guidance." },
+  { q: "When and where will the event be held?", a: "Generation Next 2026 will take place from July 16–18, 2026 at Celebration Centre, Borrowdale, Harare." },
+  { q: "How can I register for the event?", a: "Register online by completing the event registration form above. Once submitted, you will receive confirmation and digital ticket details." },
+  { q: "Is registration required?", a: "Yes. Registration is compulsory for all attendees. Please complete the online registration form before arriving at the venue." },
+  { q: "What should I bring on event day?", a: "Bring your digital ticket or QR code, a charged phone, and a notebook or device for notes. Arriving early is recommended for smooth check-in." },
+  { q: "Is Generation Next denominational?", a: "Generation Next is a non-denominational movement and event space. We welcome church leaders, founders, and faith enthusiasts from different Christian backgrounds." },
+];
+
+const FaqSection: React.FC = () => {
+  const [open, setOpen] = useState<number | null>(null);
+  return (
+    <section style={{ background: "#101435", padding: "80px 0" }}>
+      <div className="container">
+        <div style={{ display: "flex", flexWrap: "wrap", gap: "48px" }}>
+          <div style={{ flex: "0 0 300px", minWidth: "220px" }}>
+            <p style={{ color: "#2133e4", fontSize: "0.75rem", fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: "16px" }}>Everything You Need to Know</p>
+            <h2 style={{ color: "#fff", fontSize: "clamp(1.8rem, 4vw, 2.5rem)", fontWeight: 800, lineHeight: 1.1 }}>Frequently Asked Questions</h2>
+          </div>
+          <div style={{ flex: 1, minWidth: "280px" }}>
+            {faqs.map((faq, i) => (
+              <div key={i} style={{ borderBottom: "1px solid rgba(255,255,255,0.08)" }}>
+                <button
+                  onClick={() => setOpen(open === i ? null : i)}
+                  style={{ width: "100%", background: "none", border: "none", color: "#fff", textAlign: "left", padding: "20px 0", fontSize: "1rem", fontWeight: 600, cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "center", fontFamily: "Manrope, sans-serif" }}
+                >
+                  {faq.q}
+                  <span style={{ color: "#2133e4", fontSize: "1.2rem", flexShrink: 0, marginLeft: "16px" }}>{open === i ? "−" : "+"}</span>
+                </button>
+                {open === i && (
+                  <p style={{ color: "rgba(255,255,255,0.65)", fontSize: "0.95rem", lineHeight: 1.7, paddingBottom: "20px", margin: 0 }}>{faq.a}</p>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+/* ── WhatsApp Section ── */
+
+const WhatsAppSection: React.FC = () => (
+  <section style={{ background: "#0d1128", padding: "80px 0", textAlign: "center" }}>
+    <div className="container">
+      <p style={{ color: "#2133e4", fontSize: "0.75rem", fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: "16px" }}>Stay in the Loop</p>
+      <h2 style={{ color: "#fff", fontSize: "clamp(1.8rem, 4vw, 2.5rem)", fontWeight: 800, marginBottom: "20px", lineHeight: 1.1 }}>Get Generation Next Updates</h2>
+      <p style={{ color: "rgba(255,255,255,0.6)", fontSize: "1rem", maxWidth: "520px", margin: "0 auto 36px", lineHeight: 1.7 }}>
+        Join our WhatsApp channel for Generation Next updates, registration reminders, and conference announcements.
+      </p>
+      <a
+        href="https://whatsapp.com/channel/0029Vb20RmL0gcfK6OqZ8j34"
+        target="_blank"
+        rel="noreferrer"
+        style={{ display: "inline-block", background: "#2133e4", color: "#fff", padding: "16px 36px", borderRadius: "6px", fontSize: "0.8rem", fontWeight: 800, letterSpacing: "0.12em", textTransform: "uppercase", textDecoration: "none", fontFamily: "Manrope, sans-serif" }}
+      >
+        Join WhatsApp Channel
+      </a>
+      <p style={{ color: "rgba(255,255,255,0.35)", fontSize: "0.8rem", marginTop: "20px" }}>
+        Follow the channel to receive official Generation Next announcements directly on WhatsApp.
+      </p>
+    </div>
+  </section>
+);
 
 /* ── Shared styles ── */
 
