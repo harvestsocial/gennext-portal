@@ -313,30 +313,39 @@ const FaqSection: React.FC = () => {
   );
 };
 
-/* ── WhatsApp Section — exact homepage HTML ── */
+/* ── WhatsApp Section ── */
 
 const WhatsAppSection: React.FC = () => (
-  <section className="bg-dark section-dark text-light pt-80 relative jarallax" aria-label="section">
-    <img src="/assets/images/background/3.webp" className="jarallax-img" alt="" />
-    <div className="gradient-edge-top"></div>
-    <div className="gradient-edge-bottom"></div>
-    <div className="sw-overlay op-8"></div>
-    <div className="container relative z-2">
-      <div className="row g-4 justify-content-center">
-        <div className="col-lg-8 text-center">
-          <div className="subtitle">Stay in the Loop</div>
-          <h2>Get Generation Next Updates</h2>
-          <p>Join our WhatsApp channel for Generation Next updates, registration reminders, and conference announcements.</p>
-        </div>
-      </div>
-      <div className="row justify-content-center">
-        <div className="col-auto mb-3">
-          <a href="https://whatsapp.com/channel/0029Vb20RmL0gcfK6OqZ8j34" target="_blank" rel="noreferrer" className="btn-main fx-slide"><span>Join WhatsApp Channel</span></a>
-        </div>
-        <div className="col-12 text-center">
-          <p className="small text-muted">Follow the channel to receive official Generation Next announcements directly on WhatsApp.</p>
-        </div>
-      </div>
+  <section style={{
+    position: "relative",
+    padding: "100px 0",
+    textAlign: "center",
+    backgroundImage: "url(/assets/images/background/3.webp)",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundAttachment: "fixed",
+    overflow: "hidden",
+  }}>
+    <div style={{ position: "absolute", inset: 0, background: "rgba(16,20,53,0.85)" }} />
+    <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: "120px", background: "linear-gradient(to bottom, rgba(16,20,53,0.8), transparent)" }} />
+    <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: "120px", background: "linear-gradient(to top, rgba(16,20,53,0.8), transparent)" }} />
+    <div className="container" style={{ position: "relative", zIndex: 1 }}>
+      <div className="subtitle" style={{ marginBottom: "16px" }}>Stay in the Loop</div>
+      <h2 style={{ color: "#fff", marginBottom: "20px" }}>Get Generation Next Updates</h2>
+      <p style={{ color: "rgba(255,255,255,0.7)", maxWidth: "560px", margin: "0 auto 40px", lineHeight: 1.8 }}>
+        Join our WhatsApp channel for Generation Next updates, registration reminders, and conference announcements.
+      </p>
+      <a
+        href="https://whatsapp.com/channel/0029Vb20RmL0gcfK6OqZ8j34"
+        target="_blank"
+        rel="noreferrer"
+        style={{ display: "inline-block", background: "#2133e4", color: "#fff", padding: "14px 36px", borderRadius: "4px", fontSize: "12px", fontWeight: 800, letterSpacing: "2px", textTransform: "uppercase", textDecoration: "none" }}
+      >
+        Join WhatsApp Channel
+      </a>
+      <p style={{ color: "rgba(255,255,255,0.35)", fontSize: "13px", marginTop: "20px" }}>
+        Follow the channel to receive official Generation Next announcements directly on WhatsApp.
+      </p>
     </div>
   </section>
 );
