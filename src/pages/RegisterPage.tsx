@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { allCountries } from "@/lib/countryList";
 import { createPendingRegistration, buildPaynowUrl } from "@/lib/registrationApi";
 
-const REGISTRATION_OPEN_DATE = new Date("2026-05-19T00:00:00+02:00");
+const REGISTRATION_OPEN_DATE = new Date("2026-01-01T00:00:00+02:00");
 
 function getTimeRemaining() {
   const diff = REGISTRATION_OPEN_DATE.getTime() - Date.now();
