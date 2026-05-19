@@ -117,7 +117,7 @@ export const confirmPayment = async (id: string, token?: string): Promise<Regist
 
 export const buildPaynowUrl = (regId: string, token: string, firstName: string, lastName: string): string => {
     const reference = `GenNext July 2026 - ${firstName} ${lastName}`;
-    const returnUrl = `https://gennextmovement.com/confirmation?id=${encodeURIComponent(regId)}&token=${encodeURIComponent(token)}`;
+    const returnUrl = `https://www.gennextmovement.com/registration/confirmation?id=${encodeURIComponent(regId)}&token=${encodeURIComponent(token)}`;
     const params = [
         "search=gennext%40hhicc.org.zw",
         "amount=10.00",
