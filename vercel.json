@@ -3,12 +3,19 @@
   "outputDirectory": "landing/dist",
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    { "source": "/staff/login", "destination": "/registration/staff/login", "permanent": false },
+    { "source": "/staff/portal", "destination": "/registration/staff/portal", "permanent": false },
+    { "source": "/staff/analytics", "destination": "/registration/staff/analytics", "permanent": false },
+    { "source": "/staff/analytics/tv", "destination": "/registration/staff/analytics/tv", "permanent": false }
+  ],
   "rewrites": [
     { "source": "/about", "destination": "/" },
     { "source": "/why-attend", "destination": "/" },
     { "source": "/speakers", "destination": "/" },
     { "source": "/schedule", "destination": "/" },
     { "source": "/venue", "destination": "/" },
-    { "source": "/faq", "destination": "/" }
+    { "source": "/faq", "destination": "/" },
+    { "source": "/registration/staff/:path*", "destination": "/registration/index.html" }
   ]
 }
