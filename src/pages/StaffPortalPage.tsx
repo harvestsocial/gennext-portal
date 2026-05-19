@@ -80,7 +80,9 @@ const StaffPortalPage: React.FC = () => {
     a.click();
   };
 
-  const filtered = registrations.filter(r => {
+  const confirmed = registrations.filter(r => r.paymentStatus === "confirmed");
+
+  const filtered = confirmed.filter(r => {
     if (!searchTerm) return true;
     return [r.id,r.title,r.firstName,r.lastName,r.church,r.city,r.country,r.phone,r.email].filter(Boolean).join(" ").toLowerCase().includes(searchTerm);
   });
@@ -105,7 +107,7 @@ const StaffPortalPage: React.FC = () => {
       <div style={{ background: "#101435", borderBottom: "1px solid rgba(255,255,255,0.07)", padding: "20px 32px", display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "12px" }}>
         <div>
           <h1 style={{ fontSize: "1.4rem", fontWeight: 800, margin: 0, color: "#fff" }}>GenNext Staff Portal</h1>
-          <p style={{ color: "rgba(255,255,255,0.4)", fontSize: "0.8rem", margin: "4px 0 0" }}>{registrations.length} registrations</p>
+          <p style={{ color: "rgba(255,255,255,0.4)", fontSize: "0.8rem", margin: "4px 0 0" }}>{confirmed.length} confirmed registrations</p>
         </div>
         <div style={{ display: "flex", gap: "8px", flexWrap: "wrap" }}>
           {[

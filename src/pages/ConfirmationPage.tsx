@@ -37,11 +37,11 @@ const ConfirmationPage: React.FC = () => {
     const [searchParams] = useSearchParams();
     const [data, setData] = useState<RegistrationData | null>(null);
     const [loading, setLoading] = useState(true);
+    const [paymentFailed, setPaymentFailed] = useState(false);
     const [shareMessage, setShareMessage] = useState("");
     const navigate = useNavigate();
 
     const registrationId = searchParams.get("id");
-    const confirmToken = searchParams.get("token") ?? undefined;
 
     useEffect(() => {
         if (!registrationId) { navigate("/"); return; }
@@ -62,7 +62,7 @@ const ConfirmationPage: React.FC = () => {
             if (!registration) { navigate("/"); return; }
             setData(registration);
 
-            // If still pending, poll every 4s for up to 60s for webhook to confirm
+            // If still pending, poll every 4s for up to 60s waiting for webhook
             if (registration.paymentStatus !== "confirmed") {
                 let attempts = 0;
                 pollRef.current = window.setInterval(async () => {
@@ -70,8 +70,12 @@ const ConfirmationPage: React.FC = () => {
                     try {
                         const latest = await getRegistrationById(registrationId);
                         if (latest) setData(latest);
-                        if (latest?.paymentStatus === "confirmed" || attempts >= 15) {
+                        if (latest?.paymentStatus === "confirmed") {
                             if (pollRef.current) window.clearInterval(pollRef.current);
+                        } else if (attempts >= 15) {
+                            // 60s elapsed — payment was not received
+                            if (pollRef.current) window.clearInterval(pollRef.current);
+                            setPaymentFailed(true);
                         }
                     } catch { /* silent */ }
                 }, 4000);
@@ -151,6 +155,28 @@ const ConfirmationPage: React.FC = () => {
 
     if (loading) return <div className="text-center mt-5">Loading Ticket...</div>;
     if (!data) return null;
+
+    // Payment failed — show error screen
+    if (paymentFailed || (data.paymentStatus !== "confirmed" && !loading)) {
+        return (
+            <div style={{ minHeight: "100vh", background: "#101435", display: "flex", alignItems: "center", justifyContent: "center", padding: "40px 16px", fontFamily: "Manrope, sans-serif" }}>
+                <div style={{ maxWidth: "460px", width: "100%", textAlign: "center" }}>
+                    <div style={{ width: "72px", height: "72px", borderRadius: "50%", background: "rgba(220,53,69,0.15)", border: "2px solid rgba(220,53,69,0.4)", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 24px", fontSize: "2rem" }}>✕</div>
+                    <h2 style={{ color: "#fff", fontWeight: 800, fontSize: "1.6rem", marginBottom: "12px" }}>Payment Not Completed</h2>
+                    <p style={{ color: "rgba(255,255,255,0.6)", lineHeight: 1.7, marginBottom: "8px" }}>
+                        Your registration was not confirmed because the payment was not received.
+                        Your spot has <strong style={{ color: "#fff" }}>not</strong> been reserved.
+                    </p>
+                    <p style={{ color: "rgba(255,255,255,0.4)", fontSize: "0.85rem", marginBottom: "32px" }}>
+                        If you believe this is an error, please contact us at <strong style={{ color: "rgba(255,255,255,0.7)" }}>0787 963 720</strong>.
+                    </p>
+                    <a href="https://www.gennextmovement.com/registration" style={{ display: "inline-block", background: "#2133e4", color: "#fff", padding: "14px 36px", borderRadius: "6px", fontSize: "0.85rem", fontWeight: 800, letterSpacing: "0.08em", textTransform: "uppercase", textDecoration: "none" }}>
+                        Try Again
+                    </a>
+                </div>
+            </div>
+        );
+    }
 
     const qrValue = [
         "GENNEXT_TICKET",
