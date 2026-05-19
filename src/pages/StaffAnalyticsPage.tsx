@@ -646,6 +646,29 @@ const StaffAnalyticsPage: React.FC<StaffAnalyticsPageProps> = ({ tvMode = false 
 
     const renderOverview = () => (
         <div className="row g-4">
+            <div className="col-12">
+                <div className="card analytics-card" style={{ padding: "28px 32px" }}>
+                    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: "12px", flexWrap: "wrap", gap: "8px" }}>
+                        <div>
+                            <p style={{ color: "rgba(255,255,255,0.5)", fontSize: "0.75rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.1em", margin: "0 0 4px" }}>Attendance Progress</p>
+                            <div style={{ display: "flex", alignItems: "baseline", gap: "8px" }}>
+                                <span style={{ fontSize: "2.5rem", fontWeight: 800, color: "#fff", lineHeight: 1 }}>{metrics.checkedIn}</span>
+                                <span style={{ color: "rgba(255,255,255,0.4)", fontSize: "1rem" }}>of {metrics.total} registered</span>
+                            </div>
+                        </div>
+                        <span style={{ fontSize: "2rem", fontWeight: 800, color: metrics.checkInRate > 0 ? "#4ade80" : "rgba(255,255,255,0.3)" }}>
+                            {metrics.checkInRate}%
+                        </span>
+                    </div>
+                    <div style={{ height: "10px", background: "rgba(255,255,255,0.08)", borderRadius: "999px", overflow: "hidden" }}>
+                        <div style={{ height: "100%", width: `${metrics.checkInRate}%`, background: "linear-gradient(90deg, #2133e4, #4ade80)", borderRadius: "999px", transition: "width 0.8s ease" }} />
+                    </div>
+                    <div style={{ display: "flex", justifyContent: "space-between", marginTop: "8px" }}>
+                        <span style={{ fontSize: "0.75rem", color: "rgba(255,255,255,0.35)" }}>0</span>
+                        <span style={{ fontSize: "0.75rem", color: "rgba(255,255,255,0.35)" }}>{metrics.total} total</span>
+                    </div>
+                </div>
+            </div>
             <div className="col-md-4">
                 <div className="card analytics-card">
                     <div className="metric-head">
