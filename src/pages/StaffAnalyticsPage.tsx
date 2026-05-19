@@ -315,6 +315,18 @@ const StaffAnalyticsPage: React.FC<StaffAnalyticsPageProps> = ({ tvMode = false 
             .sort((a, b) => b.total - a.total)
             .slice(0, 8);
 
+        // Registrations by day
+        const dayCount: Record<string, number> = {};
+        registrations.forEach((r) => {
+            if (r.createdAt) {
+                const day = r.createdAt.slice(0, 10); // YYYY-MM-DD
+                dayCount[day] = (dayCount[day] || 0) + 1;
+            }
+        });
+        const registrationsByDay = Object.entries(dayCount)
+            .sort(([a], [b]) => a.localeCompare(b))
+            .slice(-14); // last 14 days
+
         return {
             total,
             checkedIn,
@@ -326,6 +338,7 @@ const StaffAnalyticsPage: React.FC<StaffAnalyticsPageProps> = ({ tvMode = false 
             topTitles: Object.entries(titleCount).sort((a, b) => b[1] - a[1]).slice(0, 8),
             countryCities,
             topGenderCities,
+            registrationsByDay,
         };
     }, [registrations]);
 
@@ -660,6 +673,32 @@ const StaffAnalyticsPage: React.FC<StaffAnalyticsPageProps> = ({ tvMode = false 
                     <h3 className="metric-value" style={{ color: "var(--info-accent)" }}>{metrics.checkInRate}%</h3>
                 </div>
             </div>
+            {metrics.registrationsByDay.length > 0 && (
+                <div className="col-12">
+                    <div className="card analytics-card">
+                        <h6 className="metric-title mb-4">Registration Trend</h6>
+                        <div style={{ display: "flex", alignItems: "flex-end", gap: "6px", height: "120px" }}>
+                            {(() => {
+                                const maxVal = Math.max(...metrics.registrationsByDay.map(([, c]) => c), 1);
+                                return metrics.registrationsByDay.map(([day, count]) => {
+                                    const pct = Math.max(8, Math.round((count / maxVal) * 100));
+                                    const label = day.slice(5); // MM-DD
+                                    return (
+                                        <div key={day} style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "center", gap: "6px", height: "100%" }}>
+                                            <div style={{ flex: 1, display: "flex", alignItems: "flex-end", width: "100%" }}>
+                                                <div title={`${day}: ${count}`} style={{ width: "100%", height: `${pct}%`, background: "#2133e4", borderRadius: "4px 4px 0 0", transition: "height 0.6s ease", cursor: "default", position: "relative" }}>
+                                                    <span style={{ position: "absolute", top: "-20px", left: "50%", transform: "translateX(-50%)", fontSize: "10px", fontWeight: 700, color: "#fff", whiteSpace: "nowrap" }}>{count}</span>
+                                                </div>
+                                            </div>
+                                            <span style={{ fontSize: "10px", color: "rgba(255,255,255,0.45)", whiteSpace: "nowrap" }}>{label}</span>
+                                        </div>
+                                    );
+                                });
+                            })()}
+                        </div>
+                    </div>
+                </div>
+            )}
             <div className="col-12">
                 <div className="card analytics-card">
                     <h6 className="metric-title mb-4">Top Countries of Origin</h6>
