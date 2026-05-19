@@ -16,6 +16,6 @@
     { "source": "/schedule", "destination": "/" },
     { "source": "/venue", "destination": "/" },
     { "source": "/faq", "destination": "/" },
-    { "source": "/registration/staff/:path*", "destination": "/registration/index.html" }
+    { "source": "/registration/:path*", "destination": "/registration" }
   ]
 }
