@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useSearchParams, useNavigate } from "react-router-dom";
 import QRCode from "react-qr-code";
-import { confirmPayment, getRegistrationById, type RegistrationData } from "@/lib/registrationApi";
+import { getRegistrationById, type RegistrationData } from "@/lib/registrationApi";
 import eventData from "@/jsonData/eventInfoContact.json";
 import logo from "/assets/img/icon/logo.svg";
 import "../index.scss";
@@ -44,36 +44,37 @@ const ConfirmationPage: React.FC = () => {
     const confirmToken = searchParams.get("token") ?? undefined;
 
     useEffect(() => {
-        if (!registrationId) {
-            alert("No registration ID found.");
-            navigate("/");
-            return;
-        }
-        fetchRegistration();
+        if (!registrationId) { navigate("/"); return; }
+        void fetchRegistration();
     }, [registrationId]);
 
+    // Poll interval ref so we can clear it on unmount or when confirmed
+    const pollRef = React.useRef<number | null>(null);
+
+    useEffect(() => {
+        return () => { if (pollRef.current) window.clearInterval(pollRef.current); };
+    }, []);
+
     const fetchRegistration = async () => {
+        if (!registrationId) return;
         try {
-            if (registrationId) {
-                if (confirmToken) {
-                    // Arriving from Paynow — attempt to confirm payment
+            const registration = await getRegistrationById(registrationId);
+            if (!registration) { navigate("/"); return; }
+            setData(registration);
+
+            // If still pending, poll every 4s for up to 60s for webhook to confirm
+            if (registration.paymentStatus !== "confirmed") {
+                let attempts = 0;
+                pollRef.current = window.setInterval(async () => {
+                    attempts++;
                     try {
-                        const registration = await confirmPayment(registrationId, confirmToken);
-                        setData(registration);
-                    } catch {
-                        alert("Payment could not be verified. Please contact support.");
-                        navigate("/");
-                    }
-                } else {
-                    // Direct lookup (e.g. page refresh without token)
-                    const registration = await getRegistrationById(registrationId);
-                    if (registration) {
-                        setData(registration);
-                    } else {
-                        alert("Registration not found!");
-                        navigate("/");
-                    }
-                }
+                        const latest = await getRegistrationById(registrationId);
+                        if (latest) setData(latest);
+                        if (latest?.paymentStatus === "confirmed" || attempts >= 15) {
+                            if (pollRef.current) window.clearInterval(pollRef.current);
+                        }
+                    } catch { /* silent */ }
+                }, 4000);
             }
         } catch (error) {
             console.error("Error fetching ticket:", error);

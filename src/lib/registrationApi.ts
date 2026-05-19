@@ -115,14 +115,19 @@ export const confirmPayment = async (id: string, token?: string): Promise<Regist
     return payload.data as RegistrationData;
 };
 
-export const buildPaynowUrl = (regId: string, token: string, firstName: string, lastName: string): string => {
-    const reference = `GenNext July 2026 - ${firstName} ${lastName}`;
-    const returnUrl = `https://www.gennextmovement.com/registration/confirmation?id=${encodeURIComponent(regId)}&token=${encodeURIComponent(token)}`;
+export const buildPaynowUrl = (regId: string, _token: string, firstName: string, lastName: string): string => {
+    // Reference embeds the registration ID so the server-side webhook can extract it
+    const reference = `GN2026-${regId}`;
+    // Return URL: no token — confirmation page just does a status lookup + polls
+    const returnUrl = `https://www.gennextmovement.com/registration/confirmation?id=${encodeURIComponent(regId)}`;
+    // Result URL: PayNow calls this server-to-server when payment completes
+    const resultUrl = REG_API_URL;
     const params = [
         "search=gennext%40hhicc.org.zw",
         "amount=10.00",
         `reference=${encodeURIComponent(reference)}`,
         `returnurl=${encodeURIComponent(returnUrl)}`,
+        `resulturl=${encodeURIComponent(resultUrl)}`,
         "l=1",
     ].join("&");
     return `https://www.paynow.co.zw/Payment/Link/?q=${btoa(params)}`;
