@@ -205,6 +205,12 @@ const ConfirmationPage: React.FC = () => {
                     <img src={logo} alt="Generation Next" style={{ width: "220px", maxWidth: "100%" }} />
                 </div>
 
+                {/* Event title strip */}
+                <div style={{ background: "#101435", borderRadius: "8px", padding: "14px 18px", marginBottom: "16px" }}>
+                    <p style={{ color: "#818cf8", fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase", margin: "0 0 4px" }}>Generation Next 2026</p>
+                    <p style={{ color: "#fff", fontSize: "1rem", fontWeight: 800, margin: 0, lineHeight: 1.3 }}>Raising the Next Generation of Leaders</p>
+                </div>
+
                 <div className="mb-4 p-3 rounded bg-light">
                     <h6 className="fw-bold mb-2" style={{ color: "#111827" }}>Event Details</h6>
                     <div className="small"><strong>Event:</strong> {EVENT_DETAILS.name}</div>
@@ -268,6 +274,12 @@ const ConfirmationPage: React.FC = () => {
                 <button onClick={() => navigate("/")} className="btn btn-link w-100 mt-2 ticket-back-home">
                     Back to Home
                 </button>
+
+                {/* Footer strip */}
+                <div style={{ borderTop: "1px solid #e5e7eb", marginTop: "16px", paddingTop: "12px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                    <span style={{ color: "#9ca3af", fontSize: "0.7rem" }}>gennextmovement.com</span>
+                    <span style={{ color: "#9ca3af", fontSize: "0.7rem", fontStyle: "italic" }}>Malachi 4:6</span>
+                </div>
             </div>
         </div>
     );
