@@ -80,7 +80,9 @@ const StaffPortalPage: React.FC = () => {
     a.click();
   };
 
-  const confirmed = registrations.filter(r => r.paymentStatus === "confirmed");
+  const confirmed = registrations.filter(r =>
+    r.paymentStatus === "confirmed" && (r.firstName || r.lastName)
+  );
 
   const filtered = confirmed.filter(r => {
     if (!searchTerm) return true;
