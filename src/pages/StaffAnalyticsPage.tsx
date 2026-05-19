@@ -179,6 +179,8 @@ const StaffAnalyticsPage: React.FC<StaffAnalyticsPageProps> = ({ tvMode = false 
     const [activeTab, setActiveTab] = useState<AnalyticsTab>("overview");
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [mapCountry, setMapCountry] = useState("Global Reach");
+    const [lastUpdated, setLastUpdated] = useState<Date | null>(null);
+    const [secondsAgo, setSecondsAgo] = useState(0);
     const containerRef = useRef<HTMLDivElement>(null);
     const navigate = useNavigate();
     const location = useLocation();
@@ -269,12 +271,22 @@ const StaffAnalyticsPage: React.FC<StaffAnalyticsPageProps> = ({ tvMode = false 
             if (showLoader) setLoading(true);
             const data = await getRegistrations();
             setRegistrations(data);
+            setLastUpdated(new Date());
+            setSecondsAgo(0);
         } catch (error: any) {
             console.error("Error loading analytics:", error);
         } finally {
             if (showLoader) setLoading(false);
         }
     };
+
+    useEffect(() => {
+        if (!lastUpdated) return;
+        const id = window.setInterval(() => {
+            setSecondsAgo(Math.floor((Date.now() - lastUpdated.getTime()) / 1000));
+        }, 1000);
+        return () => window.clearInterval(id);
+    }, [lastUpdated]);
 
     const metrics = useMemo(() => {
         const total = registrations.length;
@@ -991,7 +1003,13 @@ const StaffAnalyticsPage: React.FC<StaffAnalyticsPageProps> = ({ tvMode = false 
                                 </span>
                             )}
                         </div>
-                        <p className="text-muted" style={{ marginTop: "6px" }}>Live data · auto-refreshes every 10s</p>
+                        <div style={{ display: "flex", alignItems: "center", gap: "8px", marginTop: "6px" }}>
+                            <span style={{ width: "8px", height: "8px", borderRadius: "50%", background: "#4ade80", display: "inline-block", boxShadow: "0 0 0 0 rgba(74,222,128,0.4)", animation: "pulse-dot 2s infinite" }} />
+                            <p className="text-muted" style={{ margin: 0 }}>
+                                {lastUpdated ? `Updated ${secondsAgo}s ago` : "Live data · auto-refreshes every 10s"}
+                            </p>
+                        </div>
+                        <style>{`@keyframes pulse-dot { 0%{box-shadow:0 0 0 0 rgba(74,222,128,0.4)} 70%{box-shadow:0 0 0 8px rgba(74,222,128,0)} 100%{box-shadow:0 0 0 0 rgba(74,222,128,0)} }`}</style>
                     </div>
 
                     <div className="analytics-topbar__desktop-controls">
