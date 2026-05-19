@@ -181,6 +181,7 @@ const StaffAnalyticsPage: React.FC<StaffAnalyticsPageProps> = ({ tvMode = false 
     const [mapCountry, setMapCountry] = useState("Global Reach");
     const [lastUpdated, setLastUpdated] = useState<Date | null>(null);
     const [secondsAgo, setSecondsAgo] = useState(0);
+    const [quickSearch, setQuickSearch] = useState("");
     const containerRef = useRef<HTMLDivElement>(null);
     const navigate = useNavigate();
     const location = useLocation();
@@ -1010,6 +1011,44 @@ const StaffAnalyticsPage: React.FC<StaffAnalyticsPageProps> = ({ tvMode = false 
                             </p>
                         </div>
                         <style>{`@keyframes pulse-dot { 0%{box-shadow:0 0 0 0 rgba(74,222,128,0.4)} 70%{box-shadow:0 0 0 8px rgba(74,222,128,0)} 100%{box-shadow:0 0 0 0 rgba(74,222,128,0)} }`}</style>
+
+                        {/* Quick search */}
+                        <div style={{ position: "relative", marginTop: "12px" }}>
+                            <input
+                                type="text"
+                                placeholder="Quick search — name, church, city…"
+                                value={quickSearch}
+                                onChange={e => setQuickSearch(e.target.value)}
+                                style={{ width: "100%", background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.12)", borderRadius: "6px", padding: "9px 14px 9px 36px", color: "#fff", fontSize: "0.85rem", fontFamily: "Manrope, sans-serif", outline: "none", boxSizing: "border-box" }}
+                            />
+                            <svg style={{ position: "absolute", left: "10px", top: "50%", transform: "translateY(-50%)", opacity: 0.4 }} xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="#fff" viewBox="0 0 512 512"><path d="M416 208c0 45.4-14.8 87.3-39.8 121L472 424l-48 48-95-95.8A207.7 207.7 0 0 1 208 416C93.1 416 0 322.9 0 208S93.1 0 208 0s208 93.1 208 208zm-208 160a160 160 0 1 0 0-320 160 160 0 0 0 0 320z"/></svg>
+                            {quickSearch && <button onClick={() => setQuickSearch("")} style={{ position: "absolute", right: "10px", top: "50%", transform: "translateY(-50%)", background: "none", border: "none", color: "rgba(255,255,255,0.4)", cursor: "pointer", fontSize: "1rem", padding: 0 }}>✕</button>}
+
+                            {quickSearch.trim().length >= 2 && (() => {
+                                const q = quickSearch.toLowerCase();
+                                const results = registrations.filter(r =>
+                                    [r.firstName, r.lastName, r.title, r.church, r.city, r.country, r.email, r.phone, r.id]
+                                        .filter(Boolean).join(" ").toLowerCase().includes(q)
+                                ).slice(0, 6);
+                                return (
+                                    <div style={{ position: "absolute", top: "calc(100% + 6px)", left: 0, right: 0, background: "#1A1E42", border: "1px solid rgba(255,255,255,0.12)", borderRadius: "8px", zIndex: 100, boxShadow: "0 8px 32px rgba(0,0,0,0.4)", overflow: "hidden" }}>
+                                        {results.length === 0 ? (
+                                            <div style={{ padding: "14px 16px", color: "rgba(255,255,255,0.4)", fontSize: "0.85rem" }}>No matches found.</div>
+                                        ) : results.map(r => (
+                                            <div key={r.id} style={{ padding: "12px 16px", borderBottom: "1px solid rgba(255,255,255,0.06)", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                                                <div>
+                                                    <div style={{ color: "#fff", fontWeight: 700, fontSize: "0.9rem" }}>{r.title} {r.firstName} {r.lastName}</div>
+                                                    <div style={{ color: "rgba(255,255,255,0.45)", fontSize: "0.75rem" }}>{r.church} · {r.city}, {r.country}</div>
+                                                </div>
+                                                <span style={{ padding: "3px 10px", borderRadius: "100px", fontSize: "0.7rem", fontWeight: 700, background: r.accessGranted ? "rgba(74,222,128,0.15)" : "rgba(251,191,36,0.15)", color: r.accessGranted ? "#4ade80" : "#fbbf24", border: `1px solid ${r.accessGranted ? "rgba(74,222,128,0.3)" : "rgba(251,191,36,0.3)"}`, whiteSpace: "nowrap" }}>
+                                                    {r.accessGranted ? "Attended" : "Pending"}
+                                                </span>
+                                            </div>
+                                        ))}
+                                    </div>
+                                );
+                            })()}
+                        </div>
                     </div>
 
                     <div className="analytics-topbar__desktop-controls">
