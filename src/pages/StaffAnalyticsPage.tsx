@@ -927,34 +927,31 @@ const StaffAnalyticsPage: React.FC<StaffAnalyticsPageProps> = ({ tvMode = false 
                             {TABS.map((tab) => (
                                 <button
                                     key={tab.key}
-                                    className={`btn ${activeTab === tab.key ? "btn-primary" : "btn-outline-primary"}`}
                                     onClick={() => setActiveTab(tab.key)}
+                                    style={activeTab === tab.key ? tabActiveStyle : tabInactiveStyle}
                                 >
                                     {tab.label}
                                 </button>
                             ))}
                         </div>
                         <div>
-                            <button className="btn btn-primary" onClick={handleDisplayMode}>
+                            <button onClick={handleDisplayMode} style={tabActiveStyle}>
                                 {displayModeLabel}
                             </button>
                         </div>
                         <div className="analytics-actions">
-                            <button className="btn btn-outline-primary" onClick={() => void handleSharePage()}>
-                                Share
-                            </button>
-                            <button className="btn btn-outline-primary" onClick={handlePrintPage}>
-                                Print
-                            </button>
+                            <button onClick={() => void handleSharePage()} style={tabInactiveStyle}>Share</button>
+                            <button onClick={handlePrintPage} style={tabInactiveStyle}>Print</button>
                         </div>
                     </div>
 
                     <div className="analytics-topbar__mobile-controls">
                         <button
-                            className="btn btn-primary analytics-menu-toggle"
+                            className="analytics-menu-toggle"
                             onClick={() => setIsMobileMenuOpen((prev) => !prev)}
                             aria-expanded={isMobileMenuOpen}
                             aria-controls="analytics-mobile-menu"
+                            style={tabActiveStyle}
                         >
                             {isMobileMenuOpen ? "Close Menu" : "Open Menu"}
                         </button>
@@ -965,40 +962,17 @@ const StaffAnalyticsPage: React.FC<StaffAnalyticsPageProps> = ({ tvMode = false 
                             {TABS.map((tab) => (
                                 <button
                                     key={tab.key}
-                                    className={`btn ${activeTab === tab.key ? "btn-primary" : "btn-outline-primary"}`}
-                                    onClick={() => {
-                                        setActiveTab(tab.key);
-                                        setIsMobileMenuOpen(false);
-                                    }}
+                                    onClick={() => { setActiveTab(tab.key); setIsMobileMenuOpen(false); }}
+                                    style={activeTab === tab.key ? tabActiveStyle : tabInactiveStyle}
                                 >
                                     {tab.label}
                                 </button>
                             ))}
-                            <button
-                                className="btn btn-primary"
-                                onClick={() => {
-                                    setIsMobileMenuOpen(false);
-                                    handleDisplayMode();
-                                }}
-                            >
+                            <button onClick={() => { setIsMobileMenuOpen(false); handleDisplayMode(); }} style={tabActiveStyle}>
                                 {displayModeLabel}
                             </button>
-                            <button
-                                className="btn btn-outline-primary"
-                                onClick={() => {
-                                    setIsMobileMenuOpen(false);
-                                    void handleSharePage();
-                                }}
-                            >
-                                Share
-                            </button>
-                            <button
-                                className="btn btn-outline-primary"
-                                onClick={() => {
-                                    setIsMobileMenuOpen(false);
-                                    handlePrintPage();
-                                }}
-                            >
+                            <button onClick={() => { setIsMobileMenuOpen(false); void handleSharePage(); }} style={tabInactiveStyle}>Share</button>
+                            <button onClick={() => { setIsMobileMenuOpen(false); handlePrintPage(); }} style={tabInactiveStyle}>
                                 Print
                             </button>
                         </div>
@@ -1015,6 +989,32 @@ const StaffAnalyticsPage: React.FC<StaffAnalyticsPageProps> = ({ tvMode = false 
             </div>
         </div>
     );
+};
+
+const tabActiveStyle: React.CSSProperties = {
+    background: "#2133e4",
+    color: "#fff",
+    border: "none",
+    borderRadius: "8px",
+    padding: "8px 18px",
+    fontSize: "0.85rem",
+    fontWeight: 700,
+    cursor: "pointer",
+    fontFamily: "Manrope, sans-serif",
+    transition: "opacity 0.2s",
+};
+
+const tabInactiveStyle: React.CSSProperties = {
+    background: "transparent",
+    color: "rgba(255,255,255,0.65)",
+    border: "1px solid rgba(255,255,255,0.15)",
+    borderRadius: "8px",
+    padding: "8px 18px",
+    fontSize: "0.85rem",
+    fontWeight: 600,
+    cursor: "pointer",
+    fontFamily: "Manrope, sans-serif",
+    transition: "all 0.2s",
 };
 
 export default StaffAnalyticsPage;
