@@ -957,8 +957,18 @@ const StaffAnalyticsPage: React.FC<StaffAnalyticsPageProps> = ({ tvMode = false 
                         <button onClick={() => navigate("/staff/portal")} style={{ background: "rgba(255,255,255,0.07)", border: "1px solid rgba(255,255,255,0.12)", borderRadius: "6px", color: "rgba(255,255,255,0.7)", fontSize: "0.8rem", fontWeight: 700, padding: "6px 14px", cursor: "pointer", fontFamily: "Manrope, sans-serif", marginBottom: "10px", display: "inline-flex", alignItems: "center", gap: "6px" }}>
                             ← Portal
                         </button>
-                        <h2>Generation Next <span className="fw-light">Dashboard</span></h2>
-                        <p className="text-muted">Live data analysis from GenNext 2026 registration system</p>
+                        <div style={{ display: "flex", alignItems: "center", gap: "14px", flexWrap: "wrap" }}>
+                            <h2 style={{ margin: 0 }}>Generation Next <span className="fw-light">Dashboard</span></h2>
+                            <span style={{ background: "rgba(33,51,228,0.2)", border: "1px solid rgba(33,51,228,0.45)", color: "#818cf8", borderRadius: "100px", padding: "4px 14px", fontSize: "0.85rem", fontWeight: 800, whiteSpace: "nowrap" }}>
+                                {metrics.total} registered
+                            </span>
+                            {metrics.checkedIn > 0 && (
+                                <span style={{ background: "rgba(74,222,128,0.12)", border: "1px solid rgba(74,222,128,0.3)", color: "#4ade80", borderRadius: "100px", padding: "4px 14px", fontSize: "0.85rem", fontWeight: 800, whiteSpace: "nowrap" }}>
+                                    {metrics.checkedIn} attended
+                                </span>
+                            )}
+                        </div>
+                        <p className="text-muted" style={{ marginTop: "6px" }}>Live data · auto-refreshes every 10s</p>
                     </div>
 
                     <div className="analytics-topbar__desktop-controls">
